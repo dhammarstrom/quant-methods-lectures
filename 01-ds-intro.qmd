@@ -1,0 +1,183 @@
+---
+title: "Introduction to data science"
+bibliography: resources/bib-final.bib
+format:
+  revealjs:
+   theme: dark
+title-slide-attributes:
+    data-background-image: "/img/01-ds-bi.png"
+    data-background-size: cover
+    data-background-opacity: "number"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Data is everywhere
+
+
+```{r}
+#' echo: false
+#' 
+#'
+
+
+library(tidyverse)
+library(lubridate)
+library(cowplot)
+
+
+steps <- read_csv2("./data/steps.csv") %>%
+  
+  mutate(start = dmy_hm(Start), 
+         finish = dmy_hm(Finish)) %>%
+  
+
+  dplyr::select(start, finish, steps = `Steps (count)`) %>%
+
+  mutate(
+    date = format(start, '%Y-%m-%d'),
+    month = format(start, '%m'),
+    span = (as.numeric(finish - start)/60)/60,
+         
+         year = format(start, '%Y'), 
+         day_of_week = weekdays(start), 
+         season = if_else(month %in% c("01", "02", "12"), "Winter", 
+                          if_else(month %in% c("03", "04", "05"), "Spring", 
+                          if_else(month %in% c("06", "07", "08"), "Summer", 
+                          "Autumn")))) %>%
+  
+  # Remove records that span more than 9 hours
+  filter(span < 9) 
+
+
+steps_fig1 <- steps %>%
+  mutate(date = ymd(date)) %>%
+  filter(steps < 10000) %>%
+        
+
+  ggplot(aes(date, steps)) + geom_point(shape = 21, fill = "blue", alpha = 0.4) + 
+  scale_y_continuous(limits = c(0, 2000)) +
+  labs(y = "Step (counts)", 
+       x = "Date") + 
+  theme_minimal()
+
+
+
+steps_fig2 <- steps %>%
+  group_by(year, day_of_week, season, date) %>%
+  summarise(steps = sum(steps)) %>%
+  
+  group_by(year, day_of_week, season) %>%
+  summarise(steps = mean(steps)) %>%
+  
+  
+  mutate(day_of_week = if_else(day_of_week == "mandag", "Monday", 
+                               if_else(day_of_week == "tirsdag", "Tuesday",
+                                       if_else(day_of_week == "onsdag", "Wednesday",
+                                               if_else(day_of_week == "torsdag", "Thursday",
+                                                       if_else(day_of_week == "fredag", "Friday",
+                                                               if_else(day_of_week == "lørdag", "Saturday","Sunday")))))),
+         day_of_week = factor(day_of_week, levels = c("Monday",
+                                         "Tuesday", 
+                                         "Wednesday",
+                                         "Thursday",
+                                         "Friday",
+                                         "Saturday",
+                                         "Sunday")), 
+         season = factor(season, levels = c("Winter", "Spring", "Summer", "Autumn"))) %>%
+  
+  filter(year != "2016") %>%
+
+  ggplot(aes(day_of_week, steps, group = year)) + geom_line() + facet_grid(year ~ season) + 
+  
+  labs(y = "Average steps per day", 
+       x = "Day of the week") + 
+  scale_x_discrete()+ 
+  theme_minimal() +
+  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
+  
+  
+  plot_grid(steps_fig1, 
+            steps_fig2, ncol = 1, 
+            rel_heights = c(0.5, 1), 
+            labels = "AUTO", 
+            label_size = 12)
+
+
+
+
+```
+
+## The PPDAC cycle^[[@RN2902]] {background-image="img/01-ppdac.png" background-size="contain" background-position="right"}
+
+
+
+
+
+## Replication and Reproducibility [@RN1492]
+
+A *fully reproducible* study has 
+
+- Available data.
+- Computer code (software) that produces the results of the study.
+- Documentation that describes the software and data used in the study, and
+- ways to share the data and code.
+
+
+## Reproducibility and transparency outside science
+
+- Data are valuable and often hard to get
+- Data **may** guide good decision-making if understood
+
+
+## {background-image="img/01-ds-orientering.png" background-size="contain" background-position="center"}
+
+
+## Tools in data science
+
+We want software where analyses can be:
+
+- Human- and computer-readable
+- Documented
+- Available and able to share with other
+
+
+
+::: {.notes}
+
+- Human- and computer-readable, **meaning that we want to be able to write scripts, or computer programs that execute the analyses.**
+- Documented, **meaning that along the code we want to be able to describe what the code does.**
+- Available and able to share with other, **meaning that we analyses can be run on open and free software to maximize ability to share them.**
+
+:::
+
+## Tools in data science [@r4ds]
+
+![](img/01-rf-data-science.png)
+
+## Data in practice - Storing data for everyday use
+
+- Spreadsheets can be used for efficient **storage** of data for everyday use
+- Spreadsheet software contains functions that adds information on top of the data...
+
+## All happy families are alike; each unhappy family is unhappy in its own way.
+
+
+
+
+## {background-image="img/01-spension_bridge.jpg" background-size="contain" background-position="center"}
+
+::: {.notes}
+
+From wikipedia: Maria Spelterini (1876) is walking across a tightrope across the Niagara Gorge, from the United States side to Canada, with her feet in peach baskets. In the background is the Niagara Suspension Bridge, which is full of spectators. In the distant background is the Niagara Falls.
+
+source: https://commons.wikimedia.org/wiki/File:Maria_Spelterini_at_Suspension_Bridge.jpg#/media/File:Maria_Spelterini_at_Suspension_Bridge.jpg
+
+:::
+
+
+
+## References
+
+
+
