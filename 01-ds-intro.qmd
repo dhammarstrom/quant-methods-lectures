@@ -175,6 +175,8 @@ source: https://commons.wikimedia.org/wiki/File:Maria_Spelterini_at_Suspension_B
 
 :::
 
+## [Analyzing a data set](https://dhammarstrom.github.io/quant-methods-workshops/ws1-data-science-intro.html)
+
 
 
 ## References
