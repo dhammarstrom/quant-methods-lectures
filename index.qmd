@@ -1,0 +1,12 @@
+---
+title: "Quantitative methods and statistics (In Sport and Exercise Science) - Lectures"
+---
+
+
+
+
+|Lecture | Notes |
+| --- | --- |
+| [Introduction to data science](01-ds-intro.qmd)| |
+| [Introduction to data visualization](02-datavis.qmd)| |
+

@@ -1,0 +1,23 @@
+project:
+  render: 
+        - "*.qmd"
+        - "!devel-workshops/"
+  type: website
+  output-dir: docs
+
+website:
+  title: "Quantitative Methods - Workshop and Tutorials"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: workshops.qmd
+        text: Workshops
+
+format:
+  html:
+    theme: lumen
+    css: styles.css
+    toc: true
+
+

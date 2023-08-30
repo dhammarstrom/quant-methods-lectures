@@ -16,9 +16,9 @@ editor_options:
 
 
 ```{r}
-#' echo: false
-#' 
-#'
+#| echo: false
+#| cache: true 
+#|
 
 
 library(tidyverse)
@@ -110,13 +110,25 @@ steps_fig2 <- steps %>%
 
 ## The PPDAC cycle^[[@RN2902]] {background-image="img/01-ppdac.png" background-size="contain" background-position="right"}
 
+:::: {.columns}
+
+::: {.column width="40%"}
+- A general approach to data-driven problem-solving
+- Data literacy and data science as opposed to statistics
+:::
+
+::: {.column width="60%"}
+
+:::
+
+::::
 
 
 
 
-## Replication and Reproducibility [@RN1492]
+## Replication and Reproducibility 
 
-A *fully reproducible* study has 
+A *fully reproducible*^[[@RN1492]] study has 
 
 - Available data.
 - Computer code (software) that produces the results of the study.
@@ -127,7 +139,8 @@ A *fully reproducible* study has
 ## Reproducibility and transparency outside science
 
 - Data are valuable and often hard to get
-- Data **may** guide good decision-making if understood
+- Data **may** guide good decision-making, if understood
+- Efficient management and use of data requires data literacy and data science skills
 
 
 ## {background-image="img/01-ds-orientering.png" background-size="contain" background-position="center"}
@@ -137,9 +150,9 @@ A *fully reproducible* study has
 
 We want software where analyses can be:
 
-- Human- and computer-readable
-- Documented
-- Available and able to share with other
+- **Human- and computer-readable**, meaning that we want to be able to write scripts or computer programs that execute the analyses.
+- **Documented**, meaning that along the code, we want to be able to describe what the code does.
+- **Available** and able to share with others, meaning that our analyses can be run on open and free software to maximize the ability to share them.
 
 
 
@@ -151,21 +164,88 @@ We want software where analyses can be:
 
 :::
 
-## Tools in data science [@r4ds]
+## Tools in data science
 
-![](img/01-rf-data-science.png)
+- R and RStudio
+- Quarto
+- Git and GitHub
+
+
+
+## Tools in data science ^[[@r4ds]]
+
+![](https://r4ds.hadley.nz/diagrams/data-science/base.png)
+
+
+## How to learn how to code
+
+- There are (almost always) multiple solutions to a problem. 
+- Someone else has already had the same problem
+- Find your motivation
+- "Microdosing"
+
+::: {.notes}
+
+- There are (almost always) multiple solutions to a problem. When faced with difficulties, do not give up trying to search for a perfect single solution. Instead know that there are multiple ways of defining the problem and therefore multiple ways of making stuff work.
+- Someone else has already had the same problem. The internet is full of questions and answers, also related to what ever problem you might have. Learning how to write “googleable” questions is a great skill. By adding “in R” to your problem in a google search term often helps finding R related solutions.
+- Find your motivation. The skills that you will learn in this course are transferable to countless potential work related roles for the future you! To be able to showcase these skills may lead you to your dream job! Find your motivation for learning how to analyze data and communicating insights!
+- “Microdosing” statistical learning. Replace your social media influencers with R users and data scientists! I find R people on Twitter and mastodon. Tweets and posts in this format keeps your R brain going!
+
+
+:::
+
+
 
 ## Data in practice - Storing data for everyday use
 
 - Spreadsheets can be used for efficient **storage** of data for everyday use
 - Spreadsheet software contains functions that adds information on top of the data...
 
-## All happy families are alike; each unhappy family is unhappy in its own way.
+## 
 
 
+<br>
+
+<p style="color:Red; font-size: 60px; text-align:center;padding: 70px">All happy families are alike; each unhappy family is unhappy in its own way.</p>
 
 
-## {background-image="img/01-spension_bridge.jpg" background-size="contain" background-position="center"}
+## Data Organization in Spreadsheets: Empty cells^[[@RN2391]]
+
+![](https://www.tandfonline.com/na101/home/literatum/publisher/tandf/journals/content/utas20/2018/utas20.v072.i01/00031305.2017.1375989/20180424-01/images/large/utas_a_1375989_f0002_b.jpeg)
+
+## Data Organization in Spreadsheets: A tidy version (happy family)
+
+![](https://www.tandfonline.com/na101/home/literatum/publisher/tandf/journals/content/utas20/2018/utas20.v072.i01/00031305.2017.1375989/20180424-01/images/large/utas_a_1375989_f0003_b.jpeg)
+
+
+## Data Organization in Spreadsheets: Nonrectangular layouts
+
+![](https://www.tandfonline.com/na101/home/literatum/publisher/tandf/journals/content/utas20/2018/utas20.v072.i01/00031305.2017.1375989/20180424-01/images/large/utas_a_1375989_f0005_b.jpeg)
+
+
+## Data Organization in Spreadsheets: Data dictionary
+
+![](https://www.tandfonline.com/na101/home/literatum/publisher/tandf/journals/content/utas20/2018/utas20.v072.i01/00031305.2017.1375989/20180424-01/images/large/utas_a_1375989_f0009_b.jpeg)
+
+## Data Organization in Spreadsheets: Plain text
+
+![](https://www.tandfonline.com/na101/home/literatum/publisher/tandf/journals/content/utas20/2018/utas20.v072.i01/00031305.2017.1375989/20180424-01/images/large/utas_a_1375989_f0011_b.jpeg)
+
+
+## {background-image="img/01-spension_bridge.jpg" background-size="contain" background-position="right"}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+ 
+<p style="color:Red; font-size: 60px; text-align:center;padding: 70px">Minimize the risk of failure by adopting good habits!</p>
+:::
+
+::: {.column width="60%"}
+
+:::
+
+::::
 
 ::: {.notes}
 
@@ -174,9 +254,6 @@ From wikipedia: Maria Spelterini (1876) is walking across a tightrope across the
 source: https://commons.wikimedia.org/wiki/File:Maria_Spelterini_at_Suspension_Bridge.jpg#/media/File:Maria_Spelterini_at_Suspension_Bridge.jpg
 
 :::
-
-## [Analyzing a data set](https://dhammarstrom.github.io/quant-methods-workshops/ws1-data-science-intro.html)
-
 
 
 ## References

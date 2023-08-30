@@ -1,0 +1,254 @@
+[
+  {
+    "objectID": "02-datavis.html#data-visualization",
+    "href": "02-datavis.html#data-visualization",
+    "title": "Data visualization",
+    "section": "Data visualization",
+    "text": "Data visualization\nWhy graphs?\n\n“… to help us perceive broad features of the data”\n“… to let us … see what else is there.”\n\n(Anscombe 1973)"
+  },
+  {
+    "objectID": "02-datavis.html#four-data-sets---anscombes-quartet",
+    "href": "02-datavis.html#four-data-sets---anscombes-quartet",
+    "title": "Data visualization",
+    "section": "Four data sets - Anscombe’s quartet",
+    "text": "Four data sets - Anscombe’s quartet\n\n\n\n\nSummary statistics for Anscombe’s data\n\n\nDataset\nVariable\nMean\nSD\nMin\nMax\n\n\n\n\n1\nx\n9.0\n3.3\n4.0\n14.0\n\n\n2\nx\n9.0\n3.3\n4.0\n14.0\n\n\n3\nx\n9.0\n3.3\n4.0\n14.0\n\n\n4\nx\n9.0\n3.3\n8.0\n19.0\n\n\n1\ny\n7.5\n2.0\n4.3\n10.8\n\n\n2\ny\n7.5\n2.0\n3.1\n9.3\n\n\n3\ny\n7.5\n2.0\n5.4\n12.7\n\n\n4\ny\n7.5\n2.0\n5.2\n12.5\n\n\n\n\n\n\n(Anscombe 1973)"
+  },
+  {
+    "objectID": "02-datavis.html#anscombes-quartet-2",
+    "href": "02-datavis.html#anscombes-quartet-2",
+    "title": "Data visualization",
+    "section": "Anscombe’s quartet (2)",
+    "text": "Anscombe’s quartet (2)\n\n\n\n\nRegression coeficients for for Anscombe’s data\n\n\nDataset\nIntercept\nSlope\nCorrelation\n\n\n\n\n1\n3\n0.5\n0.82\n\n\n2\n3\n0.5\n0.82\n\n\n3\n3\n0.5\n0.82\n\n\n4\n3\n0.5\n0.82\n\n\n\n\n\n\n(Anscombe 1973)"
+  },
+  {
+    "objectID": "02-datavis.html#a-best-guess-of-the-data-pattern",
+    "href": "02-datavis.html#a-best-guess-of-the-data-pattern",
+    "title": "Data visualization",
+    "section": "A best guess of the data pattern",
+    "text": "A best guess of the data pattern"
+  },
+  {
+    "objectID": "02-datavis.html#plotting-the-actual-data",
+    "href": "02-datavis.html#plotting-the-actual-data",
+    "title": "Data visualization",
+    "section": "Plotting the actual data",
+    "text": "Plotting the actual data"
+  },
+  {
+    "objectID": "02-datavis.html#another-example---the-datasaurus",
+    "href": "02-datavis.html#another-example---the-datasaurus",
+    "title": "Data visualization",
+    "section": "Another example - The Datasaurus",
+    "text": "Another example - The Datasaurus\n\n\n\n\nThe Datasaurus datasets\n\n\nDataset\nMean x\nMean y\nSD x\nSD y\nCorrelation\n\n\n\n\naway\n54.27\n47.83\n16.77\n26.94\n-0.06\n\n\nbullseye\n54.27\n47.83\n16.77\n26.94\n-0.07\n\n\ncircle\n54.27\n47.84\n16.76\n26.93\n-0.07\n\n\ndino\n54.26\n47.83\n16.77\n26.94\n-0.06\n\n\ndots\n54.26\n47.84\n16.77\n26.93\n-0.06\n\n\nh_lines\n54.26\n47.83\n16.77\n26.94\n-0.06\n\n\nhigh_lines\n54.27\n47.84\n16.77\n26.94\n-0.07\n\n\nslant_down\n54.27\n47.84\n16.77\n26.94\n-0.07\n\n\nslant_up\n54.27\n47.83\n16.77\n26.94\n-0.07\n\n\nstar\n54.27\n47.84\n16.77\n26.93\n-0.06\n\n\nv_lines\n54.27\n47.84\n16.77\n26.94\n-0.07\n\n\nwide_lines\n54.27\n47.83\n16.77\n26.94\n-0.07\n\n\nx_shape\n54.26\n47.84\n16.77\n26.93\n-0.07"
+  },
+  {
+    "objectID": "02-datavis.html#section",
+    "href": "02-datavis.html#section",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Source: The datasauRus package"
+  },
+  {
+    "objectID": "02-datavis.html#a-system-for-creating-graphs",
+    "href": "02-datavis.html#a-system-for-creating-graphs",
+    "title": "Data visualization",
+    "section": "A system for creating graphs",
+    "text": "A system for creating graphs\n\nThree layers of a graph, geometric objects, scales and coordinates and annotations of the plot(Wickham 2010)"
+  },
+  {
+    "objectID": "02-datavis.html#a-system-for-creating-graphs-1",
+    "href": "02-datavis.html#a-system-for-creating-graphs-1",
+    "title": "Data visualization",
+    "section": "A system for creating graphs",
+    "text": "A system for creating graphs\n\nThree layers of a graph put together, geometric objects, scales and coordinates and annotations of the plot(Wickham 2010)"
+  },
+  {
+    "objectID": "02-datavis.html#ggplot2---grammar-of-graphics",
+    "href": "02-datavis.html#ggplot2---grammar-of-graphics",
+    "title": "Data visualization",
+    "section": "ggplot2 - Grammar of graphics",
+    "text": "ggplot2 - Grammar of graphics\n\ndata → The dataset containing variables to plot\naesthetics → Scales where the data are mapped\ngeometries → Geometric representations of the data\nfacet → A part of the dataset\nstatistical transformations → Summaries of data\ncoordinates → The coordinate space\nthemes → Plot components not linked to data"
+  },
+  {
+    "objectID": "02-datavis.html#creating-a-plot",
+    "href": "02-datavis.html#creating-a-plot",
+    "title": "Data visualization",
+    "section": "Creating a plot",
+    "text": "Creating a plot\n\n\n\n\nlibrary(\"palmerpenguins\")\n\ndata(\"penguins\")\n\npenguins %&gt;%\n        ggplot(aes(x = flipper_length_mm, \n                   y = body_mass_g)) + \n        geom_point()"
+  },
+  {
+    "objectID": "02-datavis.html#mapping-many-variables",
+    "href": "02-datavis.html#mapping-many-variables",
+    "title": "Data visualization",
+    "section": "Mapping many variables",
+    "text": "Mapping many variables\n\n\n\n\nlibrary(\"palmerpenguins\")\n\ndata(\"penguins\")\n\npenguins %&gt;%\n        ggplot(aes(x = flipper_length_mm, \n                   y = body_mass_g, \n                   color = species, \n                   shape = sex, \n                   size = bill_length_mm)) + \n        geom_point()"
+  },
+  {
+    "objectID": "02-datavis.html#mapping-many-variables-and-adding-facets",
+    "href": "02-datavis.html#mapping-many-variables-and-adding-facets",
+    "title": "Data visualization",
+    "section": "Mapping many variables and adding facets",
+    "text": "Mapping many variables and adding facets\n\n\n\n\nlibrary(\"palmerpenguins\")\n\ndata(\"penguins\")\n\npenguins %&gt;%\n        ggplot(aes(x = flipper_length_mm, \n                   y = body_mass_g, \n                   color = species, \n                   shape = sex,\n                   size = bill_length_mm)) + \n        geom_point() + \n        facet_wrap(~ year)"
+  },
+  {
+    "objectID": "02-datavis.html#changing-non-data-aspects-of-the-plot-theme",
+    "href": "02-datavis.html#changing-non-data-aspects-of-the-plot-theme",
+    "title": "Data visualization",
+    "section": "Changing non-data aspects of the plot (theme())",
+    "text": "Changing non-data aspects of the plot (theme())\n\n\n\n\nlibrary(\"palmerpenguins\")\n\ndata(\"penguins\")\n\npenguins %&gt;%\n        ggplot(aes(x = flipper_length_mm, \n                   y = body_mass_g, \n                   color = species, \n                   shape = sex, \n                   size = bill_length_mm)) + \n        geom_point() + \n        \n        theme_dark()"
+  },
+  {
+    "objectID": "02-datavis.html#references",
+    "href": "02-datavis.html#references",
+    "title": "Data visualization",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nAnscombe, F. J. 1973. “Graphs in Statistical Analysis.” The American Statistician 27 (1): 17. https://doi.org/10.2307/2682899.\n\n\nWickham, Hadley. 2010. “A Layered Grammar of Graphics.” Journal of Computational and Graphical Statistics 19 (1): 3–28. https://doi.org/10.1198/jcgs.2009.07098."
+  },
+  {
+    "objectID": "devel/xx-study-design.html#quarto",
+    "href": "devel/xx-study-design.html#quarto",
+    "title": "Designing scientific studies",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+  },
+  {
+    "objectID": "devel/xx-study-design.html#bullets",
+    "href": "devel/xx-study-design.html#bullets",
+    "title": "Designing scientific studies",
+    "section": "Bullets",
+    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+  },
+  {
+    "objectID": "devel/xx-study-design.html#code",
+    "href": "devel/xx-study-design.html#code",
+    "title": "Designing scientific studies",
+    "section": "Code",
+    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quantitative methods and statistics (In Sport and Exercise Science) - Lectures",
+    "section": "",
+    "text": "Lecture\nNotes\n\n\n\n\nIntroduction to data science\n\n\n\nIntroduction to data visualization"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-is-everywhere",
+    "href": "01-ds-intro.html#data-is-everywhere",
+    "title": "Introduction to data science",
+    "section": "Data is everywhere",
+    "text": "Data is everywhere"
+  },
+  {
+    "objectID": "01-ds-intro.html#the-ppdac-cycle",
+    "href": "01-ds-intro.html#the-ppdac-cycle",
+    "title": "Introduction to data science",
+    "section": "The PPDAC cycle1",
+    "text": "The PPDAC cycle1\n\n\n\nA general approach to data-driven problem-solving\nData literacy and data science as opposed to statistics\n\n\n\n\n\n(Spiegelhalter 2019)"
+  },
+  {
+    "objectID": "01-ds-intro.html#replication-and-reproducibility",
+    "href": "01-ds-intro.html#replication-and-reproducibility",
+    "title": "Introduction to data science",
+    "section": "Replication and Reproducibility",
+    "text": "Replication and Reproducibility\nA fully reproducible1 study has\n\nAvailable data.\nComputer code (software) that produces the results of the study.\nDocumentation that describes the software and data used in the study, and\nways to share the data and code.\n\n(Peng, Dominici, and Zeger 2006)"
+  },
+  {
+    "objectID": "01-ds-intro.html#reproducibility-and-transparency-outside-science",
+    "href": "01-ds-intro.html#reproducibility-and-transparency-outside-science",
+    "title": "Introduction to data science",
+    "section": "Reproducibility and transparency outside science",
+    "text": "Reproducibility and transparency outside science\n\nData are valuable and often hard to get\nData may guide good decision-making, if understood\nEfficient management and use of data requires data literacy and data science skills"
+  },
+  {
+    "objectID": "01-ds-intro.html#tools-in-data-science",
+    "href": "01-ds-intro.html#tools-in-data-science",
+    "title": "Introduction to data science",
+    "section": "Tools in data science",
+    "text": "Tools in data science\nWe want software where analyses can be:\n\nHuman- and computer-readable, meaning that we want to be able to write scripts or computer programs that execute the analyses.\nDocumented, meaning that along the code, we want to be able to describe what the code does.\nAvailable and able to share with others, meaning that our analyses can be run on open and free software to maximize the ability to share them.\n\n\n\nHuman- and computer-readable, meaning that we want to be able to write scripts, or computer programs that execute the analyses.\nDocumented, meaning that along the code we want to be able to describe what the code does.\nAvailable and able to share with other, meaning that we analyses can be run on open and free software to maximize ability to share them."
+  },
+  {
+    "objectID": "01-ds-intro.html#tools-in-data-science-1",
+    "href": "01-ds-intro.html#tools-in-data-science-1",
+    "title": "Introduction to data science",
+    "section": "Tools in data science",
+    "text": "Tools in data science\n\nR and RStudio\nQuarto\nGit and GitHub"
+  },
+  {
+    "objectID": "01-ds-intro.html#tools-in-data-science-2",
+    "href": "01-ds-intro.html#tools-in-data-science-2",
+    "title": "Introduction to data science",
+    "section": "Tools in data science 1",
+    "text": "Tools in data science 1\n\n(Wickham and Grolemund 2017)"
+  },
+  {
+    "objectID": "01-ds-intro.html#how-to-learn-how-to-code",
+    "href": "01-ds-intro.html#how-to-learn-how-to-code",
+    "title": "Introduction to data science",
+    "section": "How to learn how to code",
+    "text": "How to learn how to code\n\nThere are (almost always) multiple solutions to a problem.\nSomeone else has already had the same problem\nFind your motivation\n“Microdosing”\n\n\n\nThere are (almost always) multiple solutions to a problem. When faced with difficulties, do not give up trying to search for a perfect single solution. Instead know that there are multiple ways of defining the problem and therefore multiple ways of making stuff work.\nSomeone else has already had the same problem. The internet is full of questions and answers, also related to what ever problem you might have. Learning how to write “googleable” questions is a great skill. By adding “in R” to your problem in a google search term often helps finding R related solutions.\nFind your motivation. The skills that you will learn in this course are transferable to countless potential work related roles for the future you! To be able to showcase these skills may lead you to your dream job! Find your motivation for learning how to analyze data and communicating insights!\n“Microdosing” statistical learning. Replace your social media influencers with R users and data scientists! I find R people on Twitter and mastodon. Tweets and posts in this format keeps your R brain going!"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-in-practice---storing-data-for-everyday-use",
+    "href": "01-ds-intro.html#data-in-practice---storing-data-for-everyday-use",
+    "title": "Introduction to data science",
+    "section": "Data in practice - Storing data for everyday use",
+    "text": "Data in practice - Storing data for everyday use\n\nSpreadsheets can be used for efficient storage of data for everyday use\nSpreadsheet software contains functions that adds information on top of the data…"
+  },
+  {
+    "objectID": "01-ds-intro.html#section-1",
+    "href": "01-ds-intro.html#section-1",
+    "title": "Introduction to data science",
+    "section": "",
+    "text": "All happy families are alike; each unhappy family is unhappy in its own way."
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-empty-cells",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-empty-cells",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: Empty cells1",
+    "text": "Data Organization in Spreadsheets: Empty cells1\n\n(Broman and Woo 2018)"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-a-tidy-version-happy-family",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-a-tidy-version-happy-family",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: A tidy version (happy family)",
+    "text": "Data Organization in Spreadsheets: A tidy version (happy family)"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-nonrectangular-layouts",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-nonrectangular-layouts",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: Nonrectangular layouts",
+    "text": "Data Organization in Spreadsheets: Nonrectangular layouts"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-data-dictionary",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-data-dictionary",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: Data dictionary",
+    "text": "Data Organization in Spreadsheets: Data dictionary"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-plain-text",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-plain-text",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: Plain text",
+    "text": "Data Organization in Spreadsheets: Plain text"
+  },
+  {
+    "objectID": "01-ds-intro.html#section-2",
+    "href": "01-ds-intro.html#section-2",
+    "title": "Introduction to data science",
+    "section": "",
+    "text": "Minimize the risk of failure by adopting good habits!\n\n\n\n\n\n\nFrom wikipedia: Maria Spelterini (1876) is walking across a tightrope across the Niagara Gorge, from the United States side to Canada, with her feet in peach baskets. In the background is the Niagara Suspension Bridge, which is full of spectators. In the distant background is the Niagara Falls.\nsource: https://commons.wikimedia.org/wiki/File:Maria_Spelterini_at_Suspension_Bridge.jpg#/media/File:Maria_Spelterini_at_Suspension_Bridge.jpg"
+  },
+  {
+    "objectID": "01-ds-intro.html#references",
+    "href": "01-ds-intro.html#references",
+    "title": "Introduction to data science",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nBroman, Karl W., and Kara H. Woo. 2018. “Data Organization in Spreadsheets.” Journal Article. The American Statistician 72 (1): 2–10. https://doi.org/10.1080/00031305.2017.1375989.\n\n\nPeng, R. D., F. Dominici, and S. L. Zeger. 2006. “Reproducible Epidemiologic Research.” Journal Article. Am J Epidemiol 163 (9): 783–89. https://doi.org/10.1093/aje/kwj093.\n\n\nSpiegelhalter, D. J. 2019. The Art of Statistics : How to Learn from Data. Book. First US edition. New York: Basic Books.\n\n\nWickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 1st ed. Paperback; O’Reilly Media. http://r4ds.had.co.nz/."
+  }
+]
