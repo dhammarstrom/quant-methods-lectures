@@ -1,0 +1,170 @@
+---
+title: "Data wrangling"
+bibliography: resources/bib-final.bib
+format:
+  revealjs: 
+    theme: [dark]
+title-slide-attributes:
+    data-background-image: "/img/data-wrangling-illustration.png"
+    data-background-size: contain
+    data-background-opacity: "number"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Tidy tabular data
+
+* **Tidy** tabular data has
+    * One *variable* per column
+    * One *observation* per row
+    * One *value* per cell
+    
+## Data wrangling
+
+:::: {.columns}
+
+::: {.column width="40%"}
+<br>
+
+*"Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data."*
+:::
+
+::: {.column width="60%"}
+![](./img/data-wrangling-illustration2.png)
+:::
+
+::::
+
+
+
+
+
+
+## Data wrangling
+
+- Aggregation through summaries
+    - E.g. variables are summarised over multiple obeservations
+
+- Transformation of data
+    - E.g. new variables are created on existing data
+    
+- Arranging data
+    - E.g. sorting data based on values of observations
+    
+## `dplyr`
+
+- `dplyr` provides _**verbs**_ for wrangling data
+- The idea behind the package is to make it easy to translate thoughts to code
+- Using the package we can 
+   - `mutate` (create) new variables
+   - `select` variables
+   - `filter` observations
+   - `summarise` values
+   - `arrange` observations or rows
+   
+## Data pipes
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+
+::: {.incremental}
+- Using pipes we can execute data verbs in sequence
+- Two "pipe-operators" are available in R
+    - `|>` exists in base R
+    - `%>%` is loaded with `tidyverse` as part of the `magrittr` package
+:::    
+   
+
+:::
+
+::: {.column width="40%"}
+![](./img/pipe-illustration.png)
+:::
+
+::::
+
+## A data pipe (base R)
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+```{r}
+#| eval: false
+#| echo: true
+
+library(dplyr)
+
+data |>
+        filter(var1 > 10) |>
+        mutate(var3 = var1 + var2) |>
+        select(var1, varX) |>
+        print()
+```
+
+
+:::
+
+::: {.column width="40%"}
+![](./img/pipe-illustration.png)
+:::
+
+::::
+
+## A data pipe (magrittr)
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+```{r}
+#| eval: false
+#| echo: true
+
+library(dplyr)
+
+data %>% 
+        filter(var1 > 10) %>% 
+        mutate(var3 = var1 + var2) %>% 
+        select(var1, varX) %>% 
+        print()
+```
+
+
+:::
+
+::: {.column width="40%"}
+![](./img/pipe-illustration.png)
+:::
+
+::::
+
+## The idea behind the pipe operator
+
+```{r}
+#| echo: true
+#| eval: false
+
+data %>% 
+        fun(argument)
+
+## Is equivalent to
+
+fun(data, argument)
+
+
+
+
+
+
+```
+
+
+
+
+
+
+

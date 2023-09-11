@@ -6,13 +6,11 @@ project:
   output-dir: docs
 
 website:
-  title: "Quantitative Methods - Workshop and Tutorials"
+  title: "Quantitative Methods - Lectures"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - href: workshops.qmd
-        text: Workshops
 
 format:
   html:

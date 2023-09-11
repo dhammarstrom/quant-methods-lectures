@@ -250,5 +250,75 @@
     "title": "Introduction to data science",
     "section": "References",
     "text": "References\n\n\n\n\n\n\nBroman, Karl W., and Kara H. Woo. 2018. “Data Organization in Spreadsheets.” Journal Article. The American Statistician 72 (1): 2–10. https://doi.org/10.1080/00031305.2017.1375989.\n\n\nPeng, R. D., F. Dominici, and S. L. Zeger. 2006. “Reproducible Epidemiologic Research.” Journal Article. Am J Epidemiol 163 (9): 783–89. https://doi.org/10.1093/aje/kwj093.\n\n\nSpiegelhalter, D. J. 2019. The Art of Statistics : How to Learn from Data. Book. First US edition. New York: Basic Books.\n\n\nWickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 1st ed. Paperback; O’Reilly Media. http://r4ds.had.co.nz/."
+  },
+  {
+    "objectID": "03-data-wrangling.html#tidy-tabular-data",
+    "href": "03-data-wrangling.html#tidy-tabular-data",
+    "title": "Data wrangling",
+    "section": "Tidy tabular data",
+    "text": "Tidy tabular data\n\nTidy tabular data has\n\nOne variable per column\nOne observation per row\nOne value per cell"
+  },
+  {
+    "objectID": "03-data-wrangling.html#data-wrangling",
+    "href": "03-data-wrangling.html#data-wrangling",
+    "title": "Data wrangling",
+    "section": "Data wrangling",
+    "text": "Data wrangling\n\n\n\n“Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data.”"
+  },
+  {
+    "objectID": "03-data-wrangling.html#data-wrangling-1",
+    "href": "03-data-wrangling.html#data-wrangling-1",
+    "title": "Data wrangling",
+    "section": "Data wrangling",
+    "text": "Data wrangling\n\nAggregation through summaries\n\nE.g. variables are summarised over multiple obeservations\n\nTransformation of data\n\nE.g. new variables are created on existing data\n\nArranging data\n\nE.g. sorting data based on values of observations"
+  },
+  {
+    "objectID": "03-data-wrangling.html#dplyr",
+    "href": "03-data-wrangling.html#dplyr",
+    "title": "Data wrangling",
+    "section": "dplyr",
+    "text": "dplyr\n\ndplyr provides verbs for wrangling data\nThe idea behind the package is to make it easy to translate thoughts to code\nUsing the package we can\n\nmutate (create) new variables\nselect variables\nfilter observations\nsummarise values\narrange observations or rows"
+  },
+  {
+    "objectID": "03-data-wrangling.html#data-pipes",
+    "href": "03-data-wrangling.html#data-pipes",
+    "title": "Data wrangling",
+    "section": "Data pipes",
+    "text": "Data pipes\n\n\n\n\nUsing pipes we can execute data verbs in sequence\nTwo “pipe-operators” are available in R\n\n|&gt; exists in base R\n%&gt;% is loaded with tidyverse as part of the magrittr package"
+  },
+  {
+    "objectID": "03-data-wrangling.html#a-data-pipe",
+    "href": "03-data-wrangling.html#a-data-pipe",
+    "title": "Data wrangling",
+    "section": "A data pipe",
+    "text": "A data pipe\n\n\n\nlibrary(dplyr)\n\ndata |&gt;\n        filter(var1 &gt; 10) |&gt;\n        mutate(var3 = var1 + var2) |&gt;\n        select(var1, varX) |&gt;\n        print()"
+  },
+  {
+    "objectID": "03-data-wrangling.html#a-pipe",
+    "href": "03-data-wrangling.html#a-pipe",
+    "title": "Data wrangling",
+    "section": "A pipe",
+    "text": "A pipe"
+  },
+  {
+    "objectID": "03-data-wrangling.html#a-data-pipe-base-r",
+    "href": "03-data-wrangling.html#a-data-pipe-base-r",
+    "title": "Data wrangling",
+    "section": "A data pipe (base R)",
+    "text": "A data pipe (base R)\n\n\n\nlibrary(dplyr)\n\ndata |&gt;\n        filter(var1 &gt; 10) |&gt;\n        mutate(var3 = var1 + var2) |&gt;\n        select(var1, varX) |&gt;\n        print()"
+  },
+  {
+    "objectID": "03-data-wrangling.html#a-data-pipe-magrittr",
+    "href": "03-data-wrangling.html#a-data-pipe-magrittr",
+    "title": "Data wrangling",
+    "section": "A data pipe (magrittr)",
+    "text": "A data pipe (magrittr)\n\n\n\nlibrary(dplyr)\n\ndata %&gt;% \n        filter(var1 &gt; 10) %&gt;% \n        mutate(var3 = var1 + var2) %&gt;% \n        select(var1, varX) %&gt;% \n        print()"
+  },
+  {
+    "objectID": "03-data-wrangling.html#the-idea-behind-the-pipe-operator",
+    "href": "03-data-wrangling.html#the-idea-behind-the-pipe-operator",
+    "title": "Data wrangling",
+    "section": "The idea behind the pipe operator",
+    "text": "The idea behind the pipe operator\n\ndata %&gt;% \n        fun(argument)\n\n## Is equivalent to\n\nfun(data, argument)"
   }
 ]
