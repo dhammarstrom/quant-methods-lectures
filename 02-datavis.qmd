@@ -5,7 +5,7 @@ format:
   revealjs:
    theme: dark
 title-slide-attributes:
-    data-background-image: "/img/02-datavis-bi.png"
+    data-background-image: "/img/02-datavis.png"
     data-background-size: contain
     data-background-opacity: "number"
 editor_options: 
@@ -96,7 +96,7 @@ data.frame(x = c(0, 20),
         
         geom_blank() +
         
-        geom_abline(intercept = 3, slope = 0.5, color = "mediumorchid1", 
+        geom_abline(intercept = 3, slope = 0.5, color = "steelblue", 
                     size = 2) +
 
         geom_point(data = data.frame(x = 9, y = 7.5), 
@@ -136,7 +136,7 @@ anscombe %>%
         
         
         
-        ggplot(aes(x, y)) + geom_point(shape = 21, size = 3, fill = "orange") + 
+        ggplot(aes(x, y)) + geom_point(shape = 21, size = 3, fill = "steelblue") + 
         
         scale_y_continuous(limits = c(0, 13)) + 
         scale_x_continuous(limits = c(0, 20)) +
@@ -203,7 +203,7 @@ datasaurus_dozen %>%
 Source: The [datasauRus package](https://cran.r-project.org/web/packages/datasauRus)
 :::
 
-## A system for creating graphs
+## A system for creating graphs in R
 
 ```{r}
 #| echo: false
@@ -526,6 +526,171 @@ penguins %>%
 :::
 
 ::::
+
+
+## Common types of plots - Frequencies and densities 
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "A continuous variable displayed in a Histogram and Density plot"
+
+set.seed(1)
+library(patchwork)
+
+dat <- data.frame(category = c(rep("A", 5), rep("B", 25), rep("C", 125)),
+           value = c(rnorm(5, 25, 10), 
+                     rnorm(25, 25, 10), 
+                     rnorm(125, 25, 10)))
+
+
+a <- dat %>%
+        ggplot(aes(value)) + geom_histogram()
+
+b <-  dat %>% 
+        ggplot(aes(value)) + geom_density()
+
+
+a | b
+
+
+
+```
+
+
+## Common types of plots - Comparing categories
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "Comparison of a continous variable between categories using summary graphics"
+
+
+a <- dat %>%
+        ggplot(aes(category, value)) + geom_boxplot() + 
+        scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+b <- dat %>%
+        group_by(category) %>%
+        summarise(s = sd(value), 
+                  value = mean(value)) %>%
+        ggplot(aes(category, value)) + 
+        geom_errorbar(aes(ymin = value, ymax = value + s), width = 0.4) +
+        geom_bar(stat = "identity", fill = "steelblue", color = "black") +
+
+        scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+
+
+a | b
+
+```
+
+
+
+## Common types of plots - Comparing categories without hiding data
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "Comparison of a continous variable between categories using summary graphics"
+
+
+a <- dat %>%
+        group_by(category) %>%
+        summarise(s = sd(value), 
+                  value = mean(value)) %>%
+        ggplot(aes(category, value)) + 
+        geom_errorbar(aes(ymin = value, ymax = value + s), width = 0.4) +
+        geom_bar(stat = "identity", fill = "steelblue", color = "black") +
+
+        scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+
+
+b <- dat %>%
+        ggplot(aes(category, value)) + geom_point(position = position_jitter(width = 0.2)) + 
+        scale_y_continuous(limits = c(0, 50), expand = c(0, 0))
+
+
+
+a | b
+
+```
+
+
+
+## Common types of plots - Comparing categories highlighting differences
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "Comparison of a continous variable between categories using raw data and summaries"
+
+
+b <- dat %>%
+        ggplot(aes(category, value, fill = category)) + geom_point(position = position_jitter(width = 0.2), 
+                                                  alpha = 0.4, shape = 21) + 
+        scale_y_continuous(limits = c(0, 50), expand = c(0, 0)) +
+        stat_summary(fun=mean, geom="point", shape = 21, aes(fill = category), size = 3)
+
+
+
+b
+
+```
+
+## Common types of plots - Relationships between continuous variables
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "Highlighting relationships, raw data and summaries"
+
+set.seed(1)
+
+dat <- data.frame(x = rnorm(100, 50, 25)) %>%
+        mutate(y = 10 + 0.5 * x + rnorm(100, 0, 5), 
+               y2 = 10 + 0.5 * x + x^2 * 0.01 + rnorm(100, 0, 25))
+        
+
+a <- dat %>% 
+        ggplot(aes(x = x, y = y)) + geom_point() +
+        
+        scale_y_continuous(limits = c(-10, 90))
+
+
+b <- dat %>% 
+        ggplot(aes(x = x, y = y)) + geom_point() +
+        geom_smooth(method = "lm") +
+        
+        scale_y_continuous(limits = c(-10, 90))
+
+
+c <- dat %>% 
+        ggplot(aes(x = x, y = y2)) + geom_point() +
+        geom_smooth() 
+
+
+
+
+a | b | c
+
+
+
+```
+
+
+
 
 
 

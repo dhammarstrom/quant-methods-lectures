@@ -37,9 +37,6 @@ editor_options:
 
 
 
-
-
-
 ## Data wrangling
 
 - Aggregation through summaries
@@ -155,15 +152,32 @@ data %>%
 
 fun(data, argument)
 
+```
+
+
+## Data placeholder
+
+```{r}
+#| echo: true
+#| eval: false
+
+data %>% 
+        fun(argument)
+
+## Is equivalent to
+data %>% 
+        fun(., argument)
+
+
+## If the data is to be used in another place we need the placeholder
+data %>% 
+        fun(argument, data = .) 
 
 
 
 
 
 ```
-
-
-
 
 
 
