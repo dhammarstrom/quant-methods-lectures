@@ -1,0 +1,173 @@
+---
+title: "Homework - reproducing figures"
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+## First steps
+
+```{r}
+#| echo: true
+
+library(tidyverse) # <1>
+
+# <2> 
+child_heart <- read_csv("https://raw.githubusercontent.com/dspiegel29/ArtofStatistics/master/01-1-2-3-child-heart-survival-times/01-1-child-heart-survival-x.csv")
+
+head(child_heart) # <3>
+
+
+
+```
+
+1. Load the tidyverse
+2. Download the data, `read_csv` loads the data to an object in the environment
+3. Get an overview of the available variables
+
+## What should be the end result?
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](img/spiegelhalter1-3.png)
+
+:::
+
+
+::: {.column width="60%"}
+
+- Calculate the proportion of operations to the total
+- Sort the variable hospital name based on proportion
+- Create a bar plot
+
+:::
+
+::::
+
+
+## Data wrangling
+
+```{r}
+#| echo: true
+child_heart$percentage_op <- 100 * (child_heart$Operations / sum(child_heart$Operations)) # <1>
+child_heart$Hospital <- fct_reorder(child_heart$Hospital, child_heart$percentage_op)  # <2>
+
+child_heart$Hospital
+
+```
+
+1. Creating a new variable, operations per hospital expressed as a percentage of the total
+2. Overwriting the existing variable `Hospital` with a factor variable
+
+
+## Data wrangling alternative
+
+```{r}
+#| echo: true
+child_heart <- child_heart %>%
+        mutate(percentage_op = 100 * (Operations / sum(Operations)), # <1>
+               Hospital = fct_reorder(Hospital, -percentage_op)) %>% # <2>
+        print()
+
+```
+
+1. Creating a new variable, operations per hospital expressed as a percentage of the total
+2. Overwriting the existing variable `Hospital` with a factor variable
+
+
+## Building a bar plot
+
+
+
+
+```{r}
+#| output-location: column
+#| echo: true
+#| fig-width: 6
+#| fig-height: 4
+
+ggplot(data = child_heart, 
+       aes(x = percentage_op, 
+           y = Hospital)) + 
+        geom_bar(stat = "identity")
+
+
+```
+
+## Fixing axis labels
+
+```{r}
+#| output-location: column
+#| echo: true
+#| fig-width: 6
+#| fig-height: 4
+
+ggplot(data = child_heart, 
+       aes(x = percentage_op, 
+           y = Hospital)) + 
+        geom_bar(stat = "identity") + 
+        
+        labs(x = "Percentage of all operations in 2012-15\nthat are carried out in each hospital") + 
+        theme(axis.title.y = element_blank())
+
+
+```
+
+## Fixing axis scales (x-axis)
+
+```{r}
+#| output-location: column
+#| echo: true
+#| fig-width: 6
+#| fig-height: 4
+
+ggplot(data = child_heart, 
+       aes(x = percentage_op, 
+           y = Hospital)) + 
+        geom_bar(stat = "identity") + 
+        
+        scale_x_continuous(limits = c(0, 16), 
+                           breaks = c(0, 2, 4, 6, 8, 10, 12, 14, 16), 
+                           expand = c(0, 0)) +
+        
+        
+        labs(x = "Percentage of all operations in 2012-15\nthat are carried out in each hospital") + 
+        theme(axis.title.y = element_blank())
+
+
+```
+
+## Removing reduntant grid lines, adding plot border, fixing plot background 
+
+```{r}
+#| output-location: column
+#| echo: true
+#| fig-width: 6
+#| fig-height: 4
+
+ggplot(data = child_heart, 
+       aes(x = percentage_op, 
+           y = Hospital)) + 
+        geom_bar(stat = "identity") + 
+        
+        scale_x_continuous(limits = c(0, 16), 
+                           breaks = c(0, 2, 4, 6, 8, 10, 12, 14, 16), 
+                           expand = c(0, 0)) +
+        
+        
+        labs(x = "Percentage of all operations in 2012-15\nthat are carried out in each hospital") + 
+        theme(axis.title.y = element_blank(), 
+              panel.grid.major.y = element_blank(), 
+              panel.grid.major.x = element_line(color = "gray70"), 
+              panel.grid.minor.x = element_blank(), 
+              panel.border = element_rect(color = "black", fill = NA), 
+              panel.background = element_rect(fill = "white"))
+
+
+```
+
+## Next steps?
+
+

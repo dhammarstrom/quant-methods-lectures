@@ -8,6 +8,7 @@ title: "Quantitative methods and statistics (In Sport and Exercise Science) - Le
 |Lecture | Notes |
 | --- | --- |
 | [Introduction to data science](01-ds-intro.qmd)| |
-| [Introduction to data visualization](02-datavis.qmd)| |
+| [Introduction to data visualization](02-datavis.qmd)| [Homework, possible solutions](02-datavis-homework.qmd) |
 | [Introduction to data wrangling](03-data-wrangling.qmd)| |
+| []
 
