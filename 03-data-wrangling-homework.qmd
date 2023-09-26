@@ -1,0 +1,241 @@
+---
+title: "Creating tables - Homework"
+format: revealjs
+---
+
+## The Assignment
+
+![](img/table1-haun-et-al.jpeg)
+
+## Variables
+
+- The data are part of the `exscidata` package.
+- To load the data and check variable names:
+
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse); library(gt); library(exscidata)
+
+colnames(hypertrophy)
+```
+
+## Variables in the table, some are missing from the data
+
+```{r}
+#| message: false
+#| warning: false
+
+hypertrophy %>%
+        select(GROUP, AGE, 
+               HEIGHT, 
+               BODYMASS_T1, 
+               DXA_LBM_T1, 
+               DXA_FM_T1, 
+               SQUAT_3RM) %>%
+        head()
+## Missing variables: Bench press, Deadlift, Lat pulldown, Overhead press
+
+```
+
+## Grouping and summarising
+
+- The table shows data per group and across all groups. 
+- I will first create a summary of groups the across all groups.
+
+
+```{r}
+
+group_wise <- hypertrophy %>%
+                select(GROUP,AGE, HEIGHT, BODYMASS_T1,DXA_LBM_T1, DXA_FM_T1, 
+                        SQUAT_3RM) %>%
+        pivot_longer(names_to = "variable", 
+                     values_to = "value", 
+                     cols = AGE:SQUAT_3RM) %>%
+        
+        summarise(m = mean(value), 
+                  s = sd(value), 
+                  .by = c(GROUP, variable)) %>%
+        print()
+
+```
+
+## It seems we have missing data
+- Adding two variables to get more control
+
+```{r}
+
+group_wise <- hypertrophy %>%
+                select(GROUP,AGE, HEIGHT, BODYMASS_T1,DXA_LBM_T1, DXA_FM_T1, 
+                        SQUAT_3RM) %>%
+        pivot_longer(names_to = "variable", 
+                     values_to = "value", 
+                     cols = AGE:SQUAT_3RM) %>%
+        
+        summarise(m = mean(value, na.rm = TRUE), 
+                  s = sd(value, na.rm = TRUE), 
+                  miss_val = sum(is.na(value)),
+                  n = n(),
+                  .by = c(GROUP, variable)) %>%
+        print()
+
+```
+
+## Wrangling to a wide format
+
+```{r}
+group_wise <- group_wise %>%
+        select(GROUP:s) %>%
+        pivot_wider(names_from = GROUP, 
+                    values_from = c(m ,s)) %>%
+        
+        select(variable, 
+               m_WP, s_WP,
+               m_GWP, s_GWP, 
+               m_MALTO, s_MALTO) %>%
+                
+        print()
+
+```
+
+## Summarising across groups
+
+```{r}
+total <- hypertrophy %>%
+                select(GROUP,AGE, HEIGHT, BODYMASS_T1,DXA_LBM_T1, DXA_FM_T1, 
+                        SQUAT_3RM) %>%
+        pivot_longer(names_to = "variable", 
+                     values_to = "value", 
+                     cols = AGE:SQUAT_3RM) %>%
+        
+        summarise(m = mean(value, na.rm = TRUE), 
+                  s = sd(value, na.rm = TRUE), 
+                  miss_val = sum(is.na(value)),
+                  n = n(),
+                  .by = c(variable)) %>%
+        print()
+
+```
+
+
+## Combining group-wise and total summaries (1)
+
+```{r}
+
+group_wise %>%
+        inner_join(total) %>%
+        print()
+
+```
+
+## Combining group-wise and total summaries (2)
+
+```{r}
+
+cbind(group_wise, total[,c(2,3)])
+
+
+```
+
+## Formatting the table (`gt`)
+
+
+
+```{r}
+
+tbl <- group_wise %>%
+        inner_join(total) %>%
+        select(variable:s) %>%
+        mutate(variable = factor(variable, 
+                                 levels = c("AGE", "HEIGHT", "BODYMASS_T1", 
+                                            "DXA_LBM_T1", "DXA_FM_T1", 
+                                            "SQUAT_3RM"), 
+                                 labels = c("Age (years)", 
+                                            "Height (cm)", 
+                                            "Weight (kg)", 
+                                            "Total lean mass (kg)", 
+                                            "Total fat mass (kg)", 
+                                            "Squat 3RM (kg)"))) %>%
+        gt() %>%
+        fmt_number(columns = m_WP:s, 
+                   decimals = 2) %>%
+        cols_merge(columns = c(m_WP, s_WP), 
+                   pattern = "{1} &plusmn; {2}") %>%
+        cols_merge(columns = c(m_GWP, s_GWP), 
+                   pattern = "{1} &plusmn; {2}") %>%
+        cols_merge(columns = c(m_MALTO, s_MALTO), 
+                   pattern = "{1} &plusmn; {2}") %>%
+        cols_merge(columns = c(m, s), 
+                   pattern = "{1} &plusmn; {2}")
+
+```
+
+## Fixing column names and footnotes
+
+```{r}
+
+# Calculate n participants per group
+labels <- hypertrophy %>%
+        summarise(.by = GROUP, 
+                  n = n()) %>%
+        add_row(GROUP = "Total")%>%
+        
+        mutate(n = if_else(is.na(n), sum(n, na.rm = TRUE), n),
+               label = paste0(GROUP, " (n = ",n, ")")) 
+
+## Store labels as a list
+col_labs <- as.list(labels$label)
+## Name the element of the list
+names(col_labs) <- c("m_WP", "m_GWP",  "m_MALTO", "m")
+
+
+tbl <- tbl %>%
+        # cols_label accepts a list as input
+        cols_label(.list = col_labs) %>%
+        # cols_label also accepts <column name> = <label>
+        cols_label(variable = "Variable")
+        
+
+
+
+```
+
+## Last touch
+
+```{r}
+
+tbl %>%
+        cols_align(align = "center", 
+                   columns = starts_with("m")) %>%
+         cols_align(align = "left", 
+                   columns = starts_with("v"))  %>%
+          tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = cells_column_labels(everything())
+  ) %>% 
+        
+        
+        tab_footnote(footnote = md("*All data presented as means &plusmn; standard deviation values.*"))
+
+?tab_style
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
