@@ -432,5 +432,12 @@
     "title": "Quantitative methods and statistics (In Sport and Exercise Science) - Lectures",
     "section": "",
     "text": "Lecture\nNotes\n\n\n\n\nIntroduction to data science\n\n\n\nIntroduction to data visualization\nHomework, possible solutions\n\n\nIntroduction to data wrangling\n\n\n\n[]"
+  },
+  {
+    "objectID": "04-writing.html#basics-quarto-and-rmarkdown",
+    "href": "04-writing.html#basics-quarto-and-rmarkdown",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Basics: Quarto and Rmarkdown",
+    "text": "Basics: Quarto and Rmarkdown\n\n\nQuarto and R Markdown a special kind of scripts where text and computer code can be combined to generate reports.\nUnder the hood, a report generator is converting code and plain text to an output format such as html, pdf or docx (more formats are available).\nQuarto is a new, well documented format that gives extra flexibility, but also requires installation of extra software.\nR Markdown is even more well documented, see e.g. R Markdown, R Markdown: The Definitev Guide"
   }
 ]

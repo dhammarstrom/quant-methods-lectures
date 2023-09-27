@@ -23,13 +23,13 @@ editor_options:
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 <br>
 
 *"Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data."*
 :::
 
-::: {.column width="60%"}
+::: {.column width="40%"}
 ![](./img/data-wrangling-illustration2.png)
 :::
 

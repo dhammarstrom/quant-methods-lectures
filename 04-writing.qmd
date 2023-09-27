@@ -1,0 +1,15 @@
+---
+title: "Writing reports in Quarto (or R markdown)"
+format: revealjs
+---
+
+## Basics: Quarto and Rmarkdown
+
+::: {.incremental}
+
+- Quarto and R Markdown a special kind of scripts where text and computer code can be combined to generate reports. 
+- Under the hood, a report generator is converting code and plain text to an output format such as *html*, *pdf* or *docx* (more formats are available).
+- Quarto is a new, [well documented](https://quarto.org/) format that gives extra flexibility, but also requires installation of extra software.
+- R Markdown is even more well documented, see e.g. [R Markdown](https://rmarkdown.rstudio.com/), [R Markdown: The Definitev Guide](https://bookdown.org/yihui/rmarkdown/)
+
+:::
