@@ -10,6 +10,394 @@ format: revealjs
 - Quarto and R Markdown a special kind of scripts where text and computer code can be combined to generate reports. 
 - Under the hood, a report generator is converting code and plain text to an output format such as *html*, *pdf* or *docx* (more formats are available).
 - Quarto is a new, [well documented](https://quarto.org/) format that gives extra flexibility, but also requires installation of extra software.
-- R Markdown is even more well documented, see e.g. [R Markdown](https://rmarkdown.rstudio.com/), [R Markdown: The Definitev Guide](https://bookdown.org/yihui/rmarkdown/)
+- R Markdown is also, see e.g. [R Markdown](https://rmarkdown.rstudio.com/), [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 
 :::
+
+## Code execution and the environment
+
+::: {.incremental}
+- When a quarto or Rmarkdown file is "knitted" or compiled, the source file looks for additional files in the same directory as the source file is saved.
+- Working in a RStudio projects makes it easy to work with the report interactively as you can use relative paths.
+- [RStudio has an excellent guide to its project feature](https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects)
+:::
+
+## RStudio projects
+
+- **A projects is a collection of settings together with a root directory.**
+- This means that you will be able to work with relative paths. 
+- If reading a `csv` file using relative paths, your code will look like this from a project.
+
+
+```{r}
+#| eval: false
+#| echo: true
+dat <- read_csv("./data/my-data.csv")
+```
+
+
+## Absolute paths
+
+- If your are using absolute paths, reaching the same operation could look like this
+
+```{r}
+#| eval: false
+#| echo: true
+dat <- read_csv("C:/Users/Daniel/Dropbox/Some-folder/a-project/data/my-data.csv")
+
+```
+
+## A basic structure for projects
+
+- RStudio projects helps you create good habits for reproducible analysis as all analyses are conducted within a stand-alone folder structure. Your data and scripts can be shared.
+
+- Use a basic structure for all projects:
+
+```{}
+My-project
+        |
+        |-.Rproj        (The project settings)
+        |--/data        (Contains all data needed for your analysis)
+        |--/R           (Contains all scripts/R-files)
+        |--/output      (Collection of all output files)
+
+
+```
+
+## Writing in Quarto/R Markdown
+
+- The basic syntax in quarto/R Markdown files is markdown. Markdown makes it easy to format text without point-and-click as all formatting can be added with syntax, example:
+
+```
+This text is an example of the markdown syntax which includes **bold**, *italic*,
+^super^ and ~subscript~ and ~~striketrough~~
+```
+
+Resulting in:
+
+> This text is an example of the markdown syntax which includes **bold**, *italic*,
+^super^ and ~subscript~ and ~~striketrough~~
+
+## Markdown - More on text formatting  (html)
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```
+
+
+We can also use html for <sub>subscripts</sub>
+and <sup>superscript</sup>
+
+
+```
+
+
+:::
+
+
+::: {.column width="60%"}
+
+We can also use html for <sub>subscripts</sub>
+and <sup>superscript</sup>
+
+:::
+
+::::
+
+
+## Markdown - More on text formatting  (latex)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```
+
+Mathematical formulas can be added inline with $y_i \sim \operatorname{Normal}(\mu_i, \sigma)$
+
+or as a block, using
+
+$$
+y = \beta_0 + \beta_1 \times x_1 + \epsilon
+$$
+
+
+```
+
+
+:::
+
+
+::: {.column width="50%"}
+
+
+Mathematical formulas can be added inline with $y_i \sim \operatorname{Normal}(\mu_i, \sigma)$
+
+or as a block, using
+
+$$
+y = \beta_0 + \beta_1 \times x_1 + \epsilon
+$$
+
+
+:::
+
+::::
+
+## Markdown lists
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```
+A list can be unordered and ordered
+
+* Item A
+    + Item x
+
+    
+1. Item 1
+2. Item 2
+    i) Item i
+
+
+```
+
+:::
+
+
+::: {.column width="60%"}
+A list can be unordered and ordered
+
+* Item A
+    + Item x
+
+<br>
+
+1. Item 1
+2. Item 2
+    i) Item i
+ 
+:::
+
+
+::::
+
+## Markdown tables
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```
+
+| Left |Center|Right| 
+| :--- |:---: |---:|
+|Text | Text| Text| 
+|35| 3| 999|
+
+: A table caption
+
+
+```
+
+:::
+
+
+::: {.column width="60%"}
+
+
+| Left |Center|Right| 
+| :--- |:---: |---:|
+|Text | Text| Text| 
+|35| 3| 999|
+
+: A table caption {.striped .hover}
+
+:::
+
+
+::::
+
+
+## Adding images
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```
+![](img/inn-logo.svg)
+
+```
+
+:::
+
+
+::: {.column width="60%"}
+
+
+![](img/inn-logo.svg)
+
+
+:::
+
+
+::::
+
+## Cross-referencing
+
+- With cross-referencing it is possible to reference images, tables, equations etc.
+- A cross reference requires an **identifier**
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```
+![](img/inn-logo.svg){#fig-inn}
+
+See [@fig-inn] for an example ...
+
+
+
+```
+
+:::
+
+
+::: {.column width="60%"}
+
+
+![Høgskolen i Innlandet logo](img/inn-logo.svg){#fig-inn}
+
+See [@fig-inn] for an example ...
+
+
+
+:::
+
+
+::::
+
+
+
+
+## Code chunk options
+
+- Output from code chunks can be tables, figures or text used in the report. 
+- Code chunk options lets you specify, for example
+    + Figure captions, figure short-captions
+    + If code, messages or warnings should be shown
+    + Labels used for cross-referencing
+    + Caching (saving computations of a code block if unchanged)
+    
+    
+## Code chunk options syntax
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```
+
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-example
+#| fig-cap: "An example figure"
+
+
+library(exscidata); library(tidyverse)
+
+cyclingstudy %>%
+        ggplot(aes(weight.T1, height.T1)) + geom_point()
+
+
+``` 
+
+
+
+
+:::
+
+
+::: {.column width="60%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-example
+#| fig-cap: "An example figure"
+
+
+library(exscidata); library(tidyverse)
+
+cyclingstudy %>%
+        ggplot(aes(weight.T1, height.T1)) + geom_point()
+
+
+
+```
+
+
+
+:::
+
+
+::::
+
+## Inline code
+
+- Code may be included inline to include code generated outputs
+
+```{r}
+#| eval: false
+a_variable <- 3.14
+
+```
+
+- To include the variable in the text:
+
+```{r}
+#| eval: false
+The variable will be displayed here `r a_variable` 
+```
+
+
+## Bibliographies
+
+- Bibliographies/Citations may be added to reports using a external bibliography file. A simple format is bibtex
+- Pubmed entries can be searched using [TexMed](https://www.bioinformatics.org/texmed/)
+- In the visual editor, bibliographies can be easily created
+
+```{r}
+#| eval: false
+#| echo: true
+---
+title: "My document"
+bibliography: "resources/bibliography.bib"
+---
+
+```
+
+
+
+
+
+
+
+## Where to find help?
+
+- The  [quarto documentation](https://quarto.org/docs/authoring/markdown-basics.html) is really good.
+- A lot of examples on quarto is available trough google!
+    
+ See the.
+
+
+

@@ -1,0 +1,639 @@
+[
+  {
+    "objectID": "01-ds-intro.html#data-is-everywhere",
+    "href": "01-ds-intro.html#data-is-everywhere",
+    "title": "Introduction to data science",
+    "section": "Data is everywhere",
+    "text": "Data is everywhere"
+  },
+  {
+    "objectID": "01-ds-intro.html#the-ppdac-cycle",
+    "href": "01-ds-intro.html#the-ppdac-cycle",
+    "title": "Introduction to data science",
+    "section": "The PPDAC cycle1",
+    "text": "The PPDAC cycle1\n\n\n\nA general approach to data-driven problem-solving\nData literacy and data science as opposed to statistics\n\n\n\n\n\n(Spiegelhalter 2019)"
+  },
+  {
+    "objectID": "01-ds-intro.html#replication-and-reproducibility",
+    "href": "01-ds-intro.html#replication-and-reproducibility",
+    "title": "Introduction to data science",
+    "section": "Replication and Reproducibility",
+    "text": "Replication and Reproducibility\nA fully reproducible1 study has\n\nAvailable data.\nComputer code (software) that produces the results of the study.\nDocumentation that describes the software and data used in the study, and\nways to share the data and code.\n\n(Peng, Dominici, and Zeger 2006)"
+  },
+  {
+    "objectID": "01-ds-intro.html#reproducibility-and-transparency-outside-science",
+    "href": "01-ds-intro.html#reproducibility-and-transparency-outside-science",
+    "title": "Introduction to data science",
+    "section": "Reproducibility and transparency outside science",
+    "text": "Reproducibility and transparency outside science\n\nData are valuable and often hard to get\nData may guide good decision-making, if understood\nEfficient management and use of data requires data literacy and data science skills"
+  },
+  {
+    "objectID": "01-ds-intro.html#tools-in-data-science",
+    "href": "01-ds-intro.html#tools-in-data-science",
+    "title": "Introduction to data science",
+    "section": "Tools in data science",
+    "text": "Tools in data science\nWe want software where analyses can be:\n\nHuman- and computer-readable, meaning that we want to be able to write scripts or computer programs that execute the analyses.\nDocumented, meaning that along the code, we want to be able to describe what the code does.\nAvailable and able to share with others, meaning that our analyses can be run on open and free software to maximize the ability to share them.\n\n\n\nHuman- and computer-readable, meaning that we want to be able to write scripts, or computer programs that execute the analyses.\nDocumented, meaning that along the code we want to be able to describe what the code does.\nAvailable and able to share with other, meaning that we analyses can be run on open and free software to maximize ability to share them."
+  },
+  {
+    "objectID": "01-ds-intro.html#tools-in-data-science-1",
+    "href": "01-ds-intro.html#tools-in-data-science-1",
+    "title": "Introduction to data science",
+    "section": "Tools in data science",
+    "text": "Tools in data science\n\nR and RStudio\nQuarto\nGit and GitHub"
+  },
+  {
+    "objectID": "01-ds-intro.html#tools-in-data-science-2",
+    "href": "01-ds-intro.html#tools-in-data-science-2",
+    "title": "Introduction to data science",
+    "section": "Tools in data science 1",
+    "text": "Tools in data science 1\n\n(Wickham and Grolemund 2017)"
+  },
+  {
+    "objectID": "01-ds-intro.html#how-to-learn-how-to-code",
+    "href": "01-ds-intro.html#how-to-learn-how-to-code",
+    "title": "Introduction to data science",
+    "section": "How to learn how to code",
+    "text": "How to learn how to code\n\nThere are (almost always) multiple solutions to a problem.\nSomeone else has already had the same problem\nFind your motivation\n“Microdosing”\n\n\n\nThere are (almost always) multiple solutions to a problem. When faced with difficulties, do not give up trying to search for a perfect single solution. Instead know that there are multiple ways of defining the problem and therefore multiple ways of making stuff work.\nSomeone else has already had the same problem. The internet is full of questions and answers, also related to what ever problem you might have. Learning how to write “googleable” questions is a great skill. By adding “in R” to your problem in a google search term often helps finding R related solutions.\nFind your motivation. The skills that you will learn in this course are transferable to countless potential work related roles for the future you! To be able to showcase these skills may lead you to your dream job! Find your motivation for learning how to analyze data and communicating insights!\n“Microdosing” statistical learning. Replace your social media influencers with R users and data scientists! I find R people on Twitter and mastodon. Tweets and posts in this format keeps your R brain going!"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-in-practice---storing-data-for-everyday-use",
+    "href": "01-ds-intro.html#data-in-practice---storing-data-for-everyday-use",
+    "title": "Introduction to data science",
+    "section": "Data in practice - Storing data for everyday use",
+    "text": "Data in practice - Storing data for everyday use\n\nSpreadsheets can be used for efficient storage of data for everyday use\nSpreadsheet software contains functions that adds information on top of the data…"
+  },
+  {
+    "objectID": "01-ds-intro.html#section-1",
+    "href": "01-ds-intro.html#section-1",
+    "title": "Introduction to data science",
+    "section": "",
+    "text": "All happy families are alike; each unhappy family is unhappy in its own way."
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-empty-cells",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-empty-cells",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: Empty cells1",
+    "text": "Data Organization in Spreadsheets: Empty cells1\n\n(Broman and Woo 2018)"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-a-tidy-version-happy-family",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-a-tidy-version-happy-family",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: A tidy version (happy family)",
+    "text": "Data Organization in Spreadsheets: A tidy version (happy family)"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-nonrectangular-layouts",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-nonrectangular-layouts",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: Nonrectangular layouts",
+    "text": "Data Organization in Spreadsheets: Nonrectangular layouts"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-data-dictionary",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-data-dictionary",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: Data dictionary",
+    "text": "Data Organization in Spreadsheets: Data dictionary"
+  },
+  {
+    "objectID": "01-ds-intro.html#data-organization-in-spreadsheets-plain-text",
+    "href": "01-ds-intro.html#data-organization-in-spreadsheets-plain-text",
+    "title": "Introduction to data science",
+    "section": "Data Organization in Spreadsheets: Plain text",
+    "text": "Data Organization in Spreadsheets: Plain text"
+  },
+  {
+    "objectID": "01-ds-intro.html#section-2",
+    "href": "01-ds-intro.html#section-2",
+    "title": "Introduction to data science",
+    "section": "",
+    "text": "Minimize the risk of failure by adopting good habits!\n\n\n\n\n\n\nFrom wikipedia: Maria Spelterini (1876) is walking across a tightrope across the Niagara Gorge, from the United States side to Canada, with her feet in peach baskets. In the background is the Niagara Suspension Bridge, which is full of spectators. In the distant background is the Niagara Falls.\nsource: https://commons.wikimedia.org/wiki/File:Maria_Spelterini_at_Suspension_Bridge.jpg#/media/File:Maria_Spelterini_at_Suspension_Bridge.jpg"
+  },
+  {
+    "objectID": "01-ds-intro.html#references",
+    "href": "01-ds-intro.html#references",
+    "title": "Introduction to data science",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nBroman, Karl W., and Kara H. Woo. 2018. “Data Organization in Spreadsheets.” Journal Article. The American Statistician 72 (1): 2–10. https://doi.org/10.1080/00031305.2017.1375989.\n\n\nPeng, R. D., F. Dominici, and S. L. Zeger. 2006. “Reproducible Epidemiologic Research.” Journal Article. Am J Epidemiol 163 (9): 783–89. https://doi.org/10.1093/aje/kwj093.\n\n\nSpiegelhalter, D. J. 2019. The Art of Statistics : How to Learn from Data. Book. First US edition. New York: Basic Books.\n\n\nWickham, Hadley, and Garrett Grolemund. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 1st ed. Paperback; O’Reilly Media. http://r4ds.had.co.nz/."
+  },
+  {
+    "objectID": "02-datavis-homework.html#first-steps",
+    "href": "02-datavis-homework.html#first-steps",
+    "title": "Homework - reproducing figures",
+    "section": "First steps",
+    "text": "First steps\n\n1library(tidyverse)\n\n2\nchild_heart &lt;- read_csv(\"https://raw.githubusercontent.com/dspiegel29/ArtofStatistics/master/01-1-2-3-child-heart-survival-times/01-1-child-heart-survival-x.csv\")\n\n3head(child_heart)\n\n\n1\n\nLoad the tidyverse\n\n2\n\nDownload the data, read_csv loads the data to an object in the environment\n\n3\n\nGet an overview of the available variables\n\n\n\n\n# A tibble: 6 × 6\n  Hospital         Operations Survivors Deaths ThirtyDaySurvival PercentageDying\n  &lt;chr&gt;                 &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;           &lt;dbl&gt;\n1 London - Harley…        418       413      5              98.8             1.2\n2 Leicester               607       593     14              97.7             2.3\n3 Newcastle               668       653     15              97.8             2.2\n4 Glasgow                 760       733     27              96.3             3.7\n5 Southampton             829       815     14              98.3             1.7\n6 Bristol                 835       821     14              98.3             1.7"
+  },
+  {
+    "objectID": "02-datavis-homework.html#what-should-be-the-end-result",
+    "href": "02-datavis-homework.html#what-should-be-the-end-result",
+    "title": "Homework - reproducing figures",
+    "section": "What should be the end result?",
+    "text": "What should be the end result?\n\n\n\n\n\nCalculate the proportion of operations to the total\nSort the variable hospital name based on proportion\nCreate a bar plot"
+  },
+  {
+    "objectID": "02-datavis-homework.html#data-wrangling",
+    "href": "02-datavis-homework.html#data-wrangling",
+    "title": "Homework - reproducing figures",
+    "section": "Data wrangling",
+    "text": "Data wrangling\n\n1child_heart$percentage_op &lt;- 100 * (child_heart$Operations / sum(child_heart$Operations))\n2child_heart$Hospital &lt;- fct_reorder(child_heart$Hospital, child_heart$percentage_op)\n\nchild_heart$Hospital\n\n\n1\n\nCreating a new variable, operations per hospital expressed as a percentage of the total\n\n2\n\nOverwriting the existing variable Hospital with a factor variable\n\n\n\n\n [1] London - Harley Street       Leicester                   \n [3] Newcastle                    Glasgow                     \n [5] Southampton                  Bristol                     \n [7] Dublin                       Leeds                       \n [9] London - Brompton            Liverpool                   \n[11] London - Evelina             Birmingham                  \n[13] London - Great Ormond Street\n13 Levels: London - Harley Street Leicester Newcastle Glasgow ... London - Great Ormond Street"
+  },
+  {
+    "objectID": "02-datavis-homework.html#data-wrangling-alternative",
+    "href": "02-datavis-homework.html#data-wrangling-alternative",
+    "title": "Homework - reproducing figures",
+    "section": "Data wrangling alternative",
+    "text": "Data wrangling alternative\n\nchild_heart &lt;- child_heart %&gt;%\n1        mutate(percentage_op = 100 * (Operations / sum(Operations)),\n2               Hospital = fct_reorder(Hospital, -percentage_op)) %&gt;%\n        print()\n\n\n1\n\nCreating a new variable, operations per hospital expressed as a percentage of the total\n\n2\n\nOverwriting the existing variable Hospital with a factor variable\n\n\n\n\n# A tibble: 13 × 7\n   Hospital        Operations Survivors Deaths ThirtyDaySurvival PercentageDying\n   &lt;fct&gt;                &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;           &lt;dbl&gt;\n 1 London - Harle…        418       413      5              98.8             1.2\n 2 Leicester              607       593     14              97.7             2.3\n 3 Newcastle              668       653     15              97.8             2.2\n 4 Glasgow                760       733     27              96.3             3.7\n 5 Southampton            829       815     14              98.3             1.7\n 6 Bristol                835       821     14              98.3             1.7\n 7 Dublin                 983       960     23              97.7             2.3\n 8 Leeds                 1038      1016     22              97.9             2.1\n 9 London - Bromp…       1094      1075     19              98.3             1.7\n10 Liverpool             1132      1112     20              98.2             1.8\n11 London - Eveli…       1220      1185     35              97.1             2.9\n12 Birmingham            1457      1421     36              97.5             2.5\n13 London - Great…       1892      1873     19              99               1  \n# ℹ 1 more variable: percentage_op &lt;dbl&gt;"
+  },
+  {
+    "objectID": "02-datavis-homework.html#building-a-bar-plot",
+    "href": "02-datavis-homework.html#building-a-bar-plot",
+    "title": "Homework - reproducing figures",
+    "section": "Building a bar plot",
+    "text": "Building a bar plot\n\n\nggplot(data = child_heart, \n       aes(x = percentage_op, \n           y = Hospital)) + \n        geom_bar(stat = \"identity\")"
+  },
+  {
+    "objectID": "02-datavis-homework.html#fixing-axis-labels",
+    "href": "02-datavis-homework.html#fixing-axis-labels",
+    "title": "Homework - reproducing figures",
+    "section": "Fixing axis labels",
+    "text": "Fixing axis labels\n\n\nggplot(data = child_heart, \n       aes(x = percentage_op, \n           y = Hospital)) + \n        geom_bar(stat = \"identity\") + \n        \n        labs(x = \"Percentage of all operations in 2012-15\\nthat are carried out in each hospital\") + \n        theme(axis.title.y = element_blank())"
+  },
+  {
+    "objectID": "02-datavis-homework.html#fixing-axis-scales-x-axis",
+    "href": "02-datavis-homework.html#fixing-axis-scales-x-axis",
+    "title": "Homework - reproducing figures",
+    "section": "Fixing axis scales (x-axis)",
+    "text": "Fixing axis scales (x-axis)\n\n\nggplot(data = child_heart, \n       aes(x = percentage_op, \n           y = Hospital)) + \n        geom_bar(stat = \"identity\") + \n        \n        scale_x_continuous(limits = c(0, 16), \n                           breaks = c(0, 2, 4, 6, 8, 10, 12, 14, 16), \n                           expand = c(0, 0)) +\n        \n        \n        labs(x = \"Percentage of all operations in 2012-15\\nthat are carried out in each hospital\") + \n        theme(axis.title.y = element_blank())"
+  },
+  {
+    "objectID": "02-datavis-homework.html#removing-reduntant-grid-lines-adding-plot-border-fixing-plot-background",
+    "href": "02-datavis-homework.html#removing-reduntant-grid-lines-adding-plot-border-fixing-plot-background",
+    "title": "Homework - reproducing figures",
+    "section": "Removing reduntant grid lines, adding plot border, fixing plot background",
+    "text": "Removing reduntant grid lines, adding plot border, fixing plot background\n\n\nggplot(data = child_heart, \n       aes(x = percentage_op, \n           y = Hospital)) + \n        geom_bar(stat = \"identity\") + \n        \n        scale_x_continuous(limits = c(0, 16), \n                           breaks = c(0, 2, 4, 6, 8, 10, 12, 14, 16), \n                           expand = c(0, 0)) +\n        \n        \n        labs(x = \"Percentage of all operations in 2012-15\\nthat are carried out in each hospital\") + \n        theme(axis.title.y = element_blank(), \n              panel.grid.major.y = element_blank(), \n              panel.grid.major.x = element_line(color = \"gray70\"), \n              panel.grid.minor.x = element_blank(), \n              panel.border = element_rect(color = \"black\", fill = NA), \n              panel.background = element_rect(fill = \"white\"))"
+  },
+  {
+    "objectID": "02-datavis-homework.html#next-steps",
+    "href": "02-datavis-homework.html#next-steps",
+    "title": "Homework - reproducing figures",
+    "section": "Next steps?",
+    "text": "Next steps?"
+  },
+  {
+    "objectID": "02-datavis.html#data-visualization",
+    "href": "02-datavis.html#data-visualization",
+    "title": "Data visualization",
+    "section": "Data visualization",
+    "text": "Data visualization\nWhy graphs?\n\n“… to help us perceive broad features of the data”\n“… to let us … see what else is there.”\n\n(Anscombe 1973)"
+  },
+  {
+    "objectID": "02-datavis.html#four-data-sets---anscombes-quartet",
+    "href": "02-datavis.html#four-data-sets---anscombes-quartet",
+    "title": "Data visualization",
+    "section": "Four data sets - Anscombe’s quartet",
+    "text": "Four data sets - Anscombe’s quartet\n\n\n\n\nSummary statistics for Anscombe’s data\n\n\nDataset\nVariable\nMean\nSD\nMin\nMax\n\n\n\n\n1\nx\n9.0\n3.3\n4.0\n14.0\n\n\n2\nx\n9.0\n3.3\n4.0\n14.0\n\n\n3\nx\n9.0\n3.3\n4.0\n14.0\n\n\n4\nx\n9.0\n3.3\n8.0\n19.0\n\n\n1\ny\n7.5\n2.0\n4.3\n10.8\n\n\n2\ny\n7.5\n2.0\n3.1\n9.3\n\n\n3\ny\n7.5\n2.0\n5.4\n12.7\n\n\n4\ny\n7.5\n2.0\n5.2\n12.5\n\n\n\n\n\n\n(Anscombe 1973)"
+  },
+  {
+    "objectID": "02-datavis.html#anscombes-quartet-2",
+    "href": "02-datavis.html#anscombes-quartet-2",
+    "title": "Data visualization",
+    "section": "Anscombe’s quartet (2)",
+    "text": "Anscombe’s quartet (2)\n\n\n\n\nRegression coeficients for for Anscombe’s data\n\n\nDataset\nIntercept\nSlope\nCorrelation\n\n\n\n\n1\n3\n0.5\n0.82\n\n\n2\n3\n0.5\n0.82\n\n\n3\n3\n0.5\n0.82\n\n\n4\n3\n0.5\n0.82\n\n\n\n\n\n\n(Anscombe 1973)"
+  },
+  {
+    "objectID": "02-datavis.html#a-best-guess-of-the-data-pattern",
+    "href": "02-datavis.html#a-best-guess-of-the-data-pattern",
+    "title": "Data visualization",
+    "section": "A best guess of the data pattern",
+    "text": "A best guess of the data pattern"
+  },
+  {
+    "objectID": "02-datavis.html#plotting-the-actual-data",
+    "href": "02-datavis.html#plotting-the-actual-data",
+    "title": "Data visualization",
+    "section": "Plotting the actual data",
+    "text": "Plotting the actual data"
+  },
+  {
+    "objectID": "02-datavis.html#another-example---the-datasaurus",
+    "href": "02-datavis.html#another-example---the-datasaurus",
+    "title": "Data visualization",
+    "section": "Another example - The Datasaurus",
+    "text": "Another example - The Datasaurus\n\n\n\n\nThe Datasaurus datasets\n\n\nDataset\nMean x\nMean y\nSD x\nSD y\nCorrelation\n\n\n\n\naway\n54.27\n47.83\n16.77\n26.94\n-0.06\n\n\nbullseye\n54.27\n47.83\n16.77\n26.94\n-0.07\n\n\ncircle\n54.27\n47.84\n16.76\n26.93\n-0.07\n\n\ndino\n54.26\n47.83\n16.77\n26.94\n-0.06\n\n\ndots\n54.26\n47.84\n16.77\n26.93\n-0.06\n\n\nh_lines\n54.26\n47.83\n16.77\n26.94\n-0.06\n\n\nhigh_lines\n54.27\n47.84\n16.77\n26.94\n-0.07\n\n\nslant_down\n54.27\n47.84\n16.77\n26.94\n-0.07\n\n\nslant_up\n54.27\n47.83\n16.77\n26.94\n-0.07\n\n\nstar\n54.27\n47.84\n16.77\n26.93\n-0.06\n\n\nv_lines\n54.27\n47.84\n16.77\n26.94\n-0.07\n\n\nwide_lines\n54.27\n47.83\n16.77\n26.94\n-0.07\n\n\nx_shape\n54.26\n47.84\n16.77\n26.93\n-0.07"
+  },
+  {
+    "objectID": "02-datavis.html#section",
+    "href": "02-datavis.html#section",
+    "title": "Data visualization",
+    "section": "",
+    "text": "Source: The datasauRus package"
+  },
+  {
+    "objectID": "02-datavis.html#a-system-for-creating-graphs-in-r",
+    "href": "02-datavis.html#a-system-for-creating-graphs-in-r",
+    "title": "Data visualization",
+    "section": "A system for creating graphs in R",
+    "text": "A system for creating graphs in R\n\nThree layers of a graph, geometric objects, scales and coordinates and annotations of the plot(Wickham 2010)"
+  },
+  {
+    "objectID": "02-datavis.html#a-system-for-creating-graphs",
+    "href": "02-datavis.html#a-system-for-creating-graphs",
+    "title": "Data visualization",
+    "section": "A system for creating graphs",
+    "text": "A system for creating graphs\n\nThree layers of a graph put together, geometric objects, scales and coordinates and annotations of the plot(Wickham 2010)"
+  },
+  {
+    "objectID": "02-datavis.html#ggplot2---grammar-of-graphics",
+    "href": "02-datavis.html#ggplot2---grammar-of-graphics",
+    "title": "Data visualization",
+    "section": "ggplot2 - Grammar of graphics",
+    "text": "ggplot2 - Grammar of graphics\n\ndata → The dataset containing variables to plot\naesthetics → Scales where the data are mapped\ngeometries → Geometric representations of the data\nfacet → A part of the dataset\nstatistical transformations → Summaries of data\ncoordinates → The coordinate space\nthemes → Plot components not linked to data"
+  },
+  {
+    "objectID": "02-datavis.html#creating-a-plot",
+    "href": "02-datavis.html#creating-a-plot",
+    "title": "Data visualization",
+    "section": "Creating a plot",
+    "text": "Creating a plot\n\n\n\n\nlibrary(\"palmerpenguins\")\n\ndata(\"penguins\")\n\npenguins %&gt;%\n        ggplot(aes(x = flipper_length_mm, \n                   y = body_mass_g)) + \n        geom_point()"
+  },
+  {
+    "objectID": "02-datavis.html#mapping-many-variables",
+    "href": "02-datavis.html#mapping-many-variables",
+    "title": "Data visualization",
+    "section": "Mapping many variables",
+    "text": "Mapping many variables\n\n\n\n\nlibrary(\"palmerpenguins\")\n\ndata(\"penguins\")\n\npenguins %&gt;%\n        ggplot(aes(x = flipper_length_mm, \n                   y = body_mass_g, \n                   color = species, \n                   shape = sex, \n                   size = bill_length_mm)) + \n        geom_point()"
+  },
+  {
+    "objectID": "02-datavis.html#mapping-many-variables-and-adding-facets",
+    "href": "02-datavis.html#mapping-many-variables-and-adding-facets",
+    "title": "Data visualization",
+    "section": "Mapping many variables and adding facets",
+    "text": "Mapping many variables and adding facets\n\n\n\n\nlibrary(\"palmerpenguins\")\n\ndata(\"penguins\")\n\npenguins %&gt;%\n        ggplot(aes(x = flipper_length_mm, \n                   y = body_mass_g, \n                   color = species, \n                   shape = sex,\n                   size = bill_length_mm)) + \n        geom_point() + \n        facet_wrap(~ year)"
+  },
+  {
+    "objectID": "02-datavis.html#changing-non-data-aspects-of-the-plot-theme",
+    "href": "02-datavis.html#changing-non-data-aspects-of-the-plot-theme",
+    "title": "Data visualization",
+    "section": "Changing non-data aspects of the plot (theme())",
+    "text": "Changing non-data aspects of the plot (theme())\n\n\n\n\nlibrary(\"palmerpenguins\")\n\ndata(\"penguins\")\n\npenguins %&gt;%\n        ggplot(aes(x = flipper_length_mm, \n                   y = body_mass_g, \n                   color = species, \n                   shape = sex, \n                   size = bill_length_mm)) + \n        geom_point() + \n        \n        theme_dark()"
+  },
+  {
+    "objectID": "02-datavis.html#common-types-of-plots---frequencies-and-densities",
+    "href": "02-datavis.html#common-types-of-plots---frequencies-and-densities",
+    "title": "Data visualization",
+    "section": "Common types of plots - Frequencies and densities",
+    "text": "Common types of plots - Frequencies and densities\n\nA continuous variable displayed in a Histogram and Density plot"
+  },
+  {
+    "objectID": "02-datavis.html#common-types-of-plots---comparing-categories",
+    "href": "02-datavis.html#common-types-of-plots---comparing-categories",
+    "title": "Data visualization",
+    "section": "Common types of plots - Comparing categories",
+    "text": "Common types of plots - Comparing categories\n\nComparison of a continous variable between categories using summary graphics"
+  },
+  {
+    "objectID": "02-datavis.html#common-types-of-plots---comparing-categories-without-hiding-data",
+    "href": "02-datavis.html#common-types-of-plots---comparing-categories-without-hiding-data",
+    "title": "Data visualization",
+    "section": "Common types of plots - Comparing categories without hiding data",
+    "text": "Common types of plots - Comparing categories without hiding data\n\nComparison of a continous variable between categories using summary graphics"
+  },
+  {
+    "objectID": "02-datavis.html#common-types-of-plots---comparing-categories-highlighting-differences",
+    "href": "02-datavis.html#common-types-of-plots---comparing-categories-highlighting-differences",
+    "title": "Data visualization",
+    "section": "Common types of plots - Comparing categories highlighting differences",
+    "text": "Common types of plots - Comparing categories highlighting differences\n\nComparison of a continous variable between categories using raw data and summaries"
+  },
+  {
+    "objectID": "02-datavis.html#common-types-of-plots---relationships-between-continuous-variables",
+    "href": "02-datavis.html#common-types-of-plots---relationships-between-continuous-variables",
+    "title": "Data visualization",
+    "section": "Common types of plots - Relationships between continuous variables",
+    "text": "Common types of plots - Relationships between continuous variables\n\nHighlighting relationships, raw data and summaries"
+  },
+  {
+    "objectID": "02-datavis.html#references",
+    "href": "02-datavis.html#references",
+    "title": "Data visualization",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nAnscombe, F. J. 1973. “Graphs in Statistical Analysis.” The American Statistician 27 (1): 17. https://doi.org/10.2307/2682899.\n\n\nWickham, Hadley. 2010. “A Layered Grammar of Graphics.” Journal of Computational and Graphical Statistics 19 (1): 3–28. https://doi.org/10.1198/jcgs.2009.07098."
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#the-assignment",
+    "href": "03-data-wrangling-homework.html#the-assignment",
+    "title": "Creating tables - Homework",
+    "section": "The Assignment",
+    "text": "The Assignment"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#variables",
+    "href": "03-data-wrangling-homework.html#variables",
+    "title": "Creating tables - Homework",
+    "section": "Variables",
+    "text": "Variables\n\nThe data are part of the exscidata package.\nTo load the data and check variable names:\n\n\n\n  [1] \"PARTICIPANT\"              \"GROUP\"                   \n  [3] \"AGE\"                      \"HEIGHT\"                  \n  [5] \"TRAINING_AGE\"             \"BODYMASS_T2\"             \n  [7] \"VL_T1\"                    \"VL_T2\"                   \n  [9] \"VL_T3\"                    \"VL_T4\"                   \n [11] \"BICEPS_T1\"                \"BICEPS_T2\"               \n [13] \"BICEPS_T3\"                \"BICEPS_T4\"               \n [15] \"ECW_T1\"                   \"ECW_T2\"                  \n [17] \"ECW_T3\"                   \"ECW_T4\"                  \n [19] \"ICW_T1\"                   \"ICW_T2\"                  \n [21] \"ICW_T3\"                   \"ICW_T4\"                  \n [23] \"TBW_T1\"                   \"TBW_T2\"                  \n [25] \"TBW_T3\"                   \"TBW_T4\"                  \n [27] \"TOTAL_VOLUME_LOAD_WEEK_1\" \"TOTAL_VOLUME_LOAD_WEEK_2\"\n [29] \"TOTAL_VOLUME_LOAD_WEEK_3\" \"TOTAL_VOLUME_LOAD_WEEK_4\"\n [31] \"TOTAL_VOLUME_LOAD_WEEK_5\" \"TOTAL_VOLUME_LOAD_WEEK_6\"\n [33] \"CALS_WEEK_1\"              \"CALS_WEEK_2\"             \n [35] \"CALS_WEEK_3\"              \"CALS_WEEK_4\"             \n [37] \"CALS_WEEK_5\"              \"CALS_WEEK_6\"             \n [39] \"PROTEIN_WEEK_1\"           \"PROTEIN_WEEK_2\"          \n [41] \"PROTEIN_WEEK_3\"           \"PROTEIN_WEEK_4\"          \n [43] \"PROTEIN_WEEK_5\"           \"PROTEIN_WEEK_6\"          \n [45] \"CHO_WEEK_1\"               \"CHO_WEEK_2\"              \n [47] \"CHO_WEEK_3\"               \"CHO_WEEK_4\"              \n [49] \"CHO_WEEK_5\"               \"CHO_WEEK_6\"              \n [51] \"FAT_WEEK_1\"               \"FAT_WEEK_2\"              \n [53] \"FAT_WEEK_3\"               \"FAT_WEEK_4\"              \n [55] \"FAT_WEEK_5\"               \"FAT_WEEK_6\"              \n [57] \"TMD_T1\"                   \"TMD_T2\"                  \n [59] \"TMD_T3\"                   \"PPT_AVG_T1\"              \n [61] \"PPT_AVG_T2\"               \"PPT_AVG_T3\"              \n [63] \"BODYMASS_T1\"              \"BODYMASS_T3\"             \n [65] \"SQUAT_3RM\"                \"SQUAT_VOLUME\"            \n [67] \"CLUSTER\"                  \"PERCENT_TYPE_I_T1\"       \n [69] \"PERCENT_TYPE_II_T1\"       \"FAST_CSA_T1\"             \n [71] \"FAST_CSA_T2\"              \"FAST_CSA_T3\"             \n [73] \"SLOW_CSA_T1\"              \"SLOW_CSA_T2\"             \n [75] \"SLOW_CSA_T3\"              \"FAST_NUCLEI_T1\"          \n [77] \"FAST_NUCLEI_T2\"           \"FAST_NUCLEI_T3\"          \n [79] \"SLOW_NUCLEI_T1\"           \"SLOW_NUCLEI_T2\"          \n [81] \"SLOW_NUCLEI_T3\"           \"AR_PROTEIN_T1\"           \n [83] \"AR_PROTEIN_T2\"            \"AR_PROTEIN_T3\"           \n [85] \"PROTEASOME_T1\"            \"PROTEASOME_T2\"           \n [87] \"PROTEASOME_T3\"            \"GLYCOGEN_T1\"             \n [89] \"GLYCOGEN_T2\"              \"GLYCOGEN_T3\"             \n [91] \"CS_T1\"                    \"CS_T2\"                   \n [93] \"CS_T3\"                    \"CK_T1\"                   \n [95] \"CK_T2\"                    \"CK_T3\"                   \n [97] \"TESTOSTERONE_T1\"          \"TESTOSTERONE_T2\"         \n [99] \"TESTOSTERONE_T3\"          \"CORTISOL_T1\"             \n[101] \"CORTISOL_T2\"              \"CORTISOL_T3\"             \n[103] \"PAN4EBP1_T1\"              \"PAN4EBP1_T2\"             \n[105] \"PAN4EBP1_T3\"              \"PHOSPHO4EBP1_T1\"         \n[107] \"PHOSPHO4EBP1_T2\"          \"PHOSPHO4EBP1_T3\"         \n[109] \"PANMTOR_T1\"               \"PANMTOR_T2\"              \n[111] \"PANMTOR_T3\"               \"PHOSPHOMTOR_T1\"          \n[113] \"PHOSPHOMTOR_T2\"           \"PHOSPHOMTOR_T3\"          \n[115] \"PANAMPK_T1\"               \"PANAMPK_T2\"              \n[117] \"PANAMPK_T3\"               \"PHOSPHOAMPK_T1\"          \n[119] \"PHOSPHOAMPK_T2\"           \"PHOSPHOAMPK_T3\"          \n[121] \"PANP70S6K_T1\"             \"PANP70S6K_T2\"            \n[123] \"PANP70S6K_T3\"             \"PHOSPHOP70S6K_T1\"        \n[125] \"PHOSPHOP70S6K_T2\"         \"PHOSPHOP70S6K_T3\"        \n[127] \"PANPOLYUB_T1\"             \"PANPOLYUB_T2\"            \n[129] \"PANPOLYUB_T3\"             \"RNA_T1\"                  \n[131] \"RNA_T2\"                   \"RNA_T3\"                  \n[133] \"MGF_T2T1_FOLD_CHANGE\"     \"MGF_T3T1_FOLD_CHANGE\"    \n[135] \"MGF_T1\"                   \"MSTN_T2T1_FOLD_CHANGE\"   \n[137] \"MSTN_T3T1_FOLD_CHANGE\"    \"MSTN_T1\"                 \n[139] \"RNA45S_T1\"                \"RNA45S_T2T1_FOLD_CHANGE\" \n[141] \"RNA45S_T3T1_FOLD_CHANGE\"  \"DXA_LBM_T1\"              \n[143] \"DXA_LBM_T2\"               \"DXA_LBM_T3\"              \n[145] \"DXA_FM_T1\"                \"DXA_FM_T2\"               \n[147] \"DXA_FM_T3\""
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#variables-in-the-table-some-are-missing-from-the-data",
+    "href": "03-data-wrangling-homework.html#variables-in-the-table-some-are-missing-from-the-data",
+    "title": "Creating tables - Homework",
+    "section": "Variables in the table, some are missing from the data",
+    "text": "Variables in the table, some are missing from the data\n\n\n# A tibble: 6 × 7\n  GROUP   AGE HEIGHT BODYMASS_T1 DXA_LBM_T1 DXA_FM_T1 SQUAT_3RM\n  &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 WP       22   186         91.6       69.6     17.3        152\n2 WP       20   179         82         63.9     15.6        125\n3 GWP      24   178         77.7       66.0      9.37       143\n4 GWP      22   183         94.2       70.8     19.8        134\n5 MALTO    19   169         71         56.2     12.1        138\n6 WP       20   178.        83.4       57.5     22.6        147"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#grouping-and-summarising",
+    "href": "03-data-wrangling-homework.html#grouping-and-summarising",
+    "title": "Creating tables - Homework",
+    "section": "Grouping and summarising",
+    "text": "Grouping and summarising\n\nThe table shows data per group and across all groups.\nI will first create a summary of groups the across all groups.\n\n\n\n# A tibble: 18 × 4\n   GROUP variable        m     s\n   &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 WP    AGE          21.4  2.37\n 2 WP    HEIGHT      178.   5.60\n 3 WP    BODYMASS_T1  82.2  8.70\n 4 WP    DXA_LBM_T1   63.7  7.11\n 5 WP    DXA_FM_T1    15.2  4.15\n 6 WP    SQUAT_3RM   134.  21.4 \n 7 GWP   AGE          22.3  2.24\n 8 GWP   HEIGHT      183.   7.39\n 9 GWP   BODYMASS_T1  NA   NA   \n10 GWP   DXA_LBM_T1   NA   NA   \n11 GWP   DXA_FM_T1    NA   NA   \n12 GWP   SQUAT_3RM    NA   NA   \n13 MALTO AGE          20.7  1.57\n14 MALTO HEIGHT      178.   9.56\n15 MALTO BODYMASS_T1  81.4 10.7 \n16 MALTO DXA_LBM_T1   62.1  8.44\n17 MALTO DXA_FM_T1    16.1  3.55\n18 MALTO SQUAT_3RM   126   17.2"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#it-seems-we-have-missing-data",
+    "href": "03-data-wrangling-homework.html#it-seems-we-have-missing-data",
+    "title": "Creating tables - Homework",
+    "section": "It seems we have missing data",
+    "text": "It seems we have missing data\n\nAdding two variables to get more control\n\n\n\n# A tibble: 18 × 6\n   GROUP variable        m     s miss_val     n\n   &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;    &lt;int&gt; &lt;int&gt;\n 1 WP    AGE          21.4  2.37        0    10\n 2 WP    HEIGHT      178.   5.60        0    10\n 3 WP    BODYMASS_T1  82.2  8.70        0    10\n 4 WP    DXA_LBM_T1   63.7  7.11        0    10\n 5 WP    DXA_FM_T1    15.2  4.15        0    10\n 6 WP    SQUAT_3RM   134.  21.4         0    10\n 7 GWP   AGE          22.3  2.24        0    11\n 8 GWP   HEIGHT      183.   7.39        0    11\n 9 GWP   BODYMASS_T1  85.1 15.0         1    11\n10 GWP   DXA_LBM_T1   68.2 10.8         1    11\n11 GWP   DXA_FM_T1    13.4  4.77        1    11\n12 GWP   SQUAT_3RM   134.  20.6         1    11\n13 MALTO AGE          20.7  1.57        0    10\n14 MALTO HEIGHT      178.   9.56        0    10\n15 MALTO BODYMASS_T1  81.4 10.7         0    10\n16 MALTO DXA_LBM_T1   62.1  8.44        0    10\n17 MALTO DXA_FM_T1    16.1  3.55        0    10\n18 MALTO SQUAT_3RM   126   17.2         0    10"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#wrangling-to-a-wide-format",
+    "href": "03-data-wrangling-homework.html#wrangling-to-a-wide-format",
+    "title": "Creating tables - Homework",
+    "section": "Wrangling to a wide format",
+    "text": "Wrangling to a wide format\n\n\n# A tibble: 6 × 7\n  variable     m_WP  s_WP m_GWP s_GWP m_MALTO s_MALTO\n  &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1 AGE          21.4  2.37  22.3  2.24    20.7    1.57\n2 HEIGHT      178.   5.60 183.   7.39   178.     9.56\n3 BODYMASS_T1  82.2  8.70  85.1 15.0     81.4   10.7 \n4 DXA_LBM_T1   63.7  7.11  68.2 10.8     62.1    8.44\n5 DXA_FM_T1    15.2  4.15  13.4  4.77    16.1    3.55\n6 SQUAT_3RM   134.  21.4  134.  20.6    126     17.2"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#summarising-across-groups",
+    "href": "03-data-wrangling-homework.html#summarising-across-groups",
+    "title": "Creating tables - Homework",
+    "section": "Summarising across groups",
+    "text": "Summarising across groups\n\n\n# A tibble: 6 × 5\n  variable        m     s miss_val     n\n  &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;    &lt;int&gt; &lt;int&gt;\n1 AGE          21.5  2.13        0    31\n2 HEIGHT      180.   7.91        0    31\n3 BODYMASS_T1  82.9 11.5         1    31\n4 DXA_LBM_T1   64.7  9.02        1    31\n5 DXA_FM_T1    14.9  4.20        1    31\n6 SQUAT_3RM   131.  19.5         1    31"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#combining-group-wise-and-total-summaries-1",
+    "href": "03-data-wrangling-homework.html#combining-group-wise-and-total-summaries-1",
+    "title": "Creating tables - Homework",
+    "section": "Combining group-wise and total summaries (1)",
+    "text": "Combining group-wise and total summaries (1)\n\n\n# A tibble: 6 × 11\n  variable     m_WP  s_WP m_GWP s_GWP m_MALTO s_MALTO     m     s miss_val     n\n  &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;int&gt; &lt;int&gt;\n1 AGE          21.4  2.37  22.3  2.24    20.7    1.57  21.5  2.13        0    31\n2 HEIGHT      178.   5.60 183.   7.39   178.     9.56 180.   7.91        0    31\n3 BODYMASS_T1  82.2  8.70  85.1 15.0     81.4   10.7   82.9 11.5         1    31\n4 DXA_LBM_T1   63.7  7.11  68.2 10.8     62.1    8.44  64.7  9.02        1    31\n5 DXA_FM_T1    15.2  4.15  13.4  4.77    16.1    3.55  14.9  4.20        1    31\n6 SQUAT_3RM   134.  21.4  134.  20.6    126     17.2  131.  19.5         1    31"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#combining-group-wise-and-total-summaries-2",
+    "href": "03-data-wrangling-homework.html#combining-group-wise-and-total-summaries-2",
+    "title": "Creating tables - Homework",
+    "section": "Combining group-wise and total summaries (2)",
+    "text": "Combining group-wise and total summaries (2)\n\n\n     variable    m_WP      s_WP     m_GWP     s_GWP m_MALTO   s_MALTO         m\n1         AGE  21.400  2.366432  22.27273  2.240130  20.700  1.567021  21.48387\n2      HEIGHT 177.850  5.597867 183.45455  7.390719 177.750  9.563385 179.80645\n3 BODYMASS_T1  82.190  8.699355  85.14000 14.951938  81.350 10.701947  82.89333\n4  DXA_LBM_T1  63.732  7.107267  68.24200 10.840768  62.058  8.436904  64.67733\n5   DXA_FM_T1  15.181  4.146110  13.39200  4.770725  16.101  3.546486  14.89133\n6   SQUAT_3RM 134.500 21.422989 133.50000 20.560210 126.000 17.185265 131.33333\n          s\n1  2.127142\n2  7.912730\n3 11.451816\n4  9.016394\n5  4.196470\n6 19.497716"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#formatting-the-table-gt",
+    "href": "03-data-wrangling-homework.html#formatting-the-table-gt",
+    "title": "Creating tables - Homework",
+    "section": "Formatting the table (gt)",
+    "text": "Formatting the table (gt)"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#fixing-column-names-and-footnotes",
+    "href": "03-data-wrangling-homework.html#fixing-column-names-and-footnotes",
+    "title": "Creating tables - Homework",
+    "section": "Fixing column names and footnotes",
+    "text": "Fixing column names and footnotes"
+  },
+  {
+    "objectID": "03-data-wrangling-homework.html#last-touch",
+    "href": "03-data-wrangling-homework.html#last-touch",
+    "title": "Creating tables - Homework",
+    "section": "Last touch",
+    "text": "Last touch\n\n\n\n\n\n\n  \n    \n    \n      Variable\n      WP (n = 10)\n      GWP (n = 11)\n      MALTO (n = 10)\n      Total (n = 31)\n    \n  \n  \n    Age (years)\n21.40 ± 2.37\n22.27 ± 2.24\n20.70 ± 1.57\n21.48 ± 2.13\n    Height (cm)\n177.85 ± 5.60\n183.45 ± 7.39\n177.75 ± 9.56\n179.81 ± 7.91\n    Weight (kg)\n82.19 ± 8.70\n85.14 ± 14.95\n81.35 ± 10.70\n82.89 ± 11.45\n    Total lean mass (kg)\n63.73 ± 7.11\n68.24 ± 10.84\n62.06 ± 8.44\n64.68 ± 9.02\n    Total fat mass (kg)\n15.18 ± 4.15\n13.39 ± 4.77\n16.10 ± 3.55\n14.89 ± 4.20\n    Squat 3RM (kg)\n134.50 ± 21.42\n133.50 ± 20.56\n126.00 ± 17.19\n131.33 ± 19.50\n  \n  \n  \n    \n       All data presented as means ± standard deviation values."
+  },
+  {
+    "objectID": "03-data-wrangling.html#tidy-tabular-data",
+    "href": "03-data-wrangling.html#tidy-tabular-data",
+    "title": "Data wrangling",
+    "section": "Tidy tabular data",
+    "text": "Tidy tabular data\n\nTidy tabular data has\n\nOne variable per column\nOne observation per row\nOne value per cell"
+  },
+  {
+    "objectID": "03-data-wrangling.html#data-wrangling",
+    "href": "03-data-wrangling.html#data-wrangling",
+    "title": "Data wrangling",
+    "section": "Data wrangling",
+    "text": "Data wrangling\n\n\n\n“Data analysts typically spend the majority of their time in the process of data wrangling compared to the actual analysis of the data.”"
+  },
+  {
+    "objectID": "03-data-wrangling.html#data-wrangling-1",
+    "href": "03-data-wrangling.html#data-wrangling-1",
+    "title": "Data wrangling",
+    "section": "Data wrangling",
+    "text": "Data wrangling\n\nAggregation through summaries\n\nE.g. variables are summarized over multiple observations\n\nTransformation of data\n\nE.g. new variables are created on existing data\n\nArranging data\n\nE.g. sorting data based on values of observations"
+  },
+  {
+    "objectID": "03-data-wrangling.html#dplyr",
+    "href": "03-data-wrangling.html#dplyr",
+    "title": "Data wrangling",
+    "section": "dplyr",
+    "text": "dplyr\n\ndplyr provides verbs for wrangling data\n“Translate thoughts to code”\nUsing the package we can\n\nmutate (create) new variables\nselect variables\nfilter observations\nsummarise values\narrange observations or rows"
+  },
+  {
+    "objectID": "03-data-wrangling.html#r-functions",
+    "href": "03-data-wrangling.html#r-functions",
+    "title": "Data wrangling",
+    "section": "R functions",
+    "text": "R functions\n\nFunctions are created to perform a specific task\nFunctions exists in packages, or as user specified in your environment\nFunction (can) take arguments as input\n\n\n1important_function(arg1 = \"A\", arg2 = \"B\")\n2important_function(\"A\", \"B\")\n3important_function()\n\n\n1\n\nArguments are named.\n\n2\n\nArguments are used by their position\n\n3\n\nThe function is used with default argument values"
+  },
+  {
+    "objectID": "03-data-wrangling.html#r-functions-in-tidyverse",
+    "href": "03-data-wrangling.html#r-functions-in-tidyverse",
+    "title": "Data wrangling",
+    "section": "R functions in tidyverse",
+    "text": "R functions in tidyverse\n\nFunctions that are specifically written for the tidyverse are “pipeable”, the data argument has the first position, an example\n\n\n1pipe_function(data = my.data, arg2 = \"a\", arg3 = \"b\", arg4 = \"etc\")\n2pipe_function(my.data, arg2 = \"a\", arg3 = \"b\", arg4 = \"etc\")\n3pipe_function(my.data)\n\n\n1\n\nAll arguments are named.\n\n2\n\nThe first argument not names, specified by position\n\n3\n\nThe function is used with default argument values, except the first argument data"
+  },
+  {
+    "objectID": "03-data-wrangling.html#data-pipes",
+    "href": "03-data-wrangling.html#data-pipes",
+    "title": "Data wrangling",
+    "section": "Data pipes",
+    "text": "Data pipes\n\n\n\nUsing pipes we can execute data verbs in sequence\nThe pipe operator passes the “left hand” data to the first position in the following function.\n\n\n# This is equivalent...\ndata |&gt;\n        pipe_function() \n# ... to this\npipe_function(data)"
+  },
+  {
+    "objectID": "03-data-wrangling.html#why-pipe",
+    "href": "03-data-wrangling.html#why-pipe",
+    "title": "Data wrangling",
+    "section": "Why pipe?",
+    "text": "Why pipe?\n\nPiping makes code more readable, an example\n\n\n# No pipes\nprint(fun_c(fun_b(fun_a(data))))\n\n# Using pipes\ndata |&gt;\n        fun_a() |&gt;\n        fun_b() |&gt;\n        fun_c() |&gt;\n        print()"
+  },
+  {
+    "objectID": "03-data-wrangling.html#pipes-in-r",
+    "href": "03-data-wrangling.html#pipes-in-r",
+    "title": "Data wrangling",
+    "section": "Pipes in R",
+    "text": "Pipes in R\n\n\n\nTwo “pipe-operators” are available in R\n\n|&gt; exists in base R\n%&gt;% is loaded with tidyverse as part of the magrittr package"
+  },
+  {
+    "objectID": "03-data-wrangling.html#two-pipe-operators-in-action",
+    "href": "03-data-wrangling.html#two-pipe-operators-in-action",
+    "title": "Data wrangling",
+    "section": "Two pipe operators in action",
+    "text": "Two pipe operators in action\n\n\n\nlibrary(dplyr)\n\ndata |&gt;\n filter(var1 &gt; 10) |&gt;\n mutate(var3 = var1 + var2) |&gt;\n select(var1, varX) |&gt;\n print()\n\n\n\nlibrary(dplyr)\n\ndata %&gt;% \n filter(var1 &gt; 10) %&gt;% \n mutate(var3 = var1 + var2) %&gt;% \n select(var1, varX) %&gt;% \n print()"
+  },
+  {
+    "objectID": "03-data-wrangling.html#data-placeholder",
+    "href": "03-data-wrangling.html#data-placeholder",
+    "title": "Data wrangling",
+    "section": "Data placeholder",
+    "text": "Data placeholder\n\nIf the data argument is not the first argument in a function, use a placeholder\n\n\ndata %&gt;% \n        fun(argument)\n\n## Is equivalent to\ndata %&gt;% \n        fun(., argument)\n\n\n## If the data is to be used in another place we need the placeholder\ndata %&gt;% \n        fun(argument, data = .)"
+  },
+  {
+    "objectID": "03-data-wrangling.html#data-placeholder-a-realistic-example-and-saving-output",
+    "href": "03-data-wrangling.html#data-placeholder-a-realistic-example-and-saving-output",
+    "title": "Data wrangling",
+    "section": "Data placeholder a realistic example, and saving output",
+    "text": "Data placeholder a realistic example, and saving output\n\nlibrary(exscidata); library(tidyverse)\n1model1 &lt;- cyclingstudy %&gt;%\n2        filter(timepoint == \"pre\") %&gt;%\n3        mutate(VO2max.kg = VO2.max / weight.T1) %&gt;%\n4        lm(tte ~ VO2max.kg, data = .)\n5summary(model1)\n\n\n1\n\nSpecifying an object for saving output, taking the cycling study data\n\n2\n\nFilter to keep only pre-intervention data\n\n3\n\nCreating a new variable, VO2max relative to body mass\n\n4\n\nFitting a linear regression model explaining time to exhaustion (tte) with VO2max\n\n5\n\nShowing the summary from the model"
+  },
+  {
+    "objectID": "04-writing.html#basics-quarto-and-rmarkdown",
+    "href": "04-writing.html#basics-quarto-and-rmarkdown",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Basics: Quarto and Rmarkdown",
+    "text": "Basics: Quarto and Rmarkdown\n\n\nQuarto and R Markdown a special kind of scripts where text and computer code can be combined to generate reports.\nUnder the hood, a report generator is converting code and plain text to an output format such as html, pdf or docx (more formats are available).\nQuarto is a new, well documented format that gives extra flexibility, but also requires installation of extra software.\nR Markdown is also, see e.g. R Markdown, R Markdown: The Definitive Guide"
+  },
+  {
+    "objectID": "04-writing.html#code-execution-and-the-environment",
+    "href": "04-writing.html#code-execution-and-the-environment",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Code execution and the environment",
+    "text": "Code execution and the environment\n\n\nWhen a quarto or Rmarkdown file is “knitted” or compiled, the source file looks for additional files in the same directory as the source file is saved.\nWorking in a RStudio projects makes it easy to work with the report interactively as you can use relative paths.\nRStudio has an excellent guide to its project feature"
+  },
+  {
+    "objectID": "04-writing.html#rstudio-projects",
+    "href": "04-writing.html#rstudio-projects",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "RStudio projects",
+    "text": "RStudio projects\n\nA projects is a collection of settings together with a root directory.\nThis means that you will be able to work with relative paths.\nIf reading a csv file using relative paths, your code will look like this from a project.\n\n\ndat &lt;- read_csv(\"./data/my-data.csv\")"
+  },
+  {
+    "objectID": "04-writing.html#absolute-paths",
+    "href": "04-writing.html#absolute-paths",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Absolute paths",
+    "text": "Absolute paths\n\nIf your are using absolute paths, reaching the same operation could look like this\n\n\ndat &lt;- read_csv(\"C:/Users/Daniel/Dropbox/Some-folder/a-project/data/my-data.csv\")"
+  },
+  {
+    "objectID": "04-writing.html#a-basic-structure-for-projects",
+    "href": "04-writing.html#a-basic-structure-for-projects",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "A basic structure for projects",
+    "text": "A basic structure for projects\n\nRStudio projects helps you create good habits for reproducible analysis as all analyses are conducted within a stand-alone folder structure. Your data and scripts can be shared.\nUse a basic structure for all projects:\n\nMy-project\n        |\n        |-.Rproj        (The project settings)\n        |--/data        (Contains all data needed for your analysis)\n        |--/R           (Contains all scripts/R-files)\n        |--/output      (Collection of all output files)"
+  },
+  {
+    "objectID": "04-writing.html#writing-in-quartor-markdown",
+    "href": "04-writing.html#writing-in-quartor-markdown",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Writing in Quarto/R Markdown",
+    "text": "Writing in Quarto/R Markdown\n\nThe basic syntax in quarto/R Markdown files is markdown. Markdown makes it easy to format text without point-and-click as all formatting can be added with syntax, example:\n\nThis text is an example of the markdown syntax which includes **bold**, *italic*,\n^super^ and ~subscript~ and ~~striketrough~~\nResulting in:\n\nThis text is an example of the markdown syntax which includes bold, italic, super and subscript and striketrough"
+  },
+  {
+    "objectID": "04-writing.html#markdown---more-on-text-formatting-html",
+    "href": "04-writing.html#markdown---more-on-text-formatting-html",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Markdown - More on text formatting (html)",
+    "text": "Markdown - More on text formatting (html)\n\n\n\n\nWe can also use html for &lt;sub&gt;subscripts&lt;/sub&gt;\nand &lt;sup&gt;superscript&lt;/sup&gt;\n\n\n\nWe can also use html for subscripts and superscript"
+  },
+  {
+    "objectID": "04-writing.html#markdown---more-on-text-formatting-latex",
+    "href": "04-writing.html#markdown---more-on-text-formatting-latex",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Markdown - More on text formatting (latex)",
+    "text": "Markdown - More on text formatting (latex)\n\n\n\nMathematical formulas can be added inline with $y_i \\sim \\operatorname{Normal}(\\mu_i, \\sigma)$\n\nor as a block, using\n\n$$\ny = \\beta_0 + \\beta_1 \\times x_1 + \\epsilon\n$$\n\n\n\nMathematical formulas can be added inline with \\(y_i \\sim \\operatorname{Normal}(\\mu_i, \\sigma)\\)\nor as a block, using\n\\[\ny = \\beta_0 + \\beta_1 \\times x_1 + \\epsilon\n\\]"
+  },
+  {
+    "objectID": "04-writing.html#markdown-lists",
+    "href": "04-writing.html#markdown-lists",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Markdown lists",
+    "text": "Markdown lists\n\n\nA list can be unordered and ordered\n\n* Item A\n    + Item x\n\n    \n1. Item 1\n2. Item 2\n    i) Item i\n\n\n\nA list can be unordered and ordered\n\nItem A\n\nItem x\n\n\n\n\nItem 1\nItem 2\n\nItem i"
+  },
+  {
+    "objectID": "04-writing.html#markdown-tables",
+    "href": "04-writing.html#markdown-tables",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Markdown tables",
+    "text": "Markdown tables\n\n\n\n| Left |Center|Right| \n| :--- |:---: |---:|\n|Text | Text| Text| \n|35| 3| 999|\n\n: A table caption\n\n\n\n\nA table caption\n\n\nLeft\nCenter\nRight\n\n\n\n\nText\nText\nText\n\n\n35\n3\n999"
+  },
+  {
+    "objectID": "04-writing.html#adding-images",
+    "href": "04-writing.html#adding-images",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Adding images",
+    "text": "Adding images\n\n\n![](img/inn-logo.svg)"
+  },
+  {
+    "objectID": "04-writing.html#cross-referencing",
+    "href": "04-writing.html#cross-referencing",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Cross-referencing",
+    "text": "Cross-referencing\n\nWith cross-referencing it is possible to reference images, tables, equations etc.\nA cross reference requires an identifier\n\n\n\n![](img/inn-logo.svg){#fig-inn}\n\nSee [@fig-inn] for an example ...\n\n\n\n\n\n\n\nFigure 1: Høgskolen i Innlandet logo\n\n\nSee Figure 1 for an example …"
+  },
+  {
+    "objectID": "04-writing.html#code-chunk-options",
+    "href": "04-writing.html#code-chunk-options",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Code chunk options",
+    "text": "Code chunk options\n\nOutput from code chunks can be tables, figures or text used in the report.\nCode chunk options lets you specify, for example\n\nFigure captions, figure short-captions\nIf code, messages or warnings should be shown\nLabels used for cross-referencing\nCaching (saving computations of a code block if unchanged)"
+  },
+  {
+    "objectID": "04-writing.html#code-chunk-options-syntax",
+    "href": "04-writing.html#code-chunk-options-syntax",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Code chunk options syntax",
+    "text": "Code chunk options syntax\n\n\n\n#| echo: false\n#| message: false\n#| warning: false\n#| label: fig-example\n#| fig-cap: \"An example figure\"\n\n\nlibrary(exscidata); library(tidyverse)\n\ncyclingstudy %&gt;%\n        ggplot(aes(weight.T1, height.T1)) + geom_point()\n\n\n\n\n\n\n\n\nFigure 2: An example figure"
+  },
+  {
+    "objectID": "04-writing.html#inline-code",
+    "href": "04-writing.html#inline-code",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Inline code",
+    "text": "Inline code\n\nCode may be included inline to include code generated outputs\n\n\nTo include the variable in the text:"
+  },
+  {
+    "objectID": "04-writing.html#bibliographies",
+    "href": "04-writing.html#bibliographies",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Bibliographies",
+    "text": "Bibliographies\n\nBibliographies/Citations may be added to reports using a external bibliography file. A simple format is bibtex\nPubmed entries can be searched using TexMed\nIn the visual editor, bibliographies can be easily created\n\n\n---\ntitle: \"My document\"\nbibliography: \"resources/bibliography.bib\"\n---"
+  },
+  {
+    "objectID": "04-writing.html#where-to-find-help",
+    "href": "04-writing.html#where-to-find-help",
+    "title": "Writing reports in Quarto (or R markdown)",
+    "section": "Where to find help?",
+    "text": "Where to find help?\n\nThe quarto documentation is really good.\nA lot of examples on quarto is available trough google!\n\nSee the."
+  },
+  {
+    "objectID": "devel/xx-study-design.html#quarto",
+    "href": "devel/xx-study-design.html#quarto",
+    "title": "Designing scientific studies",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+  },
+  {
+    "objectID": "devel/xx-study-design.html#bullets",
+    "href": "devel/xx-study-design.html#bullets",
+    "title": "Designing scientific studies",
+    "section": "Bullets",
+    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+  },
+  {
+    "objectID": "devel/xx-study-design.html#code",
+    "href": "devel/xx-study-design.html#code",
+    "title": "Designing scientific studies",
+    "section": "Code",
+    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quantitative methods and statistics (In Sport and Exercise Science) - Lectures",
+    "section": "",
+    "text": "Lecture\nNotes\n\n\n\n\nIntroduction to data science\n\n\n\nIntroduction to data visualization\nHomework, possible solutions\n\n\nIntroduction to data wrangling\nHomework, possible solution\n\n\nWriting reports in quarto"
+  }
+]
