@@ -8,7 +8,7 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.330">
+  <meta name="generator" content="quarto-1.3.361">
 
   <title>Quantitative Methods - Lectures - Writing reports in Quarto (or R markdown)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -603,7 +603,7 @@ See [@fig-inn] for an example ...
 <div id="fig-inn" class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/inn-logo.svg"></p>
-<p></p><figcaption>Figure&nbsp;1: Høgskolen i Innlandet logo</figcaption><p></p>
+<figcaption>Figure&nbsp;1: Høgskolen i Innlandet logo</figcaption>
 </figure>
 </div>
 <p>See <a href="#/cross-referencing">Figure&nbsp;1</a> for an example …</p>
@@ -647,7 +647,7 @@ cyclingstudy %&gt;%
 <div id="fig-example" class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="04-writing_files/figure-revealjs/fig-example-1.png" width="960"></p>
-<p></p><figcaption>Figure&nbsp;2: An example figure</figcaption><p></p>
+<figcaption>Figure&nbsp;2: An example figure</figcaption>
 </figure>
 </div>
 </div>
@@ -660,9 +660,15 @@ cyclingstudy %&gt;%
 <ul>
 <li>Code may be included inline to include code generated outputs</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>a_variable <span class="ot">&lt;-</span> <span class="fl">3.14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
 <li>To include the variable in the text:</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>The variable will be displayed here <span class="st">`</span><span class="at">r a_variable</span><span class="st">`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="bibliographies" class="slide level2">
 <h2>Bibliographies</h2>
@@ -672,10 +678,10 @@ cyclingstudy %&gt;%
 <li>In the visual editor, bibliographies can be easily created</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="sc">---</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>title<span class="sc">:</span> <span class="st">"My document"</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>bibliography<span class="sc">:</span> <span class="st">"resources/bibliography.bib"</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="sc">---</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>title<span class="sc">:</span> <span class="st">"My document"</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>bibliography<span class="sc">:</span> <span class="st">"resources/bibliography.bib"</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="where-to-find-help" class="slide level2">

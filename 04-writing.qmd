@@ -358,6 +358,7 @@ cyclingstudy %>%
 
 ```{r}
 #| eval: false
+#| echo: true
 a_variable <- 3.14
 
 ```
@@ -366,6 +367,7 @@ a_variable <- 3.14
 
 ```{r}
 #| eval: false
+#| echo: true
 The variable will be displayed here `r a_variable` 
 ```
 

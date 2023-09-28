@@ -1,6 +1,5 @@
 ---
 title: "Homework - reproducing figures"
-format: revealjs
 editor_options: 
   chunk_output_type: console
 ---

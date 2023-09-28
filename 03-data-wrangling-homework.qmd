@@ -1,6 +1,5 @@
 ---
 title: "Creating tables - Homework"
-format: revealjs
 ---
 
 ## The Assignment
