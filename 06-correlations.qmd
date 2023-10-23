@@ -1,0 +1,380 @@
+---
+title: "Associations - Regression and Correlation"
+format: revealjs
+css: resources/style.css
+---
+
+
+## The regression model
+
+- The ordinary regression model $y_i = \beta_0 + \beta x_i + \epsilon_i$ gives us the relationship between two variables, x and y.
+- The correlation can be used to describe the same relationship using a unit-less number between -1 and 1
+
+
+## Correlation coefficients
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+# Load the required libraries
+library(MASS)
+library(ggplot2)
+
+# Set the number of points and correlations
+n <- 100
+correlations <- c(0.95, 0.5, 0.1,-0.1, -0.5, -0.95)
+
+# Create a data frame to hold all the points with their corresponding correlation
+data <- data.frame(x = numeric(0), y = numeric(0), correlation = factor(character(0), levels = c("0.9", "0.3", "0", "-0.3", "-0.9")))
+
+# Generate points for each correlation
+for (corr in correlations) {
+  sigma <- matrix(c(1, corr, corr, 1), nrow = 2)  # Create the covariance matrix
+  points <- mvrnorm(n, mu = c(0, 0), Sigma = sigma)  # Generate multivariate normal random variables
+  points_df <- data.frame(x = points[, 1], y = points[, 2], correlation = as.character(corr))
+  data <- rbind(data, points_df)
+}
+
+# Plot the data using ggplot2 with facets for each correlation
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() +
+  facet_wrap(~ correlation, scales = "free", labeller = label_parsed) +
+  labs(title = "Scatter plots with different Pearson correlations",
+       x = "X",
+       y = "Y",
+       caption = "Each subplot shows random variables with a specific Pearson correlation") +
+  theme_minimal()
+
+
+```
+
+
+
+## The relationship between training volume and vastus lateralis thickness
+
+:::: {.columns .v-center-container}
+
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 5
+#| fig-height: 5
+
+
+library(tidyverse)
+library(exscidata)
+
+dat <- hypertrophy %>%
+  select(PARTICIPANT, SQUAT_VOLUME, BODYMASS_T1, DXA_LBM_T1, VL_T1) %>%
+  mutate(SQUAT_VOLUME = (SQUAT_VOLUME/1000)) 
+
+
+dat %>%
+  ggplot(aes(SQUAT_VOLUME, VL_T1)) + 
+        geom_point(size = 3, shape = 21, fill = "steelblue") + 
+        theme_minimal(base_size = 20) +
+        labs(y = "Vastus lateralis thickness (cm)", 
+             x = "Training volume (kg * 1000)") +
+        
+        theme()
+
+```
+
+
+
+
+:::
+
+::: {.column width="40%"}
+
+Are assumptions met?
+
+- No apparent curve-linear relationship 
+- There are no obvious outliers, and
+- Both variables are evenly distributed (normally distributed)
+:::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## The relationship between training volume and vastus lateralis thickness
+
+:::: {.columns .v-center-container}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 5
+#| fig-height: 5
+
+
+library(tidyverse)
+library(exscidata)
+
+dat <- hypertrophy %>%
+  select(PARTICIPANT, SQUAT_VOLUME, BODYMASS_T1, DXA_LBM_T1, VL_T1) %>%
+  mutate(SQUAT_VOLUME = (SQUAT_VOLUME/1000)) 
+
+cor_results <- paste0("r = ", round(cor(hypertrophy$VL_T1, hypertrophy$SQUAT_VOLUME, 
+    use = "complete.obs"), 3))
+
+
+dat %>%
+  ggplot(aes(SQUAT_VOLUME, VL_T1)) + 
+        geom_point(size = 3, shape = 21, fill = "steelblue") + 
+        theme_minimal(base_size = 20) +
+        labs(y = "Vastus lateralis thickness (cm)", 
+             x = "Training volume (kg * 1000)") +
+        
+        geom_text(aes(x = 130, y = 2.5, 
+                      
+                      label = cor_results), 
+                  size = 8)
+        
+
+
+```
+
+
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: false
+#| echo: true
+
+library(exscidata)
+
+cor(hypertrophy$VL_T1, 
+    hypertrophy$SQUAT_VOLUME, 
+    use = "complete.obs")
+
+
+```
+
+
+:::
+
+::::
+
+## Using the correlation for inference
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- We might want to say something about the population from where we have gathered participants
+- The correlation coefficient can be used for hypothesis testing using the `cor.test` function
+
+```{r}
+#| eval: false
+#| echo: true
+cor.test(hypertrophy$VL_T1, 
+         hypertrophy$SQUAT_VOLUME, 
+    na.action = na.omit)
+
+```
+
+
+
+:::
+
+
+::: {.column width="50%"}
+
+
+```{r}
+#| eval: true
+#| echo: false
+cor.test(hypertrophy$VL_T1, 
+         hypertrophy$SQUAT_VOLUME, 
+    na.action = na.omit)
+
+```
+
+ 
+:::
+
+::::
+
+## Correlation and univariate regression
+
+
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+- The correlation coefficient is a simplification of a univariate regression.
+- We will get the same results from `lm` ($\sqrt{R^2}$) as the estimate from `cor.test`
+
+```{r}
+#| echo: true
+#| eval: false
+
+reg_mod <- lm(VL_T1 ~ SQUAT_VOLUME, 
+              data = hypertrophy)
+        
+cor_res <- with(hypertrophy, 
+                cor.test(VL_T1, 
+                         SQUAT_VOLUME))      
+
+sqrt(summary(reg_mod)$r.squared)
+
+cor_res$estimate
+```
+
+:::
+
+::: {.column width="30%"}
+
+```{r}
+#| echo: false
+#| eval: true
+
+library(broom); library(gt)
+
+reg_mod <- lm(VL_T1 ~ SQUAT_VOLUME, data = hypertrophy)
+        
+cor_res <- with(hypertrophy, cor.test(VL_T1, SQUAT_VOLUME))      
+
+results <- c(sqrt(summary(reg_mod)$r.squared), cor_res$estimate)
+
+names(results) <- c("R from lm", "Correlation estimate from cor.test")
+
+results[1]
+
+results[2]
+
+```
+
+:::
+::::
+
+## The correlation comes in many forms
+
+
+- When assumptions about normally distributed variables and outliers are questioned we may use a rank-based correlation.
+
+- Spearman's or Kendall's correlation coefficient are both alternatives to the Pearson correlation coefficient
+
+- Spearman's $\rho$ is simply the correlation coefficient calculated from ranked values 
+
+## In R
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| eval: false
+#| echo: true
+
+## Ranking is sensitive to missing values
+dat <- hypertrophy %>%
+        select(VL_T1, SQUAT_VOLUME) %>%
+         filter(!is.na(VL_T1), 
+               !is.na(SQUAT_VOLUME))
+
+# The spearman method
+with(dat, 
+     cor.test(VL_T1, 
+              SQUAT_VOLUME, 
+              method = "spearman"))
+
+# Pearson method on ranked data
+with(dat, 
+     cor.test(rank(VL_T1), 
+              rank(SQUAT_VOLUME), 
+              method = "pearson"))
+
+
+
+```
+:::
+
+::: {.column width="50%"}
+
+
+
+```{r}
+#| eval: true
+#| echo: false
+
+## Ranking is sensitive to missing values
+dat <- hypertrophy %>%
+        select(VL_T1, SQUAT_VOLUME) %>%
+         filter(!is.na(VL_T1), 
+               !is.na(SQUAT_VOLUME))
+
+# The spearman method
+with(dat, 
+     cor.test(VL_T1, 
+              SQUAT_VOLUME, 
+              method = "spearman"))
+
+# Pearson method on ranked data
+with(dat, 
+     cor.test(rank(VL_T1), 
+              rank(SQUAT_VOLUME), 
+              method = "pearson"))
+
+
+
+```
+
+
+:::
+
+::::
+
+```{css}
+code.sourceCode {
+  font-size: 0.7em;
+  /* or try font-size: xx-large; */
+}
+```
+
+
+## Correlation does not imply causation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

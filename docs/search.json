@@ -635,5 +635,75 @@
     "title": "Quantitative methods and statistics (In Sport and Exercise Science) - Lectures",
     "section": "",
     "text": "Lecture\nNotes\n\n\n\n\nIntroduction to data science\n\n\n\nIntroduction to data visualization\nHomework, possible solutions\n\n\nIntroduction to data wrangling\nHomework, possible solution\n\n\nWriting reports in quarto"
+  },
+  {
+    "objectID": "06-correlations.html#the-regression-model",
+    "href": "06-correlations.html#the-regression-model",
+    "title": "Associations - Regression and Correlation",
+    "section": "The regression model",
+    "text": "The regression model\n\nThe ordinary regression model \\(y_i = \\beta_0 + \\beta x_i + \\epsilon_i\\) gives us the relationship between two variables, x and y.\nThe correlation can be used to describe the same relationship using a unit-less number between -1 and 1"
+  },
+  {
+    "objectID": "06-correlations.html#correlation-coefficients",
+    "href": "06-correlations.html#correlation-coefficients",
+    "title": "Associations - Regression and Correlation",
+    "section": "Correlation coefficients",
+    "text": "Correlation coefficients"
+  },
+  {
+    "objectID": "06-correlations.html#the-relationship-between-training-volume-and-lean-mass",
+    "href": "06-correlations.html#the-relationship-between-training-volume-and-lean-mass",
+    "title": "Associations - Regression and Correlation",
+    "section": "The relationship between training volume and lean mass",
+    "text": "The relationship between training volume and lean mass\n\n\n\n\n\n\n\n\nAre assumptions met?\n\nNo apparent curve-linear relationship,\nThere are no obvious outliers, and\nBoth variables are evenly distributed (normally distributed)"
+  },
+  {
+    "objectID": "06-correlations.html#the-relationship-between-training-volume-and-vastus-lateralis-thickness",
+    "href": "06-correlations.html#the-relationship-between-training-volume-and-vastus-lateralis-thickness",
+    "title": "Associations - Regression and Correlation",
+    "section": "The relationship between training volume and vastus lateralis thickness",
+    "text": "The relationship between training volume and vastus lateralis thickness\n\n\n\n\n\n\n\n\nAre assumptions met?\n\nNo apparent curve-linear relationship\nThere are no obvious outliers, and\nBoth variables are evenly distributed (normally distributed)"
+  },
+  {
+    "objectID": "06-correlations.html#the-relationship-between-training-volume-and-vastus-lateralis-thickness-1",
+    "href": "06-correlations.html#the-relationship-between-training-volume-and-vastus-lateralis-thickness-1",
+    "title": "Associations - Regression and Correlation",
+    "section": "The relationship between training volume and vastus lateralis thickness",
+    "text": "The relationship between training volume and vastus lateralis thickness\n\n\n\n\n\n\n\n\n\nlibrary(exscidata)\n\ncor(hypertrophy$VL_T1, \n    hypertrophy$SQUAT_VOLUME, \n    use = \"complete.obs\")"
+  },
+  {
+    "objectID": "06-correlations.html#using-the-correlation-for-inference",
+    "href": "06-correlations.html#using-the-correlation-for-inference",
+    "title": "Associations - Regression and Correlation",
+    "section": "Using the correlation for inference",
+    "text": "Using the correlation for inference\n\n\n\nWe might want to say something about the population from where we have gathered participants\nThe correlation coefficient can be used for hypothesis testing using the cor.test function\n\n\ncor.test(hypertrophy$VL_T1, \n         hypertrophy$SQUAT_VOLUME, \n    na.action = na.omit)\n\n\n\n\n\n    Pearson's product-moment correlation\n\ndata:  hypertrophy$VL_T1 and hypertrophy$SQUAT_VOLUME\nt = 3.335, df = 27, p-value = 0.00249\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n 0.2164913 0.7568216\nsample estimates:\n      cor \n0.5401395"
+  },
+  {
+    "objectID": "06-correlations.html#correlation-and-univariate-regression",
+    "href": "06-correlations.html#correlation-and-univariate-regression",
+    "title": "Associations - Regression and Correlation",
+    "section": "Correlation and univariate regression",
+    "text": "Correlation and univariate regression\n\n\n\nThe correlation coefficient is a simplification of a univariate regression.\nWe will get the same results from lm (\\(\\sqrt{R^2}\\)) as the estimate from cor.test\n\n\nreg_mod &lt;- lm(VL_T1 ~ SQUAT_VOLUME, \n              data = hypertrophy)\n        \ncor_res &lt;- with(hypertrophy, \n                cor.test(VL_T1, \n                         SQUAT_VOLUME))      \n\nsqrt(summary(reg_mod)$r.squared)\n\ncor_res$estimate\n\n\n\n\nR from lm \n0.5401395 \n\n\nCorrelation estimate from cor.test \n                         0.5401395"
+  },
+  {
+    "objectID": "06-correlations.html#the-correlation-comes-in-many-forms",
+    "href": "06-correlations.html#the-correlation-comes-in-many-forms",
+    "title": "Associations - Regression and Correlation",
+    "section": "The correlation comes in many forms",
+    "text": "The correlation comes in many forms\n\nWhen assumptions about normally distributed variables and outliers are questioned we may use a rank-based correlation.\nSpearman’s or Kendall’s correlation coefficient are both alternatives to the Pearson correlation coefficient\nSpearman’s \\(\\rho\\) is simply the correlation coefficient calculated from ranked values"
+  },
+  {
+    "objectID": "06-correlations.html#in-r",
+    "href": "06-correlations.html#in-r",
+    "title": "Associations - Regression and Correlation",
+    "section": "In R",
+    "text": "In R\n\n\n\n## Ranking is sensitive to missing values\ndat &lt;- hypertrophy %&gt;%\n        select(VL_T1, SQUAT_VOLUME) %&gt;%\n         filter(!is.na(VL_T1), \n               !is.na(SQUAT_VOLUME))\n\n# The spearman method\nwith(dat, \n     cor.test(VL_T1, \n              SQUAT_VOLUME, \n              method = \"spearman\"))\n\n# Pearson method on ranked data\nwith(dat, \n     cor.test(rank(VL_T1), \n              rank(SQUAT_VOLUME), \n              method = \"pearson\"))\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  VL_T1 and SQUAT_VOLUME\nS = 1609.8, p-value = 0.0005285\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.6035045 \n\n\n\n    Pearson's product-moment correlation\n\ndata:  rank(VL_T1) and rank(SQUAT_VOLUME)\nt = 3.9329, df = 27, p-value = 0.0005285\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n 0.3043080 0.7943169\nsample estimates:\n      cor \n0.6035045"
+  },
+  {
+    "objectID": "06-correlations.html#correlation-does-not-imply-causation",
+    "href": "06-correlations.html#correlation-does-not-imply-causation",
+    "title": "Associations - Regression and Correlation",
+    "section": "Correlation does not imply causation",
+    "text": "Correlation does not imply causation"
   }
 ]
