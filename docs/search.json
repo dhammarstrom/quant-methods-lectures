@@ -123,14 +123,14 @@
     "href": "02-datavis-homework.html",
     "title": "Homework - reproducing figures",
     "section": "",
-    "text": "library(tidyverse)\n\n\n3\n\nGet an overview of the available variables\n\n\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nchild_heart &lt;- read_csv(\"https://raw.githubusercontent.com/dspiegel29/ArtofStatistics/master/01-1-2-3-child-heart-survival-times/01-1-child-heart-survival-x.csv\")\n\nRows: 13 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Hospital\ndbl (5): Operations, Survivors, Deaths, ThirtyDaySurvival, PercentageDying\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n3head(child_heart)\n\n# A tibble: 6 × 6\n  Hospital         Operations Survivors Deaths ThirtyDaySurvival PercentageDying\n  &lt;chr&gt;                 &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;           &lt;dbl&gt;\n1 London - Harley…        418       413      5              98.8             1.2\n2 Leicester               607       593     14              97.7             2.3\n3 Newcastle               668       653     15              97.8             2.2\n4 Glasgow                 760       733     27              96.3             3.7\n5 Southampton             829       815     14              98.3             1.7\n6 Bristol                 835       821     14              98.3             1.7"
+    "text": "library(tidyverse)\n\n\n3\n\nGet an overview of the available variables\n\n\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.1     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nchild_heart &lt;- read_csv(\"https://raw.githubusercontent.com/dspiegel29/ArtofStatistics/master/01-1-2-3-child-heart-survival-times/01-1-child-heart-survival-x.csv\")\n\nRows: 13 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Hospital\ndbl (5): Operations, Survivors, Deaths, ThirtyDaySurvival, PercentageDying\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n3head(child_heart)\n\n# A tibble: 6 × 6\n  Hospital         Operations Survivors Deaths ThirtyDaySurvival PercentageDying\n  &lt;chr&gt;                 &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;           &lt;dbl&gt;\n1 London - Harley…        418       413      5              98.8             1.2\n2 Leicester               607       593     14              97.7             2.3\n3 Newcastle               668       653     15              97.8             2.2\n4 Glasgow                 760       733     27              96.3             3.7\n5 Southampton             829       815     14              98.3             1.7\n6 Bristol                 835       821     14              98.3             1.7"
   },
   {
     "objectID": "02-datavis-homework.html#first-steps",
     "href": "02-datavis-homework.html#first-steps",
     "title": "Homework - reproducing figures",
     "section": "",
-    "text": "library(tidyverse)\n\n\n3\n\nGet an overview of the available variables\n\n\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nchild_heart &lt;- read_csv(\"https://raw.githubusercontent.com/dspiegel29/ArtofStatistics/master/01-1-2-3-child-heart-survival-times/01-1-child-heart-survival-x.csv\")\n\nRows: 13 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Hospital\ndbl (5): Operations, Survivors, Deaths, ThirtyDaySurvival, PercentageDying\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n3head(child_heart)\n\n# A tibble: 6 × 6\n  Hospital         Operations Survivors Deaths ThirtyDaySurvival PercentageDying\n  &lt;chr&gt;                 &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;           &lt;dbl&gt;\n1 London - Harley…        418       413      5              98.8             1.2\n2 Leicester               607       593     14              97.7             2.3\n3 Newcastle               668       653     15              97.8             2.2\n4 Glasgow                 760       733     27              96.3             3.7\n5 Southampton             829       815     14              98.3             1.7\n6 Bristol                 835       821     14              98.3             1.7"
+    "text": "library(tidyverse)\n\n\n3\n\nGet an overview of the available variables\n\n\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.1     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nchild_heart &lt;- read_csv(\"https://raw.githubusercontent.com/dspiegel29/ArtofStatistics/master/01-1-2-3-child-heart-survival-times/01-1-child-heart-survival-x.csv\")\n\nRows: 13 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Hospital\ndbl (5): Operations, Survivors, Deaths, ThirtyDaySurvival, PercentageDying\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n3head(child_heart)\n\n# A tibble: 6 × 6\n  Hospital         Operations Survivors Deaths ThirtyDaySurvival PercentageDying\n  &lt;chr&gt;                 &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;             &lt;dbl&gt;           &lt;dbl&gt;\n1 London - Harley…        418       413      5              98.8             1.2\n2 Leicester               607       593     14              97.7             2.3\n3 Newcastle               668       653     15              97.8             2.2\n4 Glasgow                 760       733     27              96.3             3.7\n5 Southampton             829       815     14              98.3             1.7\n6 Bristol                 835       821     14              98.3             1.7"
   },
   {
     "objectID": "02-datavis-homework.html#what-should-be-the-end-result",
@@ -403,7 +403,7 @@
     "href": "03-data-wrangling-homework.html#last-touch",
     "title": "Creating tables - Homework",
     "section": "Last touch",
-    "text": "Last touch\n\ntbl %&gt;%\n        cols_align(align = \"center\", \n                   columns = starts_with(\"m\")) %&gt;%\n         cols_align(align = \"left\", \n                   columns = starts_with(\"v\"))  %&gt;%\n          tab_style(\n    style = list(\n      cell_text(weight = \"bold\")\n    ),\n    locations = cells_column_labels(everything())\n  ) %&gt;% \n        \n        \n        tab_footnote(footnote = md(\"*All data presented as means &plusmn; standard deviation values.*\"))\n\n\n\n\n\n  \n    \n    \n      Variable\n      WP (n = 10)\n      GWP (n = 11)\n      MALTO (n = 10)\n      Total (n = 31)\n    \n  \n  \n    Age (years)\n21.40 ± 2.37\n22.27 ± 2.24\n20.70 ± 1.57\n21.48 ± 2.13\n    Height (cm)\n177.85 ± 5.60\n183.45 ± 7.39\n177.75 ± 9.56\n179.81 ± 7.91\n    Weight (kg)\n82.19 ± 8.70\n85.14 ± 14.95\n81.35 ± 10.70\n82.89 ± 11.45\n    Total lean mass (kg)\n63.73 ± 7.11\n68.24 ± 10.84\n62.06 ± 8.44\n64.68 ± 9.02\n    Total fat mass (kg)\n15.18 ± 4.15\n13.39 ± 4.77\n16.10 ± 3.55\n14.89 ± 4.20\n    Squat 3RM (kg)\n134.50 ± 21.42\n133.50 ± 20.56\n126.00 ± 17.19\n131.33 ± 19.50\n  \n  \n  \n    \n       All data presented as means ± standard deviation values.\n    \n  \n\n\n\n?tab_style"
+    "text": "Last touch\n\ntbl %&gt;%\n        cols_align(align = \"center\", \n                   columns = starts_with(\"m\")) %&gt;%\n         cols_align(align = \"left\", \n                   columns = starts_with(\"v\"))  %&gt;%\n          tab_style(\n    style = list(\n      cell_text(weight = \"bold\")\n    ),\n    locations = cells_column_labels(everything())\n  ) %&gt;% \n        \n        \n        tab_footnote(footnote = md(\"*All data presented as means &plusmn; standard deviation values.*\"))\n\n\n\n\n\n  \n    \n    \n      Variable\n      WP (n = 10)\n      GWP (n = 11)\n      MALTO (n = 10)\n      Total (n = 31)\n    \n  \n  \n    Age (years)\n21.40 ± 2.37\n22.27 ± 2.24\n20.70 ± 1.57\n21.48 ± 2.13\n    Height (cm)\n177.85 ± 5.60\n183.45 ± 7.39\n177.75 ± 9.56\n179.81 ± 7.91\n    Weight (kg)\n82.19 ± 8.70\n85.14 ± 14.95\n81.35 ± 10.70\n82.89 ± 11.45\n    Total lean mass (kg)\n63.73 ± 7.11\n68.24 ± 10.84\n62.06 ± 8.44\n64.68 ± 9.02\n    Total fat mass (kg)\n15.18 ± 4.15\n13.39 ± 4.77\n16.10 ± 3.55\n14.89 ± 4.20\n    Squat 3RM (kg)\n134.50 ± 21.42\n133.50 ± 20.56\n126.00 ± 17.19\n131.33 ± 19.50\n  \n  \n  \n    \n       All data presented as means ± standard deviation values.\n    \n  \n\n\n\n?tab_style\n\nstarting httpd help server ... done"
   },
   {
     "objectID": "03-data-wrangling.html#tidy-tabular-data",
@@ -609,53 +609,11 @@
     "text": "Where to find help?\n\nThe quarto documentation is really good.\nA lot of examples on quarto is available trough google!\n\nSee the."
   },
   {
-    "objectID": "devel/xx-study-design.html#quarto",
-    "href": "devel/xx-study-design.html#quarto",
-    "title": "Designing scientific studies",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
-  },
-  {
-    "objectID": "devel/xx-study-design.html#bullets",
-    "href": "devel/xx-study-design.html#bullets",
-    "title": "Designing scientific studies",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
-  },
-  {
-    "objectID": "devel/xx-study-design.html#code",
-    "href": "devel/xx-study-design.html#code",
-    "title": "Designing scientific studies",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quantitative methods and statistics (In Sport and Exercise Science) - Lectures",
-    "section": "",
-    "text": "Lecture\nNotes\n\n\n\n\nIntroduction to data science\n\n\n\nIntroduction to data visualization\nHomework, possible solutions\n\n\nIntroduction to data wrangling\nHomework, possible solution\n\n\nWriting reports in quarto"
-  },
-  {
     "objectID": "06-correlations.html#the-regression-model",
     "href": "06-correlations.html#the-regression-model",
     "title": "Associations - Regression and Correlation",
     "section": "The regression model",
-    "text": "The regression model\n\nThe ordinary regression model \\(y_i = \\beta_0 + \\beta x_i + \\epsilon_i\\) gives us the relationship between two variables, x and y.\nThe correlation can be used to describe the same relationship using a unit-less number between -1 and 1"
-  },
-  {
-    "objectID": "06-correlations.html#correlation-coefficients",
-    "href": "06-correlations.html#correlation-coefficients",
-    "title": "Associations - Regression and Correlation",
-    "section": "Correlation coefficients",
-    "text": "Correlation coefficients"
-  },
-  {
-    "objectID": "06-correlations.html#the-relationship-between-training-volume-and-lean-mass",
-    "href": "06-correlations.html#the-relationship-between-training-volume-and-lean-mass",
-    "title": "Associations - Regression and Correlation",
-    "section": "The relationship between training volume and lean mass",
-    "text": "The relationship between training volume and lean mass\n\n\n\n\n\n\n\n\nAre assumptions met?\n\nNo apparent curve-linear relationship,\nThere are no obvious outliers, and\nBoth variables are evenly distributed (normally distributed)"
+    "text": "The regression model\n\nThe ordinary regression model \\(y_i = \\beta_0 + \\beta x_i + \\epsilon_i\\) gives us the relationship between two variables, \\(x\\) and \\(y\\).\nThe correlation can be used to describe the same relationship using a unit-less number between -1 and 1.\nA correlation of 0 indicate no association, a correlation close to 1 and -1 indicate association."
   },
   {
     "objectID": "06-correlations.html#the-relationship-between-training-volume-and-vastus-lateralis-thickness",
@@ -700,10 +658,556 @@
     "text": "In R\n\n\n\n## Ranking is sensitive to missing values\ndat &lt;- hypertrophy %&gt;%\n        select(VL_T1, SQUAT_VOLUME) %&gt;%\n         filter(!is.na(VL_T1), \n               !is.na(SQUAT_VOLUME))\n\n# The spearman method\nwith(dat, \n     cor.test(VL_T1, \n              SQUAT_VOLUME, \n              method = \"spearman\"))\n\n# Pearson method on ranked data\nwith(dat, \n     cor.test(rank(VL_T1), \n              rank(SQUAT_VOLUME), \n              method = \"pearson\"))\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  VL_T1 and SQUAT_VOLUME\nS = 1609.8, p-value = 0.0005285\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.6035045 \n\n\n\n    Pearson's product-moment correlation\n\ndata:  rank(VL_T1) and rank(SQUAT_VOLUME)\nt = 3.9329, df = 27, p-value = 0.0005285\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n 0.3043080 0.7943169\nsample estimates:\n      cor \n0.6035045"
   },
   {
-    "objectID": "06-correlations.html#correlation-does-not-imply-causation",
-    "href": "06-correlations.html#correlation-does-not-imply-causation",
+    "objectID": "06-correlations.html#many-types-of-associations",
+    "href": "06-correlations.html#many-types-of-associations",
     "title": "Associations - Regression and Correlation",
-    "section": "Correlation does not imply causation",
-    "text": "Correlation does not imply causation"
+    "section": "Many types of associations",
+    "text": "Many types of associations\n\n\nA broader definition of association can include…\n\nDiffrences in body weight between sexes → sex (discrete) is associated with body weight (continuous)\nPrevalence of ACL injuries differ between sexes → sex (discrete) is associated with injury status (discrete).\n\nWe use numerous statistical tests to describe associations (t-test, ANOVA, regression, etc.)"
+  },
+  {
+    "objectID": "06-correlations.html#associations-and-causality",
+    "href": "06-correlations.html#associations-and-causality",
+    "title": "Associations - Regression and Correlation",
+    "section": "Associations and causality",
+    "text": "Associations and causality\n\nFigure 1: US spending on science, space and technology is positively related to the number of suicied by hanging, strangulation and suffocation."
+  },
+  {
+    "objectID": "06-correlations.html#associations-and-causality-1",
+    "href": "06-correlations.html#associations-and-causality-1",
+    "title": "Associations - Regression and Correlation",
+    "section": "Associations and causality",
+    "text": "Associations and causality\n\n\nAssociations are descriptive → We observe statistical associations without being able to infer causality\nControlled experiments can be used to infer causality → Using experiments we can intervene in a system and interpret associations as causal (intervention associated with outcome)\nUsing graphs we can draw assumptions about relationships among variables"
+  },
+  {
+    "objectID": "06-correlations.html#the-experimental-treatment-e-is-causally-associated-with-the-outcome-o",
+    "href": "06-correlations.html#the-experimental-treatment-e-is-causally-associated-with-the-outcome-o",
+    "title": "Associations - Regression and Correlation",
+    "section": "The experimental treatment (E) is causally associated with the outcome (O)",
+    "text": "The experimental treatment (E) is causally associated with the outcome (O)"
+  },
+  {
+    "objectID": "06-correlations.html#in-obeservational-settings-an-exposure-e-may-be-indirectly-related-to-an-outcome-o-trough-a-confounder-c",
+    "href": "06-correlations.html#in-obeservational-settings-an-exposure-e-may-be-indirectly-related-to-an-outcome-o-trough-a-confounder-c",
+    "title": "Associations - Regression and Correlation",
+    "section": "In obeservational settings, an exposure (E) may be indirectly related to an outcome (O) trough a confounder (C)",
+    "text": "In obeservational settings, an exposure (E) may be indirectly related to an outcome (O) trough a confounder (C)"
+  },
+  {
+    "objectID": "06-correlations.html#summary",
+    "href": "06-correlations.html#summary",
+    "title": "Associations - Regression and Correlation",
+    "section": "Summary",
+    "text": "Summary\n\n\nThe correlation analysis can be seen as a simplified regression analysis\nCorrelation and regression are used to quantify associations\nAssociations are what we describe with (many) statistical tests\nAssociation do not imply causation\nGraphs can be used to draw assumptions about associations"
+  },
+  {
+    "objectID": "07-statistical-inference.html#the-problem-with-inference",
+    "href": "07-statistical-inference.html#the-problem-with-inference",
+    "title": "The goal of inference",
+    "section": "The problem withinference",
+    "text": "The problem withinference\n\n\nAll swans are white (P &lt; 0.05)\n\n\n\n\nJJ Harrison (https://www.jjharrison.com.au/) - Own work CC BY-SA 4.0\n\n\n\nIt turns out that it is not that simple.\nThe P-value did not presented us the truth. It was just a number calculated from a laborious process that included sampling of data, calculation of summary statistics and P-value.\nThe P-value might not even mean what we think it means?"
+  },
+  {
+    "objectID": "07-statistical-inference.html#what-does-the-p-value-mean",
+    "href": "07-statistical-inference.html#what-does-the-p-value-mean",
+    "title": "The goal of inference",
+    "section": "What does the p-value mean?",
+    "text": "What does the p-value mean?\n\n(Svetkey 2008)\nSvetkey et al. performed an intervention where overweight or obese individuals that had lost at least 4 kg in a first weight loss phase were randomized to maintain their weight on their own or receive either “personal contact” or “interactive technology” in a follow up phase."
+  },
+  {
+    "objectID": "07-statistical-inference.html#what-does-the-p-value-mean-1",
+    "href": "07-statistical-inference.html#what-does-the-p-value-mean-1",
+    "title": "The goal of inference",
+    "section": "What does the p-value mean?",
+    "text": "What does the p-value mean?\nAll groups regained weight after randomization by a mean of 5.5 kg in the self-directed, 5.2 kg in the interactive technology–based, and 4.0 kg in the personal-contact group… Those in the personal-contact group regained a mean of 1.2 kg less than those in the interactive technology–based group (95% CI, 2.1-0.3 kg; P=.008)."
+  },
+  {
+    "objectID": "07-statistical-inference.html#what-does-the-p-value-mean-svetkey-at-al",
+    "href": "07-statistical-inference.html#what-does-the-p-value-mean-svetkey-at-al",
+    "title": "The goal of inference",
+    "section": "What does the p-value mean? Svetkey at al…",
+    "text": "What does the p-value mean? Svetkey at al…\n\n\n…have absolutely disproved the null hypothesis (that there is no difference between the population means).\n… have found the probability of the null hypothesis being true.\n… have absolutely proved their experimental hypothesis (that there is a difference between the population means).\n\n\nQuestions adopted from (Dienes 2008)."
+  },
+  {
+    "objectID": "07-statistical-inference.html#what-does-the-p-value-mean-svetkey-at-al-1",
+    "href": "07-statistical-inference.html#what-does-the-p-value-mean-svetkey-at-al-1",
+    "title": "The goal of inference",
+    "section": "What does the p-value mean? Svetkey at al…",
+    "text": "What does the p-value mean? Svetkey at al…\n\n\n… can deduce the probability of the experimental hypothesis being true.\n… know the probability that you are making the wrong decision, if you decided to reject the null hypothesis.\n… have a reliable experimental finding in the sense that if, hypothetically, the experiment were repeated a great number of times, you would obtain a significant result on 95 % of occasions.\n\n\nQuestions adopted from (Dienes 2008)."
+  },
+  {
+    "objectID": "07-statistical-inference.html#drawing-inference-from-a-sample",
+    "href": "07-statistical-inference.html#drawing-inference-from-a-sample",
+    "title": "The goal of inference",
+    "section": "Drawing inference from a sample",
+    "text": "Drawing inference from a sample\n\n\nParticipants are recruited to an intervention and randomized to either receive a RED or BLUE pills.\nSystolic blood pressure after the intervention\nDo RED and BLUE pills affect blood pressure differently?\n\n\n\nWe recruit participants to a trial were they will, by random allocation, receive either a blue or a red pill\nWe are interested in the systolic blood pressure as a result of the intervention, to be able to say something about the population we want to know if the groups differ?"
+  },
+  {
+    "objectID": "07-statistical-inference.html#the-results",
+    "href": "07-statistical-inference.html#the-results",
+    "title": "The goal of inference",
+    "section": "The results",
+    "text": "The results\n\n\nWe have measured BP in both groups after the intervention.\nIt turns out that we have a difference between the groups. But how can we be sure that is a difference that is due to the different pills? We would like to have a test were we compare our results to what can be expected if there were no differences between the pills.\nWe can achieve this by random permutations of the observed data…"
+  },
+  {
+    "objectID": "07-statistical-inference.html#a-permutation-experiment",
+    "href": "07-statistical-inference.html#a-permutation-experiment",
+    "title": "The goal of inference",
+    "section": "A permutation experiment",
+    "text": "A permutation experiment\n\n\nThe observed data is re-ordered to create a new data set where differences between groups is not due to the randomization of pills. From these groups, we calculate the average difference between our new groups. This follows by another re-allocation of participants, and a new average difference.\nWe repeat this process 10000 times."
+  },
+  {
+    "objectID": "07-statistical-inference.html#permutation",
+    "href": "07-statistical-inference.html#permutation",
+    "title": "The goal of inference",
+    "section": "10 000 Permutation",
+    "text": "10 000 Permutation\n\n\nMost differences, out of our 10000 permutations are close to 0. Some are greater than 2.5…"
+  },
+  {
+    "objectID": "07-statistical-inference.html#permutation-and-our-result",
+    "href": "07-statistical-inference.html#permutation-and-our-result",
+    "title": "The goal of inference",
+    "section": "10 000 Permutation and our result",
+    "text": "10 000 Permutation and our result\n\n\nOur observed difference is 2.5. This is located in the tail of the distribution of average differences. But how unlikely is our results among a collection of randomly allocated participants where the intervention had no effect?"
+  },
+  {
+    "objectID": "07-statistical-inference.html#how-unlikely-is-our-result-if-the-pills-had-no-effect",
+    "href": "07-statistical-inference.html#how-unlikely-is-our-result-if-the-pills-had-no-effect",
+    "title": "The goal of inference",
+    "section": "How unlikely is our result if the pills had no effect?",
+    "text": "How unlikely is our result if the pills had no effect?\n\n\nThe average observed difference was 2.47.\n167 reshuffled averages where equal to or greater than our observed result.\nThis represent a small fraction of the reshuffled differences, in fact…\n\\(p = \\frac{167}{10000} = 0.0167\\)"
+  },
+  {
+    "objectID": "07-statistical-inference.html#to-account-for-both-extremes",
+    "href": "07-statistical-inference.html#to-account-for-both-extremes",
+    "title": "The goal of inference",
+    "section": "To account for both extremes",
+    "text": "To account for both extremes\n\n\nWhen allocating the pills we did not really know what to expect, we did not account for the direction of the effect in our last test.\nWe should compare our result to extreme results in both directions.\n167 averages were equal to or greater than our observed result, and 169 averages were equal to or smaller than an effect corresponding to the observed in the other direction.\n\\(p = \\frac{167 + 169}{10000} = 0.0336\\)"
+  },
+  {
+    "objectID": "07-statistical-inference.html#what-is-enough-evidence-for-inference",
+    "href": "07-statistical-inference.html#what-is-enough-evidence-for-inference",
+    "title": "The goal of inference",
+    "section": "What is enough evidence for inference?",
+    "text": "What is enough evidence for inference?\n\nWe have produced a P-value!\nSo far, given our experiment, how do you define the P-value?\nIs the P-value low enough to conclude anything about our pills?"
+  },
+  {
+    "objectID": "07-statistical-inference.html#references",
+    "href": "07-statistical-inference.html#references",
+    "title": "The goal of inference",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nDienes, Zoltan. 2008. Understanding Psychology as a Science: An Introduction to Scientific and Statistical Inference. New York: Palgrave Macmillan.\n\n\nSvetkey, Laura P. 2008. “Comparison of Strategies for Sustaining Weight LossThe Weight Loss Maintenance Randomized Controlled Trial.” JAMA 299 (10): 1139. https://doi.org/10.1001/jama.299.10.1139."
+  },
+  {
+    "objectID": "08-sampling-populations.html#population-and-sample",
+    "href": "08-sampling-populations.html#population-and-sample",
+    "title": "Estimating a sampling distribution",
+    "section": "Population and sample",
+    "text": "Population and sample\n\nWhen we are interested in continuous data, the sample mean is unbiased estimate of the population parameter (the population mean).\n\nThe population mean:\n\\[\\mu=\\frac{\\sum{X_i}}{N}\\]\nThe sample mean:\n\\[\\bar{x}=\\frac{\\sum{x_i}}{n}\\]"
+  },
+  {
+    "objectID": "08-sampling-populations.html#measures-of-dispersion",
+    "href": "08-sampling-populations.html#measures-of-dispersion",
+    "title": "Estimating a sampling distribution",
+    "section": "Measures of dispersion",
+    "text": "Measures of dispersion\n\n\n\nCentral tendency is captured by the “center of gravity” in the data, however, we might also want to know something about its variation.\nThe population variance is the average (squared) difference from the mean\nAs the population parameters are unknown, we estimate them with our sample\n\n\n\\[\\sigma^2 =  \\frac{\\sum_{i=1}^{N}{(X_i-\\mu)^2}}{N}\\]\n\n\n\\[s^2 =\\frac{\\sum_{i=1}^{n}{(x_i-\\bar{x})^2}}{n-1}\\]"
+  },
+  {
+    "objectID": "08-sampling-populations.html#the-sample-variance",
+    "href": "08-sampling-populations.html#the-sample-variance",
+    "title": "Estimating a sampling distribution",
+    "section": "The sample variance",
+    "text": "The sample variance\n\nThe sample variance is an unbiased estimate of the population if we use \\(n-1\\) otherwise we will tend to underestimate the population values.\n\n\\[s^2 =\\frac{\\sum_{i=1}^{n}{(x_i-\\bar{x})^2}}{n-1}\\]\n\nThe degrees of freedom (\\(n-1\\)) is the number of values that can vary independently in the sample. One sample is dependent on the other to produce the mean, all other can vary."
+  },
+  {
+    "objectID": "08-sampling-populations.html#variance-and-the-standard-deviation",
+    "href": "08-sampling-populations.html#variance-and-the-standard-deviation",
+    "title": "Estimating a sampling distribution",
+    "section": "Variance and the standard deviation",
+    "text": "Variance and the standard deviation\n\nThe variance is the average squared deviation from the mean\nThe standard deviation (\\(s\\)) is the square root of the variance, thus on the same scale as the mean\n\n\\[s = \\sqrt{\\frac{\\sum{(x_i-\\bar{x})^2}}{n-1}}\\]\n\nThe standard deviation is still an estimate of the population SD"
+  },
+  {
+    "objectID": "08-sampling-populations.html#sampling-distributions",
+    "href": "08-sampling-populations.html#sampling-distributions",
+    "title": "Estimating a sampling distribution",
+    "section": "Sampling distributions",
+    "text": "Sampling distributions\n\nAny statistic can be calculated from a sample and used as an estimation of the population parameter.\nAs an example, the sample mean (\\(\\bar{x}\\)) is an unbiased estimator of the population mean, we can know this because the average of repeated samples from a population will be close to the population mean (\\(\\mu\\)).\n\n\n\nGreat, on average, we will hit the spot on the population parameter!\nThis result is very convenient!\nThis also means that we can know something about the distribution of samples that is retrieved from an unknown population of values.\nThis is the basis for the central limit theorem."
+  },
+  {
+    "objectID": "08-sampling-populations.html#the-distribution-of-samples-will-have-a-normal-shape-irrespective-of-the-underlying-population-distribution",
+    "href": "08-sampling-populations.html#the-distribution-of-samples-will-have-a-normal-shape-irrespective-of-the-underlying-population-distribution",
+    "title": "Estimating a sampling distribution",
+    "section": "The distribution of samples will have a “normal” shape irrespective of the underlying population distribution!",
+    "text": "The distribution of samples will have a “normal” shape irrespective of the underlying population distribution!\n\n\nAnother convenient result is that the distribution of means will have a “normal” shape regardless of the underlying population distribution. This is true in remarkably many situations.\nAgain, this means that we may anticipate some characteristics of a distribution of samples"
+  },
+  {
+    "objectID": "08-sampling-populations.html#the-distribution-of-samples-will-have-a-normal-shape-irrespective-of-the-underlying-population-distribution-1",
+    "href": "08-sampling-populations.html#the-distribution-of-samples-will-have-a-normal-shape-irrespective-of-the-underlying-population-distribution-1",
+    "title": "Estimating a sampling distribution",
+    "section": "The distribution of samples will have a “normal” shape irrespective of the underlying population distribution!",
+    "text": "The distribution of samples will have a “normal” shape irrespective of the underlying population distribution!"
+  },
+  {
+    "objectID": "08-sampling-populations.html#the-normal-distribution",
+    "href": "08-sampling-populations.html#the-normal-distribution",
+    "title": "Estimating a sampling distribution",
+    "section": "The Normal Distribution",
+    "text": "The Normal Distribution\n\n\nThe shape of the distributions of samples we saw previously was Normal, the Normal or Gaussian distribution has some characteristics that are convenient for us. We can quantify the area under the curve in different segments of the distribution, usually using a computer program.\nThis is a standardized normal distribution.\nThe distribution is determined by a mean and standard deviation. One SD up from the mean captures about 34% of the area under the curve."
+  },
+  {
+    "objectID": "08-sampling-populations.html#the-normal-distribution-1",
+    "href": "08-sampling-populations.html#the-normal-distribution-1",
+    "title": "Estimating a sampling distribution",
+    "section": "The Normal distribution",
+    "text": "The Normal distribution\n\n\nTwo SDs around the mean captures about 68% of the area, Four SDs captures about 95% and 3 SDs about 99%.\nFor calrity, the sum under the curve is 100%!"
+  },
+  {
+    "objectID": "08-sampling-populations.html#sampling-distributions-1",
+    "href": "08-sampling-populations.html#sampling-distributions-1",
+    "title": "Estimating a sampling distribution",
+    "section": "Sampling distributions",
+    "text": "Sampling distributions\n\nThe variation (standard deviation) of a distribution of averages is affected by the sample size.\nThis variation can be estimated from samples and is known as the standard error.\nThe sample standard error is an estimate of the standard deviation of the sampling distribution!\n\n\\[SE = \\frac{s}{\\sqrt{n}}\\]\n\nAgain, a convenient result! We can estimate the variation of a distribution of samples drawn from a population using the sample standard error."
+  },
+  {
+    "objectID": "08-sampling-populations.html#sampling-distributions-2",
+    "href": "08-sampling-populations.html#sampling-distributions-2",
+    "title": "Estimating a sampling distribution",
+    "section": "Sampling distributions",
+    "text": "Sampling distributions\n\n\nEven with small samples we are quite close. Larger samples will have less bias on average."
+  },
+  {
+    "objectID": "08-sampling-populations.html#hypothesis-testing",
+    "href": "08-sampling-populations.html#hypothesis-testing",
+    "title": "Estimating a sampling distribution",
+    "section": "Hypothesis testing",
+    "text": "Hypothesis testing\n\n\nBased on the estimate of the sampling distribution we can device a test, to test if a value exists within specified range.\n95% of all values lies within \\(\\pm 1.96\\times \\sigma\\) from the mean in a normal distribution, this leaves us with an uncertainty of 5%.\nHowever, due to problems with proving a theory or hypothesis, we instead test against a null-hypothesis.\nThe null hypothesis \\(H_0\\) is constructed to contain scenarios not covered by the alternative hypothesis \\(H_A\\)"
+  },
+  {
+    "objectID": "08-sampling-populations.html#hypothesis-tests---a-two-sample-scenario",
+    "href": "08-sampling-populations.html#hypothesis-tests---a-two-sample-scenario",
+    "title": "Estimating a sampling distribution",
+    "section": "Hypothesis tests - a two sample scenario",
+    "text": "Hypothesis tests - a two sample scenario\n\nThe null hypothesis is that the mean of group 1 is similar to group 2 \\(H_0: \\mu_1 - \\mu_2 = 0\\)\nTo reject this hypothesis, we need to find support for \\(\\mu_1 - \\mu_2 \\neq 0\\)\nWe want to do this with some specified error control, usually 5%. We accept that we will wrong in a specified number of cases.\nWe can calculate a 95% confidence interval of the difference"
+  },
+  {
+    "objectID": "08-sampling-populations.html#a-95-confidence-interval-for-small-samples",
+    "href": "08-sampling-populations.html#a-95-confidence-interval-for-small-samples",
+    "title": "Estimating a sampling distribution",
+    "section": "A 95% confidence interval for small samples",
+    "text": "A 95% confidence interval for small samples\nUpper bound: \\[\\bar{x} + t_{1-\\alpha/2} \\times SE\\] Lower bound: \\[\\bar{x} - t_{1-\\alpha/2} \\times SE\\]\n\n\\(\\bar{x}\\) is the difference in means between groups.\nThe standard error (\\(SE\\)) estimates the standard deviation of the sampling distribution\n\\(t_{1-\\alpha/2}\\) represents the area under probability distribution curve containing 95% of all values.\nThe \\(t\\)-distribution is used instead of the normal distribution since it can capture deviations from the Normal distribution due to the sample size."
+  },
+  {
+    "objectID": "08-sampling-populations.html#the-t-distribution",
+    "href": "08-sampling-populations.html#the-t-distribution",
+    "title": "Estimating a sampling distribution",
+    "section": "The t-distribution",
+    "text": "The t-distribution"
+  },
+  {
+    "objectID": "08-sampling-populations.html#a-case-with-samples-from-two-groups",
+    "href": "08-sampling-populations.html#a-case-with-samples-from-two-groups",
+    "title": "Estimating a sampling distribution",
+    "section": "A case with samples from two groups",
+    "text": "A case with samples from two groups"
+  },
+  {
+    "objectID": "08-sampling-populations.html#a-95-confidence-of-the-difference-in-means",
+    "href": "08-sampling-populations.html#a-95-confidence-of-the-difference-in-means",
+    "title": "Estimating a sampling distribution",
+    "section": "A 95% confidence of the difference in means",
+    "text": "A 95% confidence of the difference in means\n\nTwo groups are compared, the \\(H_0\\) is that there is no difference between the groups: \\(H_0: \\mu_1 = \\mu_2\\)\nThe difference between the groups are estimated to \\(\\mu_2 - \\mu_1 =\\) 0.97\nThe 95% confidence interval is \\(m_2 - m_1 \\pm t_{\\alpha/2} \\times SE(m_2 - m_1)\\) where the \\(SE(m_2 - m_1)\\) is the standard error of the difference."
+  },
+  {
+    "objectID": "08-sampling-populations.html#a-95-confidence-of-the-difference-in-means-1",
+    "href": "08-sampling-populations.html#a-95-confidence-of-the-difference-in-means-1",
+    "title": "Estimating a sampling distribution",
+    "section": "A 95% confidence of the difference in means",
+    "text": "A 95% confidence of the difference in means"
+  },
+  {
+    "objectID": "08-sampling-populations.html#summary",
+    "href": "08-sampling-populations.html#summary",
+    "title": "Estimating a sampling distribution",
+    "section": "Summary",
+    "text": "Summary\n\nWe can estimate population parameters using a random sample from the population\nThe calculated sample standard error is an estimate of the standard deviation of a sampling distribution\nUsing a probability density function like the \\(t\\)- or \\(z\\)-distribution, we can estimate a range a plausible values of a population parameter (e.g. mean).\nWe can test if a estimated interval contains the null hypothesis, if not we can reject \\(H_0\\)."
+  },
+  {
+    "objectID": "09-statistical-power.html#null-hypothesis-significance-testing-nhst",
+    "href": "09-statistical-power.html#null-hypothesis-significance-testing-nhst",
+    "title": "Statistical Power and Significance testing",
+    "section": "Null hypothesis significance testing (NHST)",
+    "text": "Null hypothesis significance testing (NHST)\n\nChoose a null-hypothesis, e.g. there is no differences between groups \\(H_0:\\mu_1 = \\mu_2\\), and a alternative hypothesis e.g. \\(H_1:\\mu_1 - \\mu_2 \\neq 0\\)\nSpecify a significance level, usually 5% (or \\(\\alpha=0.05\\)).\nPerform an appropriate test, in the case of differences between means, a t-test and calculate the \\(p\\)-value\nIf the \\(p\\)-value is less than the stated \\(\\alpha\\)-level we declare the result as statistically significant and reject \\(H_0\\).\n\n\n\nNHST is probably the most common way of making decisions about effects within quantitative sciences:\nNHST can be used to assess if e.g. groups are different or regression parameters are different than zero.\nNHST can be performed using the following steps:"
+  },
+  {
+    "objectID": "09-statistical-power.html#nhst-is-a-special-flavour-of-hypothesis-testing",
+    "href": "09-statistical-power.html#nhst-is-a-special-flavour-of-hypothesis-testing",
+    "title": "Statistical Power and Significance testing",
+    "section": "NHST is a special flavour of hypothesis testing",
+    "text": "NHST is a special flavour of hypothesis testing\n\nTwo competing views on hypothesis testing were originally presented by Ronald A. Fisher on the one hand and Jerzy Neyman and Egon Pearson on the other hand."
+  },
+  {
+    "objectID": "09-statistical-power.html#nhst-is-a-special-flavour-of-hypothesis-testing-1",
+    "href": "09-statistical-power.html#nhst-is-a-special-flavour-of-hypothesis-testing-1",
+    "title": "Statistical Power and Significance testing",
+    "section": "NHST is a special flavour of hypothesis testing",
+    "text": "NHST is a special flavour of hypothesis testing\n\n\n\n\n\n\n\nFisher\nNeyman-Pearson\n\n\n\n\n1. State \\(H_0\\)\n1. State \\(H_0\\) and \\(H_1\\)\n\n\n2. Specify test statistic\n2. Specify \\(\\alpha\\) (e.g. 5%) and \\(\\beta\\)\n\n\n3. Collect data, calculate test statistic and \\(p\\)-value\n3. Specify test statistics and critical value\n\n\n4. Reject \\(H_0\\) if \\(p\\) is small\n4. Collect data, calculate test statistic, determine \\(p\\)\n\n\n\n5. Reject \\(H_0\\) in favour of \\(H_1\\) if \\(p &lt; \\alpha\\)\n\n\n\n(Kline 2013)"
+  },
+  {
+    "objectID": "09-statistical-power.html#statistical-power-1-beta",
+    "href": "09-statistical-power.html#statistical-power-1-beta",
+    "title": "Statistical Power and Significance testing",
+    "section": "Statistical power (\\(1-\\beta\\))!",
+    "text": "Statistical power (\\(1-\\beta\\))!\n\nNeyman and Pearson extended Fishers hypothesis testing procedure with the concept of power.\nAn alternative hypothesis can be stated for a specific value of e.g. a difference \\(H_1: \\mu_1-\\mu_2 = 5\\)\nUsing this alternative hypothesis we can calculate the statistical power: The rate of rejecting \\(H_0\\) if the alternative hypothesis is true.\nThe rate at which we fail to reject \\(H_0\\) if \\(H_1\\) is true is the Type 2 error rate (\\(\\beta\\)).\nStatistical power is therefore: \\(1-\\beta\\)."
+  },
+  {
+    "objectID": "09-statistical-power.html#errors-in-nhst",
+    "href": "09-statistical-power.html#errors-in-nhst",
+    "title": "Statistical Power and Significance testing",
+    "section": "Errors in NHST",
+    "text": "Errors in NHST\n\nThere are two scenarios where we make mistakes, by rejecting \\(H_0\\) when it is actually true and not rejecting \\(H_0\\) when it is false.\n\n\n\n\n\n\n\n\n\nState of the world\n\n\n\n\n\n\nDecision\n\n\n\\(H_0\\) true\n\n\n\\(H_0\\) false\n\n\n\n\nAccept \\(H_0\\)\n\n\n\n\nType II error\n\n\n\n\nReject \\(H_0\\)\n\n\nType I error"
+  },
+  {
+    "objectID": "09-statistical-power.html#error-rates-in-nhst",
+    "href": "09-statistical-power.html#error-rates-in-nhst",
+    "title": "Statistical Power and Significance testing",
+    "section": "Error rates in NHST",
+    "text": "Error rates in NHST\n\nWe usually specify the level of Type I errors to 5%\nAnother convention is to specify the power to 80%, this means that the risk of failing to reject \\(H_0\\) when \\(H_0\\) is false is 20%.\nThese levels are chosen by tradition(!), but a well designed study is planned using well thought through Type I and II error rates.\nIn the case of \\(\\alpha = 0.05\\) and \\(\\beta=0.2\\), Cohen (2013) pointed out that this can be thought of as Type I errors being a mistake four times more serious than Type II errors. (\\(\\frac{0.20}{0.05} = 4\\))\nRates could be adjusted to represent the relative seriousness of respective errors."
+  },
+  {
+    "objectID": "09-statistical-power.html#the-p-value-again",
+    "href": "09-statistical-power.html#the-p-value-again",
+    "title": "Statistical Power and Significance testing",
+    "section": "The \\(p\\)-value (again!)",
+    "text": "The \\(p\\)-value (again!)\n\n\nThe \\(p\\)-value is the probability of obtaining a value of a test statistic (t) as extreme as the one obtained or more extreme under the condition that the null-hypothesis is true (sometimes written as \\(p(t|H_0)\\))\nWe assume that the null is true and we calculate how often a result such as the one obtained, or even more extreme, would occur as a result of chance.\nThe \\(\\alpha\\)-level is the Type I error rate, the probability of rejecting \\(H_0\\) when it is actually true.\n\n\n\n\nUsing \\(\\alpha = 0.05\\) we simply declare significant when \\(p&lt;0.05\\) (and accept that we will be wrong in 5% of an infinite number of studies), this is the Neyman-Person approach,"
+  },
+  {
+    "objectID": "09-statistical-power.html#interpreting-p-values",
+    "href": "09-statistical-power.html#interpreting-p-values",
+    "title": "Statistical Power and Significance testing",
+    "section": "Interpreting \\(p\\)-values",
+    "text": "Interpreting \\(p\\)-values\n\nThere are (commonly in scientific practice) two distinct ways of looking at the \\(p\\)-value, one where the \\(p\\)-value is a pre-specified threshold for decision (Neyman-Pearson), and one where the \\(p\\)-value is thought of as a measure of strength of evidence against the null-hypothesis (Fisher)."
+  },
+  {
+    "objectID": "09-statistical-power.html#interpreting-p-values-1",
+    "href": "09-statistical-power.html#interpreting-p-values-1",
+    "title": "Statistical Power and Significance testing",
+    "section": "Interpreting \\(p\\)-values",
+    "text": "Interpreting \\(p\\)-values\n\n\nIt is common practice to combine the two approaches in analysis of scientific experiments. Examples:\n\n“There was not a significant difference between groups but the p-values suggested a trend towards …”\n“The difference between group A and B was significant, but the difference between A and C was highly significant”\n\nAccording to the original frameworks, the mix (Fisher combined with Neyman-Pearson) may lead to abuse of NHST"
+  },
+  {
+    "objectID": "09-statistical-power.html#interpreting-p-values-2",
+    "href": "09-statistical-power.html#interpreting-p-values-2",
+    "title": "Statistical Power and Significance testing",
+    "section": "Interpreting \\(p\\)-values",
+    "text": "Interpreting \\(p\\)-values\n\n\nNeyman and Pearson thought about \\(\\alpha\\) and \\(\\beta\\) as probabilities attached to the testing procedure.\n\\(\\alpha\\) and \\(\\beta\\) should be decided before the experiment and guide the researcher in making decisions.\nControlling \\(\\alpha\\) and \\(\\beta\\) is about controlling error rates!\nFisher believed that the \\(p\\)-value could serve as a statement about null-hypothesis given the sample…\n\n\n(Dienes 2008)"
+  },
+  {
+    "objectID": "09-statistical-power.html#the-alpha-error-and-statistical-power-are-related",
+    "href": "09-statistical-power.html#the-alpha-error-and-statistical-power-are-related",
+    "title": "Statistical Power and Significance testing",
+    "section": "The \\(\\alpha\\)-error and statistical power are related",
+    "text": "The \\(\\alpha\\)-error and statistical power are related\n\n\nThis means that there is always a trade-off between power an type-I errors! Unless you can have large n!\nWhat does a power of 0.5 mean?"
+  },
+  {
+    "objectID": "09-statistical-power.html#error-rates-in-nhst-an-example",
+    "href": "09-statistical-power.html#error-rates-in-nhst-an-example",
+    "title": "Statistical Power and Significance testing",
+    "section": "Error rates in NHST, an example",
+    "text": "Error rates in NHST, an example\n\nIf a study tries to determine if a novel treatment with no known side-effects should be implemented, failure to detect a difference compared to placebo when there is a difference (Type II error) would be more serious than to detect a difference that is not true (Type I error).\n\n\n\nIn this case error rates could be adjusted to reflect this, decrease possibility Type II errors by increasing the possibility of Type I errors."
+  },
+  {
+    "objectID": "09-statistical-power.html#power-analysis-in-nhst",
+    "href": "09-statistical-power.html#power-analysis-in-nhst",
+    "title": "Statistical Power and Significance testing",
+    "section": "Power analysis in NHST",
+    "text": "Power analysis in NHST\n\n\nThis is a question of cost as more participants means more work\nIt is a question of ethics as more participants means that more people are subjected to risk/discomfort.\nWe aim to recruit as many participants as is necessary to answer our question.\nWe state our \\(H_0\\) and \\(H_1\\) (according to the Neyman-Pearson tradition).\nWhen we have specified \\(H_1\\) we can perform power analysis and sample size estimation.\n\n\n\n\nThe \\(H_1\\) has a special function, this can be seen as the smallest meaningful difference between conditions under study, the difference we want to be able to detect."
+  },
+  {
+    "objectID": "09-statistical-power.html#power-analysis-an-example",
+    "href": "09-statistical-power.html#power-analysis-an-example",
+    "title": "Statistical Power and Significance testing",
+    "section": "Power analysis, an example",
+    "text": "Power analysis, an example\n\n\nA 1 kg difference in lean mass increases is considered a meaningful difference after 12 weeks of training.\nThe standard deviation from previous studies is used to estimate the expected variation in responses to 12 weeks of resistance training (\\(\\sigma = 2.5\\)).\n\nTo calculate the required sample size we first must calculate a standardized effect size, also known as Cohen’s \\(d\\).\nWe can standardize our “effect size” of 1 kg by dividing by the SD \\(d = \\frac{1}{2.5}= 0.4\\)\n\n\n\n\nWe want to compare the muscle mass gains as a result of two resistance training protocols."
+  },
+  {
+    "objectID": "09-statistical-power.html#effect-sizes",
+    "href": "09-statistical-power.html#effect-sizes",
+    "title": "Statistical Power and Significance testing",
+    "section": "Effect sizes",
+    "text": "Effect sizes\n\nThe effect size is the primary aim of an experiment, we wish to know the difference, correlation, regression coefficient, percentage change…\nThe effect size can be standardized (e.g. divided by the standard deviation or calculated as e.g. a correlation)."
+  },
+  {
+    "objectID": "09-statistical-power.html#power-analysis-an-example-cont.",
+    "href": "09-statistical-power.html#power-analysis-an-example-cont.",
+    "title": "Statistical Power and Significance testing",
+    "section": "Power analysis, an example cont.",
+    "text": "Power analysis, an example cont.\n\nLet’s say that the Type I error is four times more serious than the Type II error, and that we would accept to be wrong in rejecting \\(H_0\\) at a rate of 5%.\n\n\\[\\alpha=0.05,~\\beta=0.2,~d = 0.4\\]\n\nGiven these specifics we would require 100 in each group to be able to show a meaningful difference with the power set to 80%.\n\n\n\nWe must specify \\(\\alpha\\) and \\(1-\\beta\\) to calculate the required sample size!\nThis is a big study what if we examine the smallest difference we can detect using a set sample size"
+  },
+  {
+    "objectID": "09-statistical-power.html#mean-difference-between-groups-vs.-number-of-participants-per-group",
+    "href": "09-statistical-power.html#mean-difference-between-groups-vs.-number-of-participants-per-group",
+    "title": "Statistical Power and Significance testing",
+    "section": "Mean difference between groups vs. number of participants per group",
+    "text": "Mean difference between groups vs. number of participants per group"
+  },
+  {
+    "objectID": "09-statistical-power.html#power-analysis",
+    "href": "09-statistical-power.html#power-analysis",
+    "title": "Statistical Power and Significance testing",
+    "section": "Power analysis",
+    "text": "Power analysis\nStatistical power is influenced by:\n\n\nThe \\(\\alpha\\) level\nThe direction of the hypothesis (negative, positive or both ways different from \\(H_0\\))\nExperimental design (e.g. within- or between-participants)\nThe statistical test\nReliability of test scores"
+  },
+  {
+    "objectID": "09-statistical-power.html#critique-of-nhst",
+    "href": "09-statistical-power.html#critique-of-nhst",
+    "title": "Statistical Power and Significance testing",
+    "section": "Critique of NHST",
+    "text": "Critique of NHST\n\nNHST with \\(p\\)-values tend to create an “either-or” situation, gives no answer about the size of an effect\nTest statistics are related to sample size, small effects can be detected using big sample sizes\nBuilt in to the NHST framework is the acceptance of a proportion of tests being false positive (\\(\\alpha\\)), the risk of getting false positives increases with the number of tests."
+  },
+  {
+    "objectID": "09-statistical-power.html#nhst-and-magnitude-of-an-effect",
+    "href": "09-statistical-power.html#nhst-and-magnitude-of-an-effect",
+    "title": "Statistical Power and Significance testing",
+    "section": "NHST and magnitude of an effect",
+    "text": "NHST and magnitude of an effect\n\n“The training group gained 3 kg in muscle mass from pre- to post-training (p&lt;0.05)”\n\n\nSome scientists wants to use the p-value as a signal of importance…"
+  },
+  {
+    "objectID": "09-statistical-power.html#statistical-significance-and-clinical-significance",
+    "href": "09-statistical-power.html#statistical-significance-and-clinical-significance",
+    "title": "Statistical Power and Significance testing",
+    "section": "Statistical significance and clinical significance",
+    "text": "Statistical significance and clinical significance\nLarge sample sizes can make small effect sizes statistically significant. Example, (Lee 2010):\n\nObjective: To examine the association of different amounts of physical activity with long-term weight changes among women consuming a usual diet.\nDesign: Prospective cohort study, following 34,079 healthy, US women (mean age, 54.2 years) from 1992–2007. At baseline, 36-, 72-, 96-, 120-, 144- and 156-months’ follow-up, women reported their physical activity and body weight."
+  },
+  {
+    "objectID": "09-statistical-power.html#statistical-significance-and-clinical-significance-1",
+    "href": "09-statistical-power.html#statistical-significance-and-clinical-significance-1",
+    "title": "Statistical Power and Significance testing",
+    "section": "Statistical significance and clinical significance",
+    "text": "Statistical significance and clinical significance\n\nResults: Women gained a mean of 2.6 kg throughout the study. In multivariate analysis, compared with women expending \\(\\geq\\) 21 MET-hr/week, those expending 7.5-&lt;21 and &lt;7.5 MET-hr/week gained 0.11 kg (SD=0.04; P=0.003) and 0.12 kg (SD=0.04; P=0.002), respectively, over a mean interval of 3 years.\n\n(Lee 2010)"
+  },
+  {
+    "objectID": "09-statistical-power.html#results",
+    "href": "09-statistical-power.html#results",
+    "title": "Statistical Power and Significance testing",
+    "section": "Results",
+    "text": "Results\n\n(Lee 2010)"
+  },
+  {
+    "objectID": "09-statistical-power.html#making-the-wrong-decision-5-of-the-time",
+    "href": "09-statistical-power.html#making-the-wrong-decision-5-of-the-time",
+    "title": "Statistical Power and Significance testing",
+    "section": "Making the wrong decision 5% of the time",
+    "text": "Making the wrong decision 5% of the time\n\nGiven that NHST accepts mistakes at a rate of \\(\\alpha\\), every \\(\\frac{1}{\\alpha}=20^{th}\\) test result will be false!\nThe Neyman-Pearson approach is to only do NHST with an pre-specified \\(\\alpha\\)-level\nOne must also avoid making up hypotheses after the test.\nIf you do multiple tests, family-wise corrections can be made, e.g. the Bonferroni correction: \\(\\alpha_{Bonferroni}=\\frac{\\alpha}{n~tests}\\)\nFor statistical significance to be reached, the \\(\\alpha_{Bonferroni}\\) threshold must be reached."
+  },
+  {
+    "objectID": "09-statistical-power.html#what-can-the-corrected-p-value-account-for",
+    "href": "09-statistical-power.html#what-can-the-corrected-p-value-account-for",
+    "title": "Statistical Power and Significance testing",
+    "section": "What can the corrected \\(p\\)-value account for?",
+    "text": "What can the corrected \\(p\\)-value account for?\n\n\nA statistical hypothesis test using the Neyman-Pearson approach is about error-control.\nA single test has specified errors, but these are affected by e.g. sequential testing, sneak-peaks on the data, issues with randomization and study designs…\nA large proportion of tests will not be “severe enough” to reject \\(H_0\\)\nWe are not always aware of when we adjust \\(\\alpha\\) the wrong way\n\n\n(Mayo 2018; Dienes 2008)\n\nThis is a note on the error control and severe testing proposed by Mayo."
+  },
+  {
+    "objectID": "09-statistical-power.html#sequential-testing-will-lead-to-significant-results-eventually",
+    "href": "09-statistical-power.html#sequential-testing-will-lead-to-significant-results-eventually",
+    "title": "Statistical Power and Significance testing",
+    "section": "Sequential testing will lead to significant results… eventually",
+    "text": "Sequential testing will lead to significant results… eventually\n\nAlbers (2019)"
+  },
+  {
+    "objectID": "09-statistical-power.html#the-philosophy-of-statistics-in-practice-is-a-mix",
+    "href": "09-statistical-power.html#the-philosophy-of-statistics-in-practice-is-a-mix",
+    "title": "Statistical Power and Significance testing",
+    "section": "The philosophy of statistics, in practice, is a mix!",
+    "text": "The philosophy of statistics, in practice, is a mix!\nJournal of Physiology: For a given conclusion to be assessed, the exact p-values must be stated to three significant figures even when ‘no statistical significance’ is being reported. These should be stated in the main text, figures and their legends and tables. The only exception to this is if p is less than 0.0001, in which case ‘&lt;’ is permitted. Trend statements are not permitted (i.e. ‘x increased, but was not significant’). Where there are many comparisons, a table of p values may be appropriate."
+  },
+  {
+    "objectID": "09-statistical-power.html#what-does-the-p-value-mean",
+    "href": "09-statistical-power.html#what-does-the-p-value-mean",
+    "title": "Statistical Power and Significance testing",
+    "section": "What does the p-value mean?",
+    "text": "What does the p-value mean?\nAll groups regained weight after randomization by a mean of 5.5 kg in the self-directed, 5.2 kg in the interactive technology–based, and 4.0 kg in the personal-contact group… Those in the personal-contact group regained a mean of 1.2 kg less than those in the interactive technology–based group (95% CI, 2.1-0.3 kg; P=.008)."
+  },
+  {
+    "objectID": "09-statistical-power.html#what-does-the-p-value-mean-svetkey-at-al",
+    "href": "09-statistical-power.html#what-does-the-p-value-mean-svetkey-at-al",
+    "title": "Statistical Power and Significance testing",
+    "section": "What does the p-value mean? Svetkey at al…",
+    "text": "What does the p-value mean? Svetkey at al…\n\n\n…have absolutely disproved the null hypothesis (that there is no difference between the population means).\n… have found the probability of the null hypothesis being true.\n… have absolutely proved their experimental hypothesis (that there is a difference between the population means).\n\n\nQuestions adopted from (Dienes 2008)."
+  },
+  {
+    "objectID": "09-statistical-power.html#what-does-the-p-value-mean-svetkey-at-al-1",
+    "href": "09-statistical-power.html#what-does-the-p-value-mean-svetkey-at-al-1",
+    "title": "Statistical Power and Significance testing",
+    "section": "What does the p-value mean? Svetkey at al…",
+    "text": "What does the p-value mean? Svetkey at al…\n\n\n… can deduce the probability of the experimental hypothesis being true.\n… know the probability that you are making the wrong decision, if you decided to reject the null hypothesis.\n… have a reliable experimental finding in the sense that if, hypothetically, the experiment were repeated a great number of times, you would obtain a significant result on 95 % of occasions.\n\n\nQuestions adopted from (Dienes 2008)."
+  },
+  {
+    "objectID": "09-statistical-power.html#a-complement-or-alternative-to-nhst-estimation",
+    "href": "09-statistical-power.html#a-complement-or-alternative-to-nhst-estimation",
+    "title": "Statistical Power and Significance testing",
+    "section": "A complement or alternative to NHST: Estimation",
+    "text": "A complement or alternative to NHST: Estimation\n\nInstead of testing against a null-hypothesis, estimation aims at finding a point estimate of the parameter of interest\nSecondly we want to find an interval estimate of the parameter\nThis can be done using confidence intervals.\nConfidence intervals provides an point-estimate together with a range of plausible values of the population parameter."
+  },
+  {
+    "objectID": "09-statistical-power.html#estimation-an-example",
+    "href": "09-statistical-power.html#estimation-an-example",
+    "title": "Statistical Power and Significance testing",
+    "section": "Estimation, an example",
+    "text": "Estimation, an example\n\n\nWhat conclusions can be drawn from the two studies (using NHST vs. estimation)?\n\n(Cumming 2012)"
+  },
+  {
+    "objectID": "09-statistical-power.html#estimation",
+    "href": "09-statistical-power.html#estimation",
+    "title": "Statistical Power and Significance testing",
+    "section": "Estimation",
+    "text": "Estimation\n\nIn addition to giving a interval representing the precision of the estimate, the confidence interval can be used to assess the clinical importance of a study.\nAre values inside the confidence interval large (or small) enough to care about in a clinical sense (e.g. weight gain study)"
+  },
+  {
+    "objectID": "09-statistical-power.html#estimation-using-confidence-intervals-still-has-the-draw-back-of-nhst",
+    "href": "09-statistical-power.html#estimation-using-confidence-intervals-still-has-the-draw-back-of-nhst",
+    "title": "Statistical Power and Significance testing",
+    "section": "Estimation using confidence intervals still has the draw-back of NHST",
+    "text": "Estimation using confidence intervals still has the draw-back of NHST"
+  },
+  {
+    "objectID": "09-statistical-power.html#alternatives-to-null-hypothesis-testing",
+    "href": "09-statistical-power.html#alternatives-to-null-hypothesis-testing",
+    "title": "Statistical Power and Significance testing",
+    "section": "Alternatives to Null-hypothesis testing",
+    "text": "Alternatives to Null-hypothesis testing\n\n\nIf you are interested in quantifying the probability of obtaining the population parameter, given your prior understanding → Bayesian statistics!\nIf you want to quantify the relative evidence in favour of a hypothesis over another based on your data → Likelihood inference!"
+  },
+  {
+    "objectID": "09-statistical-power.html#references",
+    "href": "09-statistical-power.html#references",
+    "title": "Statistical Power and Significance testing",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nAlbers, Casper. 2019. “The Problem with Unadjusted Multiple and Sequential Statistical Testing.” Nature Communications 10 (1): 1921. https://doi.org/10.1038/s41467-019-09941-0.\n\n\nCohen, Jacob. 2013. Statistical Power Analysis for the Behavioral Sciences. 0th ed. Routledge. https://doi.org/10.4324/9780203771587.\n\n\nCumming, Geoff. 2012. Understanding the New Statistics : Effect Sizes, Confidence Intervals, and Meta-Analysis. Multivariate Applications Series. New York: Routledge.\n\n\nDienes, Zoltan. 2008. Understanding Psychology as a Science: An Introduction to Scientific and Statistical Inference. New York: Palgrave Macmillan.\n\n\nKline, Rex B. 2013. Beyond Significance Testing: Statistics Reform in the Behavioral Sciences, 2nd Ed. Beyond Significance Testing: Statistics Reform in the Behavioral Sciences, 2nd Ed. Washington, DC, US: American Psychological Association. https://doi.org/10.1037/14136-000.\n\n\nLee, I-Min. 2010. “Physical Activity and Weight Gain Prevention.” JAMA 303 (12): 1173. https://doi.org/10.1001/jama.2010.312.\n\n\nMayo, Deborah G. 2018. Statistical Inference as Severe Testing : How to Get Beyond the Statistics Wars. Cambridge ; New York, NY: Cambridge University Press."
+  },
+  {
+    "objectID": "devel/xx-study-design.html#quarto",
+    "href": "devel/xx-study-design.html#quarto",
+    "title": "Designing scientific studies",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+  },
+  {
+    "objectID": "devel/xx-study-design.html#bullets",
+    "href": "devel/xx-study-design.html#bullets",
+    "title": "Designing scientific studies",
+    "section": "Bullets",
+    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+  },
+  {
+    "objectID": "devel/xx-study-design.html#code",
+    "href": "devel/xx-study-design.html#code",
+    "title": "Designing scientific studies",
+    "section": "Code",
+    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quantitative methods and statistics (In Sport and Exercise Science) - Lectures",
+    "section": "",
+    "text": "Lecture\nNotes\n\n\n\n\nIntroduction to data science\n\n\n\nIntroduction to data visualization\nHomework, possible solutions\n\n\nIntroduction to data wrangling\nHomework, possible solution\n\n\nWriting reports in quarto\n\n\n\nAssociations, correlation and regression\n\n\n\nStatistical inference\n\n\n\nSamples and populations\n\n\n\nStatistical power"
   }
 ]

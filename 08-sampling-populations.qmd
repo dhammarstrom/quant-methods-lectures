@@ -1,0 +1,610 @@
+---
+title: "Estimating a sampling distribution"
+format: revealjs
+bibliography: resources/bib-final.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dpi=300,fig.width=8, fig.align = "center")
+library(tidyverse); library(ggtext)
+```
+
+
+## Population and sample
+
+- When we are interested in continuous data, the sample mean is unbiased **estimate** of the **population parameter** (the population mean).
+
+The population mean:
+
+$$\mu=\frac{\sum{X_i}}{N}$$
+
+The sample mean:
+
+$$\bar{x}=\frac{\sum{x_i}}{n}$$
+
+
+```{r}
+#| cache: true
+#| message: false
+#| warning: false
+#| echo: false
+
+
+library(tidyverse); library(ggtext)
+set.seed(1)
+population <- data.frame(pop = rnorm(1000000, 100, 10))
+
+```
+
+## Measures of dispersion
+
+:::: {.columns}
+
+::: {.column width="65%"}
+
+* Central tendency is captured by the "center of gravity" in the data, however, we might also want to know something about its variation.
+
+* The population variance is the average (squared) difference from the mean
+
+* As the population parameters are unknown, we estimate them with our sample
+
+:::
+
+
+::: {.column width="35%"}
+
+$$\sigma^2 =  \frac{\sum_{i=1}^{N}{(X_i-\mu)^2}}{N}$$
+
+<br>
+
+<br>
+
+
+$$s^2 =\frac{\sum_{i=1}^{n}{(x_i-\bar{x})^2}}{n-1}$$
+:::
+
+::::
+
+## The sample variance 
+ - The sample variance is an unbiased estimate of the population if we use $n-1$ otherwise we will tend to **underestimate** the population values.
+ 
+$$s^2 =\frac{\sum_{i=1}^{n}{(x_i-\bar{x})^2}}{n-1}$$
+
+::: notes
+ 
+ The degrees of freedom ($n-1$) is the number of values that can vary independently in the sample. One sample is dependent on the other to produce the mean, all other can vary. 
+ 
+:::
+ 
+
+
+## Variance and the standard deviation
+
+* The variance is the average squared deviation from the mean
+* The standard deviation ($s$) is the square root of the variance, thus on the same scale as the mean
+
+$$s = \sqrt{\frac{\sum{(x_i-\bar{x})^2}}{n-1}}$$
+
+::: notes
+
+The standard deviation is still an estimate of the population SD
+
+
+:::
+
+
+## Sampling distributions
+
+* Any *statistic* can be calculated from a sample and used as an **estimation** of the **population parameter**. 
+* As an example, the sample mean ($\bar{x}$) is an unbiased estimator of the population mean, we can know this because the average of **repeated samples** from a population will be close to the population mean ($\mu$).
+
+```{r}
+#| cache: true
+#| warning: false
+#| echo: false
+#| fig-height: 2
+#| fig-width: 4
+#| message: false
+
+df <- data.frame(mean.5 = rep(NA, 2),
+                 mean.30  = rep(NA, 2), 
+                 sem.5 = rep(NA, 2), 
+                 sem.30 = rep(NA, 2))
+
+set.seed(1)
+
+for(i in 1:4000) {
+        
+        samp.5 <- sample(population$pop, 5, replace = FALSE)
+        samp.30 <- sample(population$pop, 30, replace = FALSE)
+        
+     df[i,1] <- mean(samp.5)
+     df[i,2] <- mean(samp.30)  
+     df[i,3] <- sd(samp.5)/sqrt(5)
+     df[i,4] <- sd(samp.30)/sqrt(30)
+        
+}
+
+
+ avg.sem.5 <- paste0("Average SEM = ", 
+                    round(mean(df[,3]), 1),  
+                    " (SD = ", round(sd(df[,1]),1),
+                    ")")
+ avg.sem.30 <- paste0("Average SEM = ", round(mean(df[,4]), 1), " (SD = ", round(sd(df[,2]), 1), ")")
+
+population %>%
+        ggplot(aes(x = pop)) + geom_density() + 
+        geom_density(data = df, aes(mean.5), color = "red") +
+        geom_density(data = df, aes(mean.30), color = "blue") +
+        xlab("Value") + ylab("Density") +
+        annotate("text", x = 70, y = 0.13, label = "Samples n = 5", color = "red") +
+         annotate("text", x = 70, y = 0.16, label = "Samples n = 30", color = "blue") +
+         annotate("text", x = 70, y = 0.1, label = "Population distribution", color = "black") +
+          theme_minimal() +
+  theme(axis.text.y = element_blank(), 
+        axis.title.y = element_blank()) 
+
+
+```
+
+
+::: notes
+
+Great, on average, we will hit the spot on the population parameter!
+
+This result is very convenient!
+
+This also means that we can know something about the distribution of samples that is retrieved from an unknown population of values.
+
+This is the basis for the central limit theorem. 
+
+:::
+
+
+## The distribution of samples will have a "normal" shape irrespective of the underlying population distribution!
+
+
+```{r}
+#| cache: true
+#| warning: false
+#| echo: false
+#| fig-height: 2
+#| fig-width: 4
+#| message: false
+
+
+population2 <- data.frame(pop = c(rnorm(10000, 95, 5), rnorm(10000, 115, 5)))
+
+
+df2 <- data.frame(mean.5 = rep(NA, 2),
+                 mean.30  = rep(NA, 2), 
+                 sem.5 = rep(NA, 2), 
+                 sem.30 = rep(NA, 2))
+
+set.seed(3)
+
+for(i in 1:2000) {
+        
+        samp.5 <- sample(population2$pop, 5, replace = FALSE)
+        samp.30 <- sample(population2$pop, 30, replace = FALSE)
+        
+     df2[i,1] <- mean(samp.5)
+     df2[i,2] <- mean(samp.30)  
+     df2[i,3] <- sd(samp.5)/sqrt(5)
+     df2[i,4] <- sd(samp.30)/sqrt(30)
+        
+}
+
+
+
+population2 %>%
+        ggplot(aes(x = pop)) + geom_density() + 
+        geom_density(data = df2, aes(mean.5), color = "red") +
+        geom_density(data = df2, aes(mean.30), color = "blue") +
+        xlab("Value") + ylab("Density") +
+        annotate("text", x = 85, y = 0.13, label = "Samples n = 5", color = "red") +
+         annotate("text", x = 85, y = 0.16, label = "Samples n = 30", color = "blue") +
+         annotate("text", x = 86, y = 0.1, label = "Population distribution", color = "black") +
+          theme_minimal() +
+  theme(axis.text.y = element_blank(), 
+        axis.title.y = element_blank()) 
+
+
+```
+
+
+::: notes
+Another convenient result is that the distribution of means will have a "normal" shape regardless of the underlying population distribution. This is true in remarkably many situations. 
+
+Again, this means that we may anticipate some characteristics of a **distribution of samples**
+
+::: 
+
+## The distribution of samples will have a "normal" shape irrespective of the underlying population distribution!
+
+```{r}
+#| cache: true
+#| warning: false
+#| echo: false
+#| fig-height: 2
+#| fig-width: 4
+#| message: false
+
+
+population2 <- data.frame(pop = c(runif(100000, 98, 110), rnorm(10000, 110, 0.2)))
+
+
+df2 <- data.frame(mean.5 = rep(NA, 2),
+                 mean.30  = rep(NA, 2), 
+                 sem.5 = rep(NA, 2), 
+                 sem.30 = rep(NA, 2))
+
+set.seed(3)
+
+for(i in 1:3000) {
+        
+        samp.5 <- sample(population2$pop, 5, replace = FALSE)
+        samp.30 <- sample(population2$pop, 30, replace = FALSE)
+        
+     df2[i,1] <- mean(samp.5)
+     df2[i,2] <- mean(samp.30)  
+     df2[i,3] <- sd(samp.5)/sqrt(5)
+     df2[i,4] <- sd(samp.30)/sqrt(30)
+        
+}
+
+
+
+population2 %>%
+        ggplot(aes(x = pop)) + geom_density() + 
+        geom_density(data = df2, aes(mean.5), color = "red") +
+        geom_density(data = df2, aes(mean.30), color = "blue") +
+        xlab("Value") + ylab("Density") +
+        annotate("text", x = 100, y = 0.22, label = "Samples n = 5", color = "red") +
+         annotate("text", x = 100, y = 0.28, label = "Samples n = 30", color = "blue") +
+         annotate("text", x = 105, y = 0.16, label = "Population distribution", color = "black") +
+          theme_minimal() +
+  theme(axis.text.y = element_blank(), 
+        axis.title.y = element_blank()) 
+
+
+```
+
+
+
+
+## The Normal Distribution
+
+```{r}
+#| cache: true
+#| warning: false
+#| echo: false
+#| fig-height: 3
+#| fig-width: 4
+#| message: false
+
+
+xvalues <- data.frame(x = c(-3, 3))
+
+dnorm_three_sd <- function(x){
+        norm_three_sd <- dnorm(x)
+        # Have NA values outside interval x in [-3, 3]:
+        norm_three_sd[x <= -3 | x >= 3] <- NA
+        return(norm_three_sd)
+}
+
+area_three_sd <- round(pnorm(3) - pnorm(-3), 4)
+
+dnorm_two_sd <- function(x){
+        norm_two_sd <- dnorm(x)
+        # Have NA values outside interval x in [-2, 2]:
+        norm_two_sd[x <= -1.96 | x >= 1.96] <- NA
+        return(norm_two_sd)
+}
+
+area_two_sd <- round(pnorm(1.96) - pnorm(-1.96), 4)
+
+dnorm_one_sd <- function(x){
+        norm_one_sd <- dnorm(x)
+        # Have NA values outside interval x in [-1, 1]:
+        norm_one_sd[x <= -1 | x >= 1] <- NA
+        return(norm_one_sd)
+}
+
+area_one_sd <- round(pnorm(1) - pnorm(-1), 4)
+
+
+ ggplot(xvalues, aes(x = x)) + 
+         stat_function(fun = dnorm) + 
+         stat_function(fun = dnorm_three_sd, geom = "area", fill = "lightblue", alpha = 0.3) +
+         stat_function(fun = dnorm_two_sd, geom = "area", fill = "blue", alpha = 0.3) +
+         stat_function(fun = dnorm_one_sd, geom = "area", fill = "orange", alpha = 0.3) +
+         geom_vline(xintercept = 0, colour = "black", linetype = "dashed") +
+         geom_text(x = 0.5, y = 0.2, size = 3.5,
+                   label = paste0(round((area_one_sd * 100)/2,2), "%")) +
+         geom_text(x = -0.5, y = 0.2, size = 3.5, 
+                   label = paste0(round((area_one_sd * 100)/2,2), "%")) +
+         geom_text(x = 1.5, y = 0.05, size = 3.5, 
+                   label = paste0(round((pnorm(2) - pnorm(1)) * 100,2), "%")) +
+         geom_text(x = -1.5, y = 0.05, size = 3.5, 
+                   label = paste0(round((pnorm(-1) - pnorm(-2)) * 100,2), "%")) +
+         geom_text(x = 2.3, y = 0.01, size = 3.5,
+                   label = paste0(round((pnorm(3) - pnorm(2)) * 100,2), "%")) +
+         geom_text(x = -2.3, y = 0.01, size = 3.5, 
+                   label = paste0(round((pnorm(-2) - pnorm(-3)) * 100,2), "%")) +
+         scale_x_continuous(breaks = c(-3:3)) + 
+         labs(x = "\n z", y = "f(z) \n", title = "Standard Normal Distribution \n") +
+
+        theme_minimal() +
+            theme(plot.title = element_text(hjust = 0.5), 
+               axis.title.x = element_text(size = 12),
+               axis.title.y = element_blank(), 
+               axis.text.y = element_blank()) 
+ 
+
+```
+
+::: notes
+
+The shape of the distributions of samples we saw previously was Normal, the Normal or Gaussian distribution has some characteristics that are convenient for us. We can quantify the area under the curve in different segments of the distribution, usually using a computer program.
+
+This is a standardized normal distribution.
+
+The distribution is determined by a mean and standard deviation. One SD up from the mean captures about 34% of the area under the curve.
+
+
+:::
+
+
+## The Normal distribution
+
+```{r}
+#| cache: true
+#| warning: false
+#| echo: false
+#| fig-height: 3
+#| fig-width: 4
+#| message: false
+
+
+ ggplot(xvalues, aes(x = x)) + 
+        stat_function(fun = dnorm) + 
+         stat_function(fun = dnorm_three_sd, geom = "area", fill = "lightblue", alpha = 0.3) +
+         stat_function(fun = dnorm_two_sd, geom = "area", fill = "blue", alpha = 0.3) +
+         stat_function(fun = dnorm_one_sd, geom = "area", fill = "orange", alpha = 0.3) +
+        geom_segment(data = data.frame(x = c(-1, -1.96, -3), 
+                                       xend = c(1, 1.96, 3, -1, -1.96, -3),
+                                       y = c(0.2, 0.052, 0), 
+                                       yend = c(0.2, 0.052, 0, 0.2, 0.052, 0)), 
+                     aes(x = x, xend = xend, y = y, yend = yend), 
+                     arrow = arrow(length = unit(0.1, "cm"))) +
+         
+         geom_text(x = 0, y = 0.22, size = 4, 
+                  label = paste0(area_one_sd * 100, "%")) +
+        geom_text(x = 0, y = 0.072, size = 4, 
+                  label = paste0(area_two_sd * 100, "%")) +
+        geom_text(x = 0, y = 0.025, size = 4, 
+                  label = paste0(area_three_sd * 100,"%")) +
+        scale_x_continuous(breaks = c(-3:3)) + 
+        labs(x = "\n z", y = "f(z) \n", title = "Standard Normal Distribution \n") +
+        theme_minimal() +
+            theme(plot.title = element_text(hjust = 0.5), 
+               axis.title.x = element_text(size = 12),
+               axis.title.y = element_blank(), 
+               axis.text.y = element_blank()) 
+
+```
+
+
+::: notes
+
+Two SDs around the mean captures about 68% of the area, Four SDs captures about 95% and 3 SDs about 99%. 
+
+For calrity, the sum under the curve is 100%!
+
+
+:::
+
+
+## Sampling distributions
+
+* The variation (standard deviation) of a distribution of averages is affected by the **sample size**.
+* This variation can be estimated from samples and is known as the **standard error**.
+* The **sample standard error** is an estimate of the **standard deviation of the sampling distribution**!
+
+$$SE = \frac{s}{\sqrt{n}}$$
+
+::: notes
+
+Again, a convenient result! We can estimate the variation of a distribution of samples drawn from a population using the sample standard error.
+
+:::
+
+
+## Sampling distributions
+
+```{r}
+#| cache: true
+#| warning: false
+#| echo: false
+#| fig-height: 3
+#| fig-width: 5
+#| message: false
+
+
+population %>%
+        ggplot(aes(x = pop)) + geom_density() + 
+        geom_density(data = df, aes(mean.5), color = "red") +
+        geom_density(data = df, aes(mean.30), color = "blue") +
+        xlab("Value") + ylab("Density") +
+        annotate("text", x = 80, y = 0.1, label = "Samples n = 5", color = "red") +
+         annotate("text", x = 80, y = 0.12, label = "Samples n = 30", color = "blue") +
+         annotate("text", x = 80, y = 0.14, label = "Population distribution", color = "black") +
+        annotate("text", x = 126, y = 0.1, label = avg.sem.5, color = "red") +
+         annotate("text", x = 126, y = 0.12, label = avg.sem.30, color = "blue") +
+        theme_minimal() +
+  theme(axis.title = element_blank(), 
+        axis.text.y = element_blank())
+
+
+```
+
+::: notes
+Even with small samples we are quite close. Larger samples will have less bias on average.
+
+:::
+
+
+
+## Hypothesis testing 
+
+::: {.incremental}
+
+* Based on the estimate of the sampling distribution we can device a test, to test if a value exists within specified range. 
+* 95% of all values lies within $\pm 1.96\times \sigma$ from the mean in a normal distribution, this leaves us with an uncertainty of 5%.
+* However, due to problems with *proving a theory or hypothesis*, we instead test against a null-hypothesis.
+
+* The null hypothesis $H_0$ is constructed to contain scenarios not covered by the alternative hypothesis $H_A$
+
+:::
+
+## Hypothesis tests - a two sample scenario
+
+* The null hypothesis is that the mean of group 1 is similar to group 2 $H_0: \mu_1 - \mu_2 = 0$
+
+* To reject this hypothesis, we need to find support for $\mu_1 - \mu_2 \neq 0$
+
+* We want to do this with some specified error control, usually 5%. We accept that we will wrong in a specified number of cases.
+
+* We can calculate a 95% **confidence interval** of the difference 
+
+## A 95% confidence interval for small samples
+
+Upper bound: $$\bar{x} + t_{1-\alpha/2} \times SE$$
+Lower bound: $$\bar{x} - t_{1-\alpha/2} \times SE$$
+
+* $\bar{x}$ is the difference in means between groups.
+* The standard error ($SE$) estimates the standard deviation of the sampling distribution
+* $t_{1-\alpha/2}$ represents the area under probability distribution curve containing 95% of all values.
+* The $t$-distribution is used instead of the normal distribution since it can capture deviations from the Normal distribution due to the sample size. 
+
+## The t-distribution
+
+```{r}
+#| cache: true
+#| warning: false
+#| echo: false
+#| message: false
+
+# The code was grabbed from https://www.statmethods.net/advgraphs/probability.html
+
+x <- seq(-4, 4, length=100)
+hx <- dnorm(x)
+
+degf <- c(1, 3, 8, 30)
+colors <- c("red", "blue", "darkgreen", "gold", "black")
+labels <- c("df=1", "df=3", "df=8", "df=30", "normal")
+
+plot(x, hx, type="l", lty=2, xlab="x value",
+  ylab="Density", main="Comparison of t Distributions")
+
+for (i in 1:4){
+  lines(x, dt(x,degf[i]), lwd=2, col=colors[i])
+}
+
+legend("topright", inset=.05, title="Distributions",
+  labels, lwd=2, lty=c(1, 1, 1, 1, 2), col=colors)
+
+```
+
+## A case with samples from two groups
+
+```{r, message = FALSE, warning=FALSE, echo=FALSE, fig.height=3, fig.width=3}
+set.seed(1)
+df <- data.frame(G1 = rnorm(30, 12, 1.2), G2 = rnorm(30, 12.9, 1.3))
+df %>%
+        gather(group, value, G1:G2) %>%
+        ggplot(aes(group, value)) + geom_boxplot() + theme_minimal() +
+        xlab("Group") + ylab("Value")
+
+
+# Pooled standard deviation
+
+# mean difference
+
+m <- mean(df$G2) - mean(df$G1)
+
+se <- sqrt(((sd(df$G1)^2)/30) + (((sd(df$G2)^2)/30)))
+
+ciu <- m + se * qt(0.975, 30 + 30 -2)
+cil <- m - se * qt(0.975, 30 + 30 -2)
+```
+
+## A 95% confidence of the difference in means
+
+* Two groups are compared, the $H_0$ is that there is no difference between the groups: $H_0: \mu_1 = \mu_2$
+
+* The difference between the groups are estimated to $\mu_2 - \mu_1 =$ `r round(m, 2)`
+* The 95% confidence interval is $m_2 - m_1 \pm t_{\alpha/2} \times SE(m_2 - m_1)$ 
+where the $SE(m_2 - m_1)$ is the standard error of the difference. 
+
+## A 95% confidence of the difference in means
+
+```{r, message = FALSE, warning=FALSE, echo=FALSE, fig.height=3, fig.width=3}
+set.seed(1)
+
+
+df <- data.frame(G1 = rnorm(30, 12, 1.2), G2 = rnorm(30, 12.9, 1.3))
+
+m <- mean(df$G2) - mean(df$G1)
+
+se <- sqrt(((sd(df$G1)^2)/30) + (((sd(df$G2)^2)/30)))
+
+ciu <- se * qt(0.975, 30 + 30 -2)
+cil <- se * qt(0.975, 30 + 30 -2)
+
+df %>%
+        gather(group, value, G1:G2) %>%
+  add_case(group = "Difference", value = mean(df$G1) + m) %>%
+  mutate(group = factor(group, levels = c("G1", "G2", "Difference"))) %>%
+        ggplot(aes(group, value)) + 
+
+    geom_errorbar(data = ~ filter(.x, group == "Difference"), aes(ymin = value - cil, ymax = value + ciu), width = 0.2) +
+  geom_point(data = ~ filter(.x, group == "Difference"), shape = 21, size = 3, fill = "lightblue") +
+  
+  annotate("segment", x = 0.5, xend = 1.8, y = mean(df$G1), yend = mean(df$G1), lty = 2) +
+  annotate("richtext", x = 0.6, y = mean(df$G1) - 0.35, label = "H<sub>0</sub>",
+           fill = NA, label.color = NA, # remove background and outline
+    label.padding = grid::unit(rep(0, 4), "pt") # remove padding
+    ) +
+
+    geom_boxplot(data = ~ filter(.x, group %in% c("G1", "G2"))) + 
+  theme_minimal() +
+  scale_y_continuous(limits = c(9, 16)) +
+        xlab("Group") + ylab("Value")
+
+
+# Pooled standard deviation
+
+# mean difference
+
+```
+
+
+
+
+
+## Summary
+
+* We can *estimate* population *parameters* using a **random** sample from the population
+* The calculated sample standard error is an estimate of the standard deviation of a sampling distribution
+* Using a *probability density function* like the $t$- or $z$-distribution, we can estimate a range a plausible values of a population parameter (e.g. mean).
+* We can test if a estimated interval contains the null hypothesis, if not we can reject $H_0$.
+
+
+
+
+

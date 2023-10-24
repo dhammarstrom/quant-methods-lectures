@@ -1,0 +1,549 @@
+---
+title: "The goal of inference"
+format: revealjs
+bibliography: resources/bib-final.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dpi=300,fig.width=8)
+```
+
+
+# The goal of inference
+
+![The scientific process.](resources/01-the-goal-of-inference/science-stock-photo.jpg){fig-align="center"}
+
+::: notes
+The goal of science is mostly to study some phenomena and then communicate how the world works. This process may include describing a phenomena, doing an experiment, observing specific natural events...
+:::
+
+# 
+
+<center>
+
+<font style="font-size:10vw"><strong>P \< 0.05</strong></font>
+
+</center>
+
+::: notes
+Surprisingly often, the goal of science seems to be the production of a number, that for some reason we want to keep below 5%!
+
+Everybody in the room is happy when significance is high.
+
+The p-value has been used to produced a new discovery, or proof or even the truth.
+:::
+
+## The problem with<br>inference {background-color="black" background-image="resources/01-the-goal-of-inference/black-swan.jpg" background-size="contain"}
+
+::: incremental
+-   All swans are white (P \< 0.05)
+:::
+
+<span style='position:absolute; bottom:0px;'><p style="font-size: small">JJ Harrison (https://www.jjharrison.com.au/) - Own work CC BY-SA 4.0</p>
+
+</span>
+
+::: notes
+It turns out that it is not that simple.
+
+The P-value did not presented us the truth. It was just a number calculated from a laborious process that included sampling of data, calculation of summary statistics and P-value.
+
+The P-value might not even mean what we think it means?
+:::
+
+## What does the p-value mean? 
+
+![[@svetkey2008]](resources/01-the-goal-of-inference/svetkey-2008-fig2.png)
+
+:::{.notes}
+Svetkey et al. performed an intervention where overweight or obese individuals that had lost at least 4 kg in a first weight loss phase were randomized to maintain their weight on their own or receive either "personal contact" or "interactive technology" in a follow up phase. 
+
+:::
+
+
+## What does the p-value mean? {background-color="black"}
+
+All groups regained weight after randomization by a mean of 5.5 kg in the *self-directed*, 5.2 kg in the *interactive technology--based*, and 4.0 kg in the *personal-contact* group... Those in the *personal-contact* group regained a mean of 1.2 kg less than those in the *interactive technology--based* group **(95% CI, 2.1-0.3 kg; P=.008)**.
+
+## What does the p-value mean? Svetkey at al... {background-color="black"}
+
+
+::: incremental
+(1) ...have absolutely disproved the null hypothesis (that there is no difference between the population means).
+(2) ... have found the probability of the null hypothesis being true.
+(3) ... have absolutely proved their experimental hypothesis (that there is a difference between the population means).
+:::
+
+Questions adopted from [@dienes2008].
+</p>
+
+## What does the p-value mean? Svetkey at al... {background-color="black"}
+::: incremental
+(4) ... can deduce the probability of the experimental hypothesis being true.
+(5) ... know the probability that you are making the wrong decision, if you decided to reject the null hypothesis.
+(6) ... have a reliable experimental finding in the sense that if, hypothetically, the experiment were repeated a great number of times, you would obtain a significant result on 95 % of occasions.
+:::
+Questions adopted from [@dienes2008].
+
+# 
+
+```{tikz, inference-intro, fig.cap = "Statistical inference", fig.ext = 'png', cache=FALSE}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,231); %set diagram left start at 0, and has height of 231
+
+%Shape: Cloud [id:dp7804573016344785] 
+\draw   (29.56,55.23) .. controls (28.36,46.6) and (32.3,38.06) .. (39.7,33.23) .. controls (47.11,28.4) and (56.69,28.13) .. (64.37,32.53) .. controls (67.09,27.51) and (72.07,24.05) .. (77.8,23.19) .. controls (83.53,22.33) and (89.34,24.16) .. (93.48,28.15) .. controls (95.79,23.6) and (100.34,20.55) .. (105.51,20.07) .. controls (110.68,19.59) and (115.74,21.75) .. (118.89,25.8) .. controls (123.07,20.97) and (129.73,18.94) .. (135.99,20.58) .. controls (142.24,22.22) and (146.96,27.24) .. (148.11,33.46) .. controls (153.24,34.83) and (157.52,38.31) .. (159.83,43) .. controls (162.14,47.69) and (162.26,53.14) .. (160.17,57.93) .. controls (165.22,64.36) and (166.4,72.93) .. (163.27,80.44) .. controls (160.15,87.96) and (153.18,93.28) .. (144.97,94.43) .. controls (144.91,101.48) and (140.96,107.95) .. (134.63,111.34) .. controls (128.31,114.74) and (120.61,114.53) .. (114.49,110.79) .. controls (111.88,119.24) and (104.55,125.45) .. (95.65,126.75) .. controls (86.75,128.05) and (77.89,124.2) .. (72.89,116.86) .. controls (66.77,120.48) and (59.41,121.52) .. (52.5,119.75) .. controls (45.58,117.99) and (39.68,113.56) .. (36.12,107.47) .. controls (29.86,108.19) and (23.81,105.01) .. (20.96,99.52) .. controls (18.12,94.03) and (19.1,87.4) .. (23.4,82.91) .. controls (17.82,79.69) and (14.97,73.31) .. (16.34,67.08) .. controls (17.71,60.87) and (23,56.22) .. (29.43,55.56) ; \draw   (23.41,82.9) .. controls (26.04,84.42) and (29.09,85.11) .. (32.13,84.88)(36.12,107.47) .. controls (37.43,107.32) and (38.71,107) .. (39.94,106.53)(72.89,116.86) .. controls (71.97,115.51) and (71.2,114.07) .. (70.59,112.55)(114.49,110.79) .. controls (114.96,109.26) and (115.27,107.67) .. (115.41,106.07)(144.96,94.43) .. controls (145.03,86.92) and (140.67,80.05) .. (133.77,76.76)(160.17,57.93) .. controls (159.05,60.48) and (157.34,62.75) .. (155.18,64.55)(148.11,33.46) .. controls (148.3,34.49) and (148.39,35.54) .. (148.38,36.59)(118.89,25.8) .. controls (117.84,27) and (116.98,28.34) .. (116.33,29.78)(93.48,28.15) .. controls (92.92,29.24) and (92.5,30.4) .. (92.24,31.59)(64.37,32.53) .. controls (65.99,33.46) and (67.5,34.58) .. (68.84,35.87)(29.56,55.23) .. controls (29.72,56.42) and (29.98,57.59) .. (30.34,58.74) ;
+
+%Straight Lines [id:da20026597789978795] 
+\draw    (163,81) -- (282,81) ;
+\draw [shift={(284,81)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+
+
+%Shape: Rectangle [id:dp223518783863208] 
+\draw   (284,55) -- (364,55) -- (364,126) -- (284,126) -- cycle ;
+
+%Shape: Rectangle [id:dp223518783863208] 
+\draw   (284,146) -- (364,146) -- (364,180) -- (284,180) -- cycle ;
+
+%Curve Lines [id:da6883489789370985] 
+\draw  [dash pattern={on 0.84pt off 2.2pt}]  (280,167) .. controls (246.68,141.52) and (132.69,162.14) .. (101.79,131.91) ;
+\draw [shift={(100,130)}, rotate = 49.69] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da5316976730410548] 
+\draw    (324,126) -- (324,143) ;
+\draw [shift={(324,146)}, rotate = 270] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+% Text Node
+\draw (305,156) node [anchor=north west][inner sep=0.75pt]   [align=left] {Model};
+% Text Node
+\draw (295,70) node [anchor=north west][inner sep=0.75pt]   [align=left] {Sample};
+% Text Node
+\draw (42,50) node [anchor=north west][inner sep=0.75pt]   [align=left] {Population};
+
+
+
+\end{tikzpicture}
+
+```
+
+::: notes
+Scientific studies only occasionally gather all available data regarding some phenomena under study. All possible data are not available to us due to, e.g., practical or economic reasons.
+
+We, therefore, have no direct way of studying all occurances of a phenomena.
+
+Thus, the scientist faces the challenge of concluding something about the population based on a limited set of observations, a sample.
+
+In order to conclude something, we often make some kind of model. A simple case can be the mean of a sample. We can use it to make a statement about the population.
+
+Models can become more complex...
+:::
+
+# 
+
+```{tikz, inference-full, fig.cap = "Statistical inference", fig.ext = 'png', cache=FALSE}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,231); %set diagram left start at 0, and has height of 231
+
+%Shape: Cloud [id:dp7804573016344785] 
+\draw   (29.56,55.23) .. controls (28.36,46.6) and (32.3,38.06) .. (39.7,33.23) .. controls (47.11,28.4) and (56.69,28.13) .. (64.37,32.53) .. controls (67.09,27.51) and (72.07,24.05) .. (77.8,23.19) .. controls (83.53,22.33) and (89.34,24.16) .. (93.48,28.15) .. controls (95.79,23.6) and (100.34,20.55) .. (105.51,20.07) .. controls (110.68,19.59) and (115.74,21.75) .. (118.89,25.8) .. controls (123.07,20.97) and (129.73,18.94) .. (135.99,20.58) .. controls (142.24,22.22) and (146.96,27.24) .. (148.11,33.46) .. controls (153.24,34.83) and (157.52,38.31) .. (159.83,43) .. controls (162.14,47.69) and (162.26,53.14) .. (160.17,57.93) .. controls (165.22,64.36) and (166.4,72.93) .. (163.27,80.44) .. controls (160.15,87.96) and (153.18,93.28) .. (144.97,94.43) .. controls (144.91,101.48) and (140.96,107.95) .. (134.63,111.34) .. controls (128.31,114.74) and (120.61,114.53) .. (114.49,110.79) .. controls (111.88,119.24) and (104.55,125.45) .. (95.65,126.75) .. controls (86.75,128.05) and (77.89,124.2) .. (72.89,116.86) .. controls (66.77,120.48) and (59.41,121.52) .. (52.5,119.75) .. controls (45.58,117.99) and (39.68,113.56) .. (36.12,107.47) .. controls (29.86,108.19) and (23.81,105.01) .. (20.96,99.52) .. controls (18.12,94.03) and (19.1,87.4) .. (23.4,82.91) .. controls (17.82,79.69) and (14.97,73.31) .. (16.34,67.08) .. controls (17.71,60.87) and (23,56.22) .. (29.43,55.56) ; \draw   (23.41,82.9) .. controls (26.04,84.42) and (29.09,85.11) .. (32.13,84.88)(36.12,107.47) .. controls (37.43,107.32) and (38.71,107) .. (39.94,106.53)(72.89,116.86) .. controls (71.97,115.51) and (71.2,114.07) .. (70.59,112.55)(114.49,110.79) .. controls (114.96,109.26) and (115.27,107.67) .. (115.41,106.07)(144.96,94.43) .. controls (145.03,86.92) and (140.67,80.05) .. (133.77,76.76)(160.17,57.93) .. controls (159.05,60.48) and (157.34,62.75) .. (155.18,64.55)(148.11,33.46) .. controls (148.3,34.49) and (148.39,35.54) .. (148.38,36.59)(118.89,25.8) .. controls (117.84,27) and (116.98,28.34) .. (116.33,29.78)(93.48,28.15) .. controls (92.92,29.24) and (92.5,30.4) .. (92.24,31.59)(64.37,32.53) .. controls (65.99,33.46) and (67.5,34.58) .. (68.84,35.87)(29.56,55.23) .. controls (29.72,56.42) and (29.98,57.59) .. (30.34,58.74) ;
+
+%Straight Lines [id:da20026597789978795] 
+\draw    (163,81) -- (282,81) ;
+\draw [shift={(284,81)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+
+
+%Shape: Rectangle [id:dp223518783863208] 
+\draw   (284,55) -- (364,55) -- (364,126) -- (284,126) -- cycle ;
+
+%Shape: Rectangle [id:dp223518783863208] 
+\draw   (284,146) -- (364,146) -- (364,180) -- (284,180) -- cycle ;
+
+%Curve Lines [id:da6883489789370985] 
+\draw  [dash pattern={on 0.84pt off 2.2pt}]  (280,167) .. controls (246.68,141.52) and (132.69,162.14) .. (101.79,131.91) ;
+\draw [shift={(100,130)}, rotate = 49.69] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da5316976730410548] 
+\draw    (324,126) -- (324,143) ;
+\draw [shift={(324,146)}, rotate = 270] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+% Text Node
+\draw (305,156) node [anchor=north west][inner sep=0.75pt]   [align=left] {Model};
+% Text Node
+\draw (295,70) node [anchor=north west][inner sep=0.75pt]   [align=left] {Sample\\statistics:\\$\bar{x}, s, \hat{p}, n$, ...};
+% Text Node
+\draw (42,50) node [anchor=north west][inner sep=0.75pt]   [align=left] {Population\\parameters:\\$\mu,\sigma, P, N$, ... };
+
+% Text Node
+\draw (220,85) node [anchor=north west][inner sep=0.75pt]   [align=left] {Sampling};
+% Text Node
+\draw (180,155) node [anchor=north west][inner sep=0.75pt]   [align=left] {Inference};
+
+\end{tikzpicture}
+
+```
+
+
+::: notes
+In statistical lingo, the **population has parameters**, these are for example the population mean, standard deviation, proportion, all with the N, the number of possible observations.
+
+The sample can be described using a **sample statistic** such as the sample mean, standard deviation, proportion, all described using the sample size (n)
+
+Collecting a sample from the population is the process of sampling. Using **random sampling**, we are  The process of drawing conclusions regarding the population based on the data/model is called **inference**.
+:::
+
+
+## Drawing inference from a sample {background-color="black" background-image="resources/01-the-goal-of-inference/red-pill-blue-pill.png" background-size="contain"}
+
+::: incremental
+- Participants are recruited to an intervention and randomized to either receive a RED or BLUE pills.
+
+- Systolic blood pressure after the intervention
+
+- Do RED and BLUE pills affect blood pressure differently?
+
+:::
+
+::: notes
+
+We recruit participants to a trial were they will, by random allocation, receive either a blue or a red pill
+
+We are interested in the systolic blood pressure as a result of the intervention, to be able to say something about the population we want to know if the groups differ? 
+
+:::
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+# fix seed
+set.seed(1)
+
+# Create study groups a true effect 4/7
+pill <- rnorm(60, 142.5,7)
+placebo <- rnorm(60, 140,7)
+
+
+observed.results <- data.frame(bp = c(pill, placebo), 
+           group = c(rep(c("Pill", "Placebo"), each = 60))) %>%
+  ggplot(aes(bp, fill = group)) + 
+  labs(fill = "", 
+       x = "Systolic blood pressure") +
+  scale_fill_manual(values = c("blue", "red")) +
+  theme_classic() +
+  
+  annotate("segment", x = mean(pill), xend = mean(pill), y = 0, yend = 0.5, color = "blue", size = 2) +
+ 
+  annotate("segment", x = mean(placebo), xend = mean(placebo), y = 0, yend = 0.5, color = "red", size = 2) + 
+  
+  annotate("segment", x = mean(placebo), xend = mean(pill), y = 0.55, yend = 0.55, color = "black", size = 2) + 
+
+  annotate("text", x = mean(placebo), y = 0.6, 
+           label = paste0("Mean difference = ", round(mean(pill) - mean(placebo), 1))) +
+  
+    geom_dotplot(alpha = 0.5) +
+  
+  
+  theme(axis.line.y = element_blank(), 
+        axis.title.y = element_blank(), 
+        axis.ticks.y = element_blank(), 
+        axis.text.y = element_blank(), 
+        legend.position = "none")
+  
+
+
+
+# Calculate avg diff
+avg.diff <- mean(pill) - mean(placebo)
+
+results <- data.frame(per.diff = rep(NA, 10000))
+
+for(i in 1:10000) {
+  
+  per <- sample(c(pill, placebo), 120, replace = FALSE)
+  
+  results[i, 1] <- mean(per[1:60]) - mean(per[61:120])
+  
+  
+}
+
+
+per.results1 <- results %>%
+  ggplot(aes(per.diff)) + geom_histogram(fill = "gray80", color = "black") +
+    theme_classic() +
+  
+  labs(x = "Average differences", 
+       y = "Number of averages") +
+  
+  theme(axis.text = element_text(size = 16), 
+        axis.title = element_text(size = 16))
+
+
+per.results2 <- results %>%
+  ggplot(aes(per.diff)) + 
+  
+  annotate("segment", y = 0, yend = 500, x = avg.diff, xend = avg.diff, size = 2, 
+           color = "black") +
+  annotate("text", y = 560, x = avg.diff, label = paste0("Obeserved\ndifference: ", round(avg.diff,1))) +
+  
+  
+  geom_histogram(fill = "gray80", color = "black") +
+    theme_classic() +
+  
+  labs(x = "Average differences", 
+       y = "Number of averages") +
+  
+    theme(axis.text = element_text(size = 16), 
+        axis.title = element_text(size = 16))
+
+
+
+```
+
+
+
+## The results
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+observed.results
+
+```
+
+
+::: notes
+
+We have measured BP in both groups after the intervention.
+
+It turns out that we have a difference between the groups. But how can we be sure that is a difference that is due to the different pills? We would like to have a test were we compare our results to what can be expected if there were no differences between the pills.
+
+We can achieve this by random permutations of the observed data... 
+
+:::
+
+
+## A permutation experiment
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse); library(cowplot); library(ggtext)
+
+# Create a blue group
+blue_group <- data.frame(y = rep(1:6, each = 10), 
+           x = rep(1:10)) %>%
+  ggplot(aes(x, y)) + geom_point(shape = 21, size = 4, fill = "blue") + 
+  
+  theme_void()
+
+# red group
+red_group <- data.frame(y = rep(1:6, each = 10), 
+                         x = rep(1:10)) %>%
+  ggplot(aes(x, y)) + geom_point(shape = 21, size = 4, fill = "red") + 
+  
+  theme_void()
+
+
+# The observed data
+obs <- plot_grid(NULL,blue_group, NULL, red_group, rel_heights =  c(0.2, 1, 0.2, 1), ncol = 1) + 
+  annotate("text", x = 0.05, y = 0.96, label = "Blue", hjust = 0, color = "blue") +
+  annotate("text", x = 0.05, y = 0.46, label = "Red", hjust = 0, color = "red")
+
+
+# Create a grouping to make it possible to balance allocation in permutations
+grouping <- rep(c("red", "blue"), each = 60)
+
+sample1 <- sample(grouping, 120)
+sample2 <- sample(grouping, 120)
+sample3 <- sample(grouping, 120)
+
+
+# "Brute force" creations of plots -> this should have been less lines of code!
+perm_group1 <- data.frame(y = rep(1:6, each = 10), 
+                        x = rep(1:10), 
+                        group = sample1[1:60]) %>%
+  ggplot(aes(x, y, fill = group)) + geom_point(shape = 21, size = 4) + 
+  
+  theme_void() +
+  scale_fill_manual(values = c("blue", "red")) +
+  theme(legend.position = "none")
+
+perm_group2 <- data.frame(y = rep(1:6, each = 10), 
+                          x = rep(1:10), 
+                          group = sample1[61:120]) %>%
+  ggplot(aes(x, y, fill = group)) + geom_point(shape = 21, size = 4) + 
+  
+  theme_void() +
+  scale_fill_manual(values = c("blue", "red")) +
+  theme(legend.position = "none")
+
+
+perm_group3 <- data.frame(y = rep(1:6, each = 10), 
+                          x = rep(1:10), 
+                          group = sample2[1:60]) %>%
+  ggplot(aes(x, y, fill = group)) + geom_point(shape = 21, size = 4) + 
+  
+  theme_void() +
+  scale_fill_manual(values = c("blue", "red")) +
+  theme(legend.position = "none")
+
+perm_group4 <- data.frame(y = rep(1:6, each = 10), 
+                          x = rep(1:10), 
+                          group = sample2[61:120]) %>%
+  ggplot(aes(x, y, fill = group)) + geom_point(shape = 21, size = 4) + 
+  
+  theme_void() +
+  scale_fill_manual(values = c("blue", "red")) +
+  theme(legend.position = "none")
+
+
+
+# Put figures together
+perm1 <- plot_grid(NULL,perm_group1, NULL, perm_group2, rel_heights =  c(0.2, 1, 0.2, 1), ncol = 1) + 
+  annotate("text", x = 0.05, y = 0.96, label = "\"Blue\"", hjust = 0, color = "blue") +
+  annotate("text", x = 0.05, y = 0.46, label = "\"Red\"", hjust = 0, color = "red")
+
+
+perm2 <- plot_grid(NULL,perm_group3, NULL, perm_group4, rel_heights =  c(0.2, 1, 0.2, 1), ncol = 1) + 
+  annotate("text", x = 0.05, y = 0.96, label = "\"Blue\"", hjust = 0, color = "blue") +
+  annotate("text", x = 0.05, y = 0.46, label = "\"Red\"", hjust = 0, color = "red")
+
+perm.text <-  data.frame(y = rep(1:6, each = 10), 
+                         x = rep(1:10)) %>%
+  ggplot(aes(x, y)) + 
+  theme_void() +
+  annotate("text", x = 5, y = 2, label = "Repeat \U00D7 10000", size = 5)
+  
+  
+perm.total <- plot_grid(NULL, 
+plot_grid(obs, NULL, perm1, NULL, perm2,NULL, perm.text, 
+          ncol = 7, 
+          rel_widths = c(1, 0.2, 1, 0.2, 1, 0.2, 1)), 
+ncol = 1, rel_heights = c(0.1, 1)) +
+  annotate("text", x = 0.1, y = 0.95, label = "Observed data") +
+  annotate("text", x = 0.35, y = 0.95, label = "Permutations")  +
+annotate("segment", x = 0.01, xend = 0.22, y = 0.92, yend = 0.92, size = 1.5) +
+annotate("segment", x = 0.25, xend = 0.95, y = 0.92, yend = 0.92, size = 1.5)
+
+perm.total
+
+
+```
+
+::: notes
+
+The observed data is re-ordered to create a new data set where differences between groups is not due to the randomization of pills. From these groups, we calculate the average difference between our new groups.
+This follows by another re-allocation of participants, and a new average difference. 
+
+We repeat this process 10000 times.
+
+
+:::
+
+## 10 000 Permutation
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+per.results1
+
+```
+
+::: notes
+
+Most differences, out of our 10000 permutations are close to 0. Some are greater than 2.5...
+
+::: 
+
+
+## 10 000 Permutation and our result
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+per.results2
+
+
+```
+
+::: notes
+
+Our observed difference is 2.5. This is located in the tail of the distribution of average differences. But how unlikely is our results among a collection of randomly allocated participants where the intervention had no effect? 
+
+:::
+
+## How unlikely is our result if the pills had no effect?
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+n.res <- length(results[results$per.diff >= avg.diff, ])
+
+pval <- n.res / 10000
+
+```
+
+::: incremental 
+
+- The average *observed difference* was `r round(avg.diff, 2)`.
+- `r n.res` *reshuffled averages* where equal to or greater than our observed result.
+- This represent a small fraction of the reshuffled differences, in fact...
+- $p = \frac{`r n.res`}{10000} = `r pval`$
+
+:::
+
+## To account for both extremes
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+n.res.up <- length(results[results$per.diff >= avg.diff, ])
+
+n.res.down <- length(results[results$per.diff <= -avg.diff, ])
+
+
+pval.twotailed <- (n.res.up + n.res.down) / 10000
+
+```
+
+::: incremental 
+
+- When allocating the pills we did not really know what to expect, we did not account for the direction of the effect in our last test.
+- We should compare our result to extreme results in both directions. 
+- **`r n.res.up`** averages were equal to or greater than our observed result, and **`r n.res.down`** averages were equal to or smaller than an effect corresponding to the observed in the other direction.
+- $p = \frac{`r n.res.up` + `r n.res.down`}{10000} = `r pval.twotailed`$
+
+:::
+
+## What is enough evidence for inference?
+
+- We have produced a *P*-value! 
+
+- So far, given our experiment, how do you define the *P*-value?
+
+- Is the *P*-value low enough to conclude anything about our pills?
+
+## References
+

@@ -8,7 +8,7 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.361">
+  <meta name="generator" content="quarto-1.3.330">
 
   <title>Quantitative Methods - Lectures - Associations - Regression and Correlation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="resources/style.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -399,12 +399,13 @@
 <section id="the-regression-model" class="slide level2">
 <h2>The regression model</h2>
 <ul>
-<li>The ordinary regression model <span class="math inline">\(y_i = \beta_0 + \beta x_i + \epsilon_i\)</span> gives us the relationship between two variables, x and y.</li>
-<li>The correlation can be used to describe the same relationship using a unit-less number between -1 and 1</li>
+<li>The ordinary regression model <span class="math inline">\(y_i = \beta_0 + \beta x_i + \epsilon_i\)</span> gives us the relationship between two variables, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</li>
+<li>The correlation can be used to describe the same relationship using a unit-less number between -1 and 1.</li>
+<li>A correlation of 0 indicate no association, a correlation close to 1 and -1 indicate association.</li>
 </ul>
 </section>
-<section id="correlation-coefficients" class="slide level2">
-<h2>Correlation coefficients</h2>
+<section id="section" class="slide level2">
+<h2></h2>
 
 <img data-src="06-correlations_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
 <section id="the-relationship-between-training-volume-and-vastus-lateralis-thickness" class="slide level2">
@@ -581,8 +582,52 @@ code.sourceCode {
 </style>
 </div>
 </section>
-<section id="correlation-does-not-imply-causation" class="slide level2">
-<h2>Correlation does not imply causation</h2>
+<section id="many-types-of-associations" class="slide level2">
+<h2>Many types of associations</h2>
+<div>
+<ul>
+<li class="fragment">A broader definition of association can include…
+<ul>
+<li class="fragment">Diffrences in body weight between sexes → <span style="color:blue">sex (discrete) is <strong>associated</strong> with body weight (continuous)</span></li>
+<li class="fragment">Prevalence of ACL injuries differ between sexes → <span style="color:blue">sex (discrete) is <strong>associated</strong> with injury status (discrete).</span></li>
+</ul></li>
+<li class="fragment">We use numerous <em>statistical tests</em> to describe associations (t-test, ANOVA, regression, etc.)</li>
+</ul>
+</div>
+</section>
+<section id="associations-and-causality" class="slide level2">
+<h2>Associations and causality</h2>
+
+<img data-src="06-correlations_files/figure-revealjs/fig-spurious-correlation-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Figure&nbsp;1: US spending on science, space and technology is positively related to the number of suicied by hanging, strangulation and suffocation.</p></section>
+<section id="associations-and-causality-1" class="slide level2">
+<h2>Associations and causality</h2>
+<div>
+<ul>
+<li class="fragment">Associations are descriptive → We <strong>observe</strong> statistical associations without being able to infer causality</li>
+<li class="fragment">Controlled experiments can be used to infer causality → Using experiments we can <strong>intervene</strong> in a system and interpret associations as causal (intervention associated with outcome)</li>
+<li class="fragment">Using graphs we can draw assumptions about relationships among variables</li>
+</ul>
+</div>
+</section>
+<section id="the-experimental-treatment-e-is-causally-associated-with-the-outcome-o" class="slide level2">
+<h2>The experimental treatment (E) is causally associated with the outcome (O)</h2>
+
+<img data-src="06-correlations_files/figure-revealjs/unnamed-chunk-13-1.png" width="480" class="r-stretch quarto-figure-center"></section>
+<section id="in-obeservational-settings-an-exposure-e-may-be-indirectly-related-to-an-outcome-o-trough-a-confounder-c" class="slide level2">
+<h2>In obeservational settings, an exposure (E) may be indirectly related to an outcome (O) trough a confounder (C)</h2>
+
+<img data-src="06-correlations_files/figure-revealjs/unnamed-chunk-14-1.png" width="480" class="r-stretch quarto-figure-center"></section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<div>
+<ul>
+<li class="fragment">The correlation analysis can be seen as a simplified regression analysis</li>
+<li class="fragment">Correlation and regression are used to quantify associations</li>
+<li class="fragment">Associations are what we describe with (many) statistical tests</li>
+<li class="fragment">Association do not imply causation</li>
+<li class="fragment">Graphs can be used to draw assumptions about associations</li>
+</ul>
+</div>
 
 <div class="footer footer-default">
 

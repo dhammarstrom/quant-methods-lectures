@@ -11,5 +11,9 @@ title: "Quantitative methods and statistics (In Sport and Exercise Science) - Le
 | [Introduction to data visualization](02-datavis.qmd)| [Homework, possible solutions](02-datavis-homework.qmd) |
 | [Introduction to data wrangling](03-data-wrangling.qmd)|[Homework, possible solution](03-data-wrangling-homework.qmd) |
 | [Writing reports in quarto](04-writing.qmd)| |
+| [Associations, correlation and regression](06-correlations.qmd)||
+| [Statistical inference](07-statistical-inference.qmd)||
+| [Samples and populations](08-sampling-populations.qmd)||
+| [Statistical power](09-statistical-power.qmd)||
 
 

@@ -2,16 +2,19 @@
 title: "Associations - Regression and Correlation"
 format: revealjs
 css: resources/style.css
+editor_options: 
+  chunk_output_type: console
 ---
 
 
 ## The regression model
 
-- The ordinary regression model $y_i = \beta_0 + \beta x_i + \epsilon_i$ gives us the relationship between two variables, x and y.
-- The correlation can be used to describe the same relationship using a unit-less number between -1 and 1
+- The ordinary regression model $y_i = \beta_0 + \beta x_i + \epsilon_i$ gives us the relationship between two variables, $x$ and $y$.
+- The correlation can be used to describe the same relationship using a unit-less number between -1 and 1.
+- A correlation of 0 indicate no association, a correlation close to 1 and -1 indicate association. 
 
 
-## Correlation coefficients
+## 
 
 ```{r}
 #| echo: false
@@ -45,7 +48,7 @@ ggplot(data, aes(x = x, y = y)) +
        x = "X",
        y = "Y",
        caption = "Each subplot shows random variables with a specific Pearson correlation") +
-  theme_minimal()
+  theme_minimal(base_size = 18)
 
 
 ```
@@ -359,16 +362,128 @@ code.sourceCode {
 ```
 
 
-## Correlation does not imply causation
+## Many types of associations
+
+
+::: {.incremental}
+- A broader definition of association can include...
+    * Diffrences in body weight between sexes &rarr; <span style="color:blue">sex (discrete) is **associated** with body weight (continuous)</span>
+    * Prevalence of ACL injuries differ between sexes &rarr; <span style="color:blue">sex (discrete) is **associated** with injury status (discrete).
+- We use numerous *statistical tests* to describe associations (t-test, ANOVA, regression, etc.)
+
+:::
+
+
+## Associations and causality
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: fig-spurious-correlation
+#| fig-cap: "US spending on science, space and technology is positively related to the number of suicied by hanging, strangulation and suffocation."
+
+library(tidyverse)
+
+data.frame(suicides = c(5427, 5688, 6198, 6462, 6635, 7336, 7248, 
+                        7491, 8161, 8578, 9000), 
+           spending = c(18.079, 18.594, 19.753, 20.734, 20.831, 23.029, 
+                        23.597, 23.584, 25.525, 27.731, 29.449), 
+           year = seq(from = 1999, to = 2009)) %>%
+  ggplot(aes(spending, suicides)) + geom_point(shape = 21,
+                                               fill = "orange", 
+                                               alpha = 0.6, 
+                                               size = 4) +
+  
+  labs(x = "US spending on science, space and technology (billion $)", 
+      y = "Suicides by hanging,\nstrangulation and suffocation", 
+      caption = "Source: https://www.tylervigen.com/spurious-correlations") + 
+  theme_minimal(base_size = 20) + 
+        theme(plot.caption = element_text(color = "gray40", 
+                                          size = 12))
+
+
+```
+
+
+## Associations and causality
+
+::: {.incremental}
+
+- Associations are descriptive &rarr; We **observe** statistical associations without being able to infer causality
+- Controlled experiments can be used to infer causality &rarr; Using experiments we can **intervene** in a system and interpret associations as causal (intervention associated with outcome)
+- Using graphs we can draw assumptions about relationships among variables
+
+:::
+
+
+## The experimental treatment (E) is causally associated with the outcome (O)
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+
+
+library(ggdag); library(ggplot2)
+
+dagify(O ~ E) %>%
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_point(color = "orange", size = 25) +
+  geom_dag_edges() +
+  geom_dag_text(color = "black") +
+  theme_dag()
 
 
 
 
+```
+
+
+## In obeservational settings, an exposure (E) may be indirectly related to an outcome (O) trough a confounder (C)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+
+
+library(ggdag); library(ggplot2)
+
+dagify(E ~ C, 
+       O ~ C) %>%
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_point(color = "orange", size = 25) +
+  geom_dag_edges() +
+  geom_dag_text(color = "black") +
+  theme_dag()
 
 
 
 
+```
 
+
+## Summary
+
+::: {.incremental}
+
+- The correlation analysis can be seen as a simplified regression analysis
+- Correlation and regression are used to quantify associations
+- Associations are what we describe with (many) statistical tests
+- Association do not imply causation
+- Graphs can be used to draw assumptions about associations
+
+:::
 
 
 
